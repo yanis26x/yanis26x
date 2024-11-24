@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylemain.css">
+
+    <title>music26x!</title>
+</head>
+<style>
+    /* Le fond est maintenant la vidéo */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #000;
+        color: white;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Vidéo en fond, couvrant toute la page */
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* On met la vidéo derrière le contenu */
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+  
+ 
+
+
+    
+</style>
+
+<body>
+    
+
+    <!-- Vidéo en arrière-plan -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="Shinji listen a music.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+    </div>
+
+    <!-- Lecteurs audio au centre -->
+    <div class="audio-container">
+        <a href="index.html">menu</a>
+        <h2>music!  </h2>
+        
+
+        <!-- Lecteur audio 1 -->
+        <div class="audio-player">
+            <audio controls autoplay>
+                <source src="nanaost.mp3" type="audio/mp3">
+                Votre navigateur ne supporte pas la balise audio.
+            </audio>
+            <p>Titre de la musique 1</p>
+        </div>
+
+        <!-- Lecteur audio 2 -->
+        <div class="audio-player">
+            <audio controls>
+                <source src="musique2.mp3" type="audio/mp3">
+                Votre navigateur ne supporte pas la balise audio.
+            </audio>
+            <p>Titre de la musique 2</p>
+        </div>
+
+        <!-- Lecteur audio 3 -->
+        <div class="audio-player">
+            <audio controls>
+                <source src="musique3.mp3" type="audio/mp3">
+                Votre navigateur ne supporte pas la balise audio.
+            </audio>
+            <p>Titre de la musique 3</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

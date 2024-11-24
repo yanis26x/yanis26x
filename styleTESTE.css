@@ -1,0 +1,63 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec 50% de transparence */
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/*pour le texte menu dans navbar*/
+.navbar a {
+    color: #ff0000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 300; /* Texte de la navbar plus léger */
+}
+
+/*le sang*/
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
+    z-index: 2000; /* Plus haut que tous les autres éléments */
+    opacity: 0.4; /* Ajuste la transparence pour voir le contenu en dessous */
+    pointer-events: none; /* Empêche l’image de capter les clics */
+}
+
+body{font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;
+    background-image: url('download.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-attachment: fixed; /* Makes the image stay in place when scrolling */
+    background-position: center; /* Centers the image on the screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */}
+
+
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-top: 80px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 24px;
+    }
+
+/* pour que les elment dans se div soi acoter 1   1*/
+    div.links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
