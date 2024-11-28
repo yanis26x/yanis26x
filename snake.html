@@ -27,6 +27,14 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
         }
 
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+           
+        }
+
         h2 {
             font-size: 36px;
             color: #ff6347;
@@ -67,6 +75,37 @@
         button:focus {
             outline: none;
         }
+
+        .leaderboard {
+            width: 300px;
+           
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .leaderboard h3 {
+            font-size: 24px;
+            color: #ff6347;
+            text-align: center;
+        }
+
+        .leaderboard table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+            text-align: center;
+        }
+
+        .leaderboard th, .leaderboard td {
+            border: 1px solid #ff6347;
+            padding: 8px;
+        }
+
+        .leaderboard th {
+            background-color: #ff6347;
+            color: black;
+        }
         
     </style>
 </head>
@@ -83,6 +122,48 @@
 <button onclick="restartGame()">im lame (retry)</button>
 
 <div id="message">Bravo ! Vous avez atteint un score de 50 ! 🎉</div>
+
+
+<div class="leaderboard">
+    <h3>Classement</h3>
+    <h6 > envoie un screen de ton score et je tajoute ! </h6>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Yanis</td>
+                <td>∞</td>
+            </tr>
+            <tr>
+                <td>un sdf</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>nassim</td>
+                <td> - 7</td>
+            </tr>
+
+            <tr>
+                <td>mama</td>
+                <td> " laisse moi tranquille "</td>
+            </tr>
+            <tr>
+                <td> Leon </td>
+                <td> 12</td>
+            </tr>
+            <tr>
+                <td> nassim apres avoir dit : "cette x cest la bonne..." </td>
+                <td> 0 , 3</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
 
 <script>
     const canvas = document.getElementById('snake');
