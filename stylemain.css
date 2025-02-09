@@ -12,17 +12,7 @@ body{font-family: 'Permanent Marker', cursive;
 
 
 
-.fullscreen-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
-    z-index: 2000; /* Plus haut que tous les autres éléments */
-    opacity: 1; /* Ajuste la transparence pour voir le contenu en dessous */
-    pointer-events: none; /* Empêche l’image de capter les clics */
-}
+
 
 
 
