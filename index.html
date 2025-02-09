@@ -76,8 +76,6 @@
             border-radius: 5px;
         }
 
-        
-
         #GFG {
             color: rgb(255, 6, 6);
             font-size: 70px;
@@ -137,7 +135,7 @@
             
         </div>
     </nav>
-    <marquee id="GFG" scrollamount="90" >
+    <marquee id="GFG" scrollamount="200" >
         wtffffmykupppp???!!
     </marquee >
 
@@ -161,7 +159,12 @@
         
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/nNhSh_wNGEc?si=B2lTJJsrBHDEzLp_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
-    
+        <button id="btn" onclick="afficherAlerte()" style="padding: 110px 220px;
+        background-color: #000000;
+        font-size: 300PX;
+        color: #0044ff;
+        font-weight: 300; /* Texte plus léger */
+        border-radius: 5px;">CLICK ME 2 START </button>
        
         
         
@@ -178,11 +181,12 @@
             <a href="snake.html">snaake</a>
             <a href="teste.html">٩(＾◡＾)۶ </a>
             <a href="aboutME.html">about you (me)</a>
-            
-
-            
-
+        
         </div>
+
+        
+
+     
 
       
         
@@ -198,7 +202,7 @@
         Salut !
         <img src="ad.gif" alt="">
         TRY ME NOW00_<button onclick="changerBackground()" id="btnIMAGE">try me </button>
-         2600%^LISTENT O MY CRY NOW <button onclick="toggleMusique()" style="background-color:red; padding: 10px;">PLAY ME</button> 
+         2600%^LISTENT O MY muSIC NOW <button onclick="toggleMusique()" style="background-color:red; padding: 10px;">PLAY ME</button> 
     </marquee >
 
 
@@ -224,14 +228,14 @@
 
     let audio = document.getElementById("musique");
     
-    function toggleMusique() {
+    // function toggleMusique() {
         
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
+    //         if (audio.paused) {
+    //             audio.play();
+    //         } else {
+    //             audio.pause();
+    //         }
+    //     }
     
 
     
@@ -248,7 +252,13 @@
     }
 
 
-    
+    function afficherAlerte() {
+        audio.play();
+            alert("Salut !.............appuie sur ok");
+            
+            
+            document.getElementById("btn").style.display = "none";
+        }
 
 
     
