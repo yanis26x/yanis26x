@@ -1,0 +1,121 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/*pour le texte menu dans navbar*/
+.navbar a {
+    color: #ff0000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 35px;
+    font-weight: 300; /* Texte de la navbar plus léger */
+    
+}
+
+/*le sang*/
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
+    z-index: 2000; /* Plus haut que tous les autres éléments */
+    opacity: 0.4; /* Ajuste la transparence pour voir le contenu en dessous */
+    pointer-events: none; /* Empêche l’image de capter les clics */
+}
+
+body{font-family: 'Courier New', Courier, monospace;
+    background-image: url('download.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-attachment: fixed; /* Makes the image stay in place when scrolling */
+    background-position: center; /* Centers the image on the screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */}
+
+
+
+
+.titre{
+    background-color: fuchsia;
+    text-align: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.content{
+    display: flex;
+            /* justify-content: space-between; */
+            width: 80%;
+            margin: auto;
+            
+            /* padding: 10px; */
+}
+
+.left, .right {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid gray;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(146, 56, 53, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Pr que text GLOW */
+}
+
+.left {
+    background-color: rgba(0, 0, 0, 0.5); /* Rose avec 50% d'opacité */
+    color: white;
+    
+    
+}
+
+.right {
+    background: rgba(248, 41, 248, 0.5); /* Rose avec 50% d'opacité */
+    
+}
+
+.input{
+    /* padding-inline: 50px */
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ff4747;
+    border-radius: 8px;
+    outline: none;
+    background-color: #222;
+    color: white;
+    transition: 0.3s;
+    border-color: #ff7676;
+    box-shadow: 0 0 10px rgba(255, 71, 71, 0.5);
+}
+
+#output{
+    color: #ff0000
+}
+
+
+button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff4747, #ff7676);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: linear-gradient(45deg, #ff7676, #ff4747);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
