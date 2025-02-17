@@ -69,14 +69,15 @@ body{font-family: 'Courier New', Courier, monospace;
 }
 
 .left {
-    background-color: rgba(0, 0, 0, 0.5); /* Rose avec 50% d'opacité */
+    /* background-color: rgba(0, 0, 0, 0.5); Rose avec 50% d'opacité */
     color: white;
     
     
 }
 
 .right {
-    background: rgba(248, 41, 248, 0.5); /* Rose avec 50% d'opacité */
+    /* background: rgba(248, 41, 248, 0.5); Rose avec 50% d'opacité */
+    color: white;
     
 }
 
@@ -114,7 +115,7 @@ body{font-family: 'Courier New', Courier, monospace;
 
 .choix button {
     padding: 20px 20px;
-    background-color: #000000;
+    background-color: #0000007b;
     border: none;
     color: #ff0000;
     font-weight: 300;
