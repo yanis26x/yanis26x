@@ -1,0 +1,173 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.841);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/*pour le texte menu dans navbar*/
+.navbar a {
+    color: #ff0000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 35px;
+    font-weight: 300; /* Texte de la navbar plus léger */
+    
+}
+
+/*le sang*/
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
+    z-index: 2000; /* Plus haut que tous les autres éléments */
+    
+    pointer-events: none; /* Empêche l’image de capter les clics */
+}
+
+body{font-family: 'Courier New', Courier, monospace;
+    background-image: url(/yanis26x/OST_IMG/xp.jpg);
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-attachment: fixed; /* Makes the image stay in place when scrolling */
+    background-position: center; /* Centers the image on the screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: background 1s ease-in-out;
+}
+
+
+
+
+.titre{
+    background-color: rgba(255, 0, 255, 0.189);
+    text-align: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.content{
+    display: flex;
+            /* justify-content: space-between; */
+            width: 80%;
+            margin: auto;
+            
+            /* padding: 10px; */
+}
+
+.left, .right {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid gray;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(146, 56, 53, 0.6), 0 0 30px rgba(255, 255, 255, 0.4); /* Pr que text GLOW */
+}
+
+.left {
+    background-color: rgba(0, 0, 0, 0.5); /* Rose avec 50% d'opacité */
+    color: white;
+    
+    
+}
+
+.right {
+    background: rgba(248, 41, 248, 0.5); /* Rose avec 50% d'opacité */
+    
+}
+
+.input{
+    /* padding-inline: 50px */
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ff4747;
+    border-radius: 8px;
+    outline: none;
+    background-color: #222;
+    color: white;
+    transition: 0.3s;
+    border-color: #ff7676;
+    box-shadow: 0 0 10px rgba(255, 71, 71, 0.5);
+}
+
+#output{
+    color: #ff0000
+}
+
+
+
+
+.choix {
+    text-align: center;
+    padding: 40px;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les boutons */
+}
+
+.choix button {
+    padding: 20px 20px;
+    background-color: #000000;
+    border: none;
+    color: #ff0000;
+    font-weight: 300;
+    border-radius: 5px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;
+}
+
+.choix button:hover {
+    background-color: #ff00ee;
+    color: #000000;
+    transform: scale(1.1);
+}
+
+.opacity_sang{
+    /* background: rgba(207, 9, 9, 0.5); Rose avec 50% d'opacité */
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    margin: 60px;
+
+}
+
+#GFG {
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+    font-weight: 900;
+    
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+
+    text-align: center;
+}
+
+.idk{
+    margin-left: 70px;
+    margin-top: 120px;
+    color: fuchsia;
+}
+
+.idk2{
+
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.emojiNAV{
+    color: #ff00ee;
+    margin-left: 100px;
+}
