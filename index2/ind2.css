@@ -172,3 +172,23 @@ footer{
     color: #ff00ee;
     margin-left: 100px;
 }
+
+
+@keyframes colorChange {
+    0% { background: rgba(68, 0, 255, 0.685); }
+    25% { background: rgba(212, 0, 0, 0.664); }
+    50% { background: rgb(255, 6, 160); }
+    75% { background: rgb(164, 6, 255); }
+    100% { background: rgba(6, 218, 255, 0.329); }
+}
+
+.soundBoard {
+    animation: colorChange 5s infinite alternate;
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    margin: 60px;
+    border: 1px solid gray;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(146, 56, 53, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+    color: #00ffc8;
+}
