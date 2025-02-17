@@ -20,7 +20,7 @@
 }
 
 /*le sang*/
-.fullscreen-image {
+.bloodOnScreen {
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@
     height: 100vh;
     object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
     z-index: 2000; /* Plus haut que tous les autres éléments */
-    
+    opacity: 0.5;
     pointer-events: none; /* Empêche l’image de capter les clics */
 }
 
