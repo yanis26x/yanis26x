@@ -154,3 +154,20 @@ footer{
 
     text-align: center;
 }
+
+.idk{
+    margin-left: 70px;
+    margin-top: 120px;
+    color: fuchsia;
+}
+
+.idk2{
+
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.emojiNAV{
+    color: #ff00ee;
+    margin-left: 100px;
+}
