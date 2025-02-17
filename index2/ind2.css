@@ -98,26 +98,7 @@ body{font-family: 'Courier New', Courier, monospace;
 }
 
 
-button {
-    margin-left: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #ff4747, #ff7676);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover {
-    background: linear-gradient(45deg, #ff7676, #ff4747);
-    transform: scale(1.05);
-}
 
-button:active {
-    transform: scale(0.95);
-}
 
 .choix{
     
@@ -128,22 +109,33 @@ button:active {
     
     
 }
-.choix a {
+.choix {
+    text-align: center;
+    padding: 40px;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacement entre les boutons */
+}
+
+.choix button {
     padding: 20px 20px;
-            background-color: #000000;
-            text-decoration: none;
-            color: #ff0000;
-            font-weight: 300; /* Texte plus léger */
-            border-radius: 5px;
-            font-size: 21px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .choix a:hover {
-            background-color: #ff00ee;
-            color: #000000;
-            transform: scale(1.1);
-        }
+    background-color: #000000;
+    border: none;
+    color: #ff0000;
+    font-weight: 300;
+    border-radius: 5px;
+    font-size: 21px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.choix button:hover {
+    background-color: #ff00ee;
+    color: #000000;
+    transform: scale(1.1);
+}
 
 .opacity_sang{
     background: rgba(207, 9, 9, 0.5); /* Rose avec 50% d'opacité */
