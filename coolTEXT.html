@@ -13,6 +13,9 @@
 </head>
 <body>
 
+    <!-- Son qui se joue automatiquement -->
+    <audio id="son" src="hello! sound effect [aria of sorrows].mp3"></audio>
+
     <!-- Image en pleine page -->
     <img src="pngkey.com-red-blur-png-4261778.png" alt="Image" class="fullscreen-image"> 
 
@@ -24,6 +27,7 @@
         <div>
             <a href="index.html" style="font-weight: 300;">menu</a>
         </div>
+        <button onclick="document.getElementById('son').play()">heLlO</button>
     </nav>
 
     <div class="titre">
@@ -53,6 +57,15 @@
 </body>
 
 <script>
+
+
+// Essaye de jouer le son automatiquement
+window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("son");
+        audio.play().catch(error => console.log("Lecture automatique bloquée :", error));
+    });
+
+
     function confirmer() {
         let inputText = document.querySelector(".input").value;
         let convertA = document.getElementById("convertA").checked; // Vérifie si la case est cochée

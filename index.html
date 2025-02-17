@@ -110,6 +110,9 @@
 </head>
 <body>
 
+    <!-- Son qui se joue automatiquement -->
+    <audio id="son" src="hello! sound effect [aria of sorrows].mp3"></audio>
+
       <!-- Image en pleine page -->
     <img src="pngkey.com-red-blur-png-4261778.png" alt="Image" class="fullscreen-image"> 
 
@@ -135,7 +138,7 @@
             
         </div>
     </nav>
-    <marquee id="GFG" scrollamount="200" >
+    <marquee id="GFG" scrollamount="200" style="color: #ff00ff;" >
         wtffffmykupppp???!!
     </marquee >
 
@@ -174,7 +177,7 @@
         
         <div class="links">
             <a href="jeux.html">play</a>
-            <a href="https://www.paypal.com/paypalme/yanis26x?locale.x=en_CA">paypal</a>
+            <!-- <a href="https://www.paypal.com/paypalme/yanis26x?locale.x=en_CA">paypal</a> -->
             <a href="https://yanis26x.github.io/a2ple/">a2ple</a>
             <a href="CalculeDeNotes.html">Calcule ta note !</a>
             <a href="music.html">♫</a>
@@ -182,10 +185,18 @@
             <!-- <a href="teste.html">٩(＾◡＾)۶ </a> -->
             <a href="aboutME.html">about me</a>
             <a href="coolTEXT.html" style="color: #ff00ff;">c00L txt convert!</a>
+            
+        
+        </div>
+        <div class="links">
+            
+            <a href="soon.html" style="color: #ff00ff;">coming S00N!</a>
+            
         
         </div>
         <div class="links">
             <button onclick="changerBackground()" id="btnIMAGE">try me !  </button>
+            <button onclick="document.getElementById('son').play() " id="btnIMAGE">heLLO</button>
             
         </div>
         
@@ -224,13 +235,16 @@
     
     
 </body>
-<footer>
-    <h1 style="color:  #0011ff;text-align: center; font: 1em sans-serif; font-size:70px;">26x </h1>
-</footer>
+
 
 
 
 <script>
+//pour helloooo
+window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("son");
+        audio.play().catch(error => console.log("Lecture automatique bloquée :", error));
+    });
 
     let audio = document.getElementById("musique");
     
