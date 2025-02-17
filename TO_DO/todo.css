@@ -134,11 +134,14 @@ body{font-family: 'Courier New', Courier, monospace;
 }
 
 .opacity_sang{
-    /* background: rgba(207, 9, 9, 0.5); Rose avec 50% d'opacité */
+    background: rgba(2, 27, 255, 0.5); 
     text-align: center;
     align-items: center;
     padding: 30px;
     margin: 60px;
+    color: #ff00ee;
+    font-size: 20px;
+    font-weight: 900;
 
 }
 
@@ -157,9 +160,9 @@ footer{
 }
 
 .idk{
-    margin-left: 70px;
+    text-align: center;
     margin-top: 120px;
-    color: rgb(68, 0, 255);
+    color: rgb(0, 255, 179);
 }
 
 .phraseDeNANA{
