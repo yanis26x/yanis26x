@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.841);
     padding: 15px 20px;
     position: fixed;
     top: 0;
@@ -33,17 +33,19 @@
 }
 
 body{font-family: 'Courier New', Courier, monospace;
-    background-image: url(/yanis26x/download.jpg);
+    background-image: url(/yanis26x/OST_IMG/sillentHill.jpg);
     background-size: cover; /* Ensures the image covers the entire background */
     background-attachment: fixed; /* Makes the image stay in place when scrolling */
     background-position: center; /* Centers the image on the screen */
-    background-repeat: no-repeat; /* Prevents the image from repeating */}
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: background 1s ease-in-out;
+}
 
 
 
 
 .titre{
-    background-color: fuchsia;
+    background-color: rgba(255, 0, 255, 0.189);
     text-align: center;
     align-items: center;
     padding-top: 40px;
@@ -100,15 +102,6 @@ body{font-family: 'Courier New', Courier, monospace;
 
 
 
-.choix{
-    
-    text-align: center;
-    align-items: center;
-    padding: 40px;
-    margin: 50px;
-    
-    
-}
 .choix {
     text-align: center;
     padding: 40px;
@@ -129,6 +122,8 @@ body{font-family: 'Courier New', Courier, monospace;
     font-size: 21px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;
 }
 
 .choix button:hover {
@@ -144,4 +139,11 @@ body{font-family: 'Courier New', Courier, monospace;
     padding: 30px;
     margin: 60px;
 
+}
+
+#GFG {
+    color: rgb(0, 0, 0);
+    font-size: 70px;
+    font-weight: 900;
+    
 }
