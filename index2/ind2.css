@@ -28,7 +28,7 @@
     height: 100vh;
     object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
     z-index: 2000; /* Plus haut que tous les autres éléments */
-    opacity: 0.4; /* Ajuste la transparence pour voir le contenu en dessous */
+    
     pointer-events: none; /* Empêche l’image de capter les clics */
 }
 
@@ -119,3 +119,37 @@ button:active {
     transform: scale(0.95);
 }
 
+.choix{
+    
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+    margin: 50px;
+    
+    
+}
+.choix a {
+    padding: 20px 20px;
+            background-color: #000000;
+            text-decoration: none;
+            color: #ff0000;
+            font-weight: 300; /* Texte plus léger */
+            border-radius: 5px;
+            font-size: 21px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .choix a:hover {
+            background-color: #ff00ee;
+            color: #000000;
+            transform: scale(1.1);
+        }
+
+.opacity_sang{
+    background: rgba(207, 9, 9, 0.5); /* Rose avec 50% d'opacité */
+    text-align: center;
+    align-items: center;
+    padding: 30px;
+    margin: 60px;
+
+}
