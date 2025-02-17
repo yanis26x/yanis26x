@@ -133,7 +133,7 @@ body{font-family: 'Courier New', Courier, monospace;
 }
 
 .opacity_sang{
-    background: rgba(207, 9, 9, 0.5); /* Rose avec 50% d'opacité */
+    /* background: rgba(207, 9, 9, 0.5); Rose avec 50% d'opacité */
     text-align: center;
     align-items: center;
     padding: 30px;
@@ -142,8 +142,15 @@ body{font-family: 'Courier New', Courier, monospace;
 }
 
 #GFG {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 70px;
     font-weight: 900;
     
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+
+    text-align: center;
 }
