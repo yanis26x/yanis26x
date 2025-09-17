@@ -1,4 +1,4 @@
-# Salut ! if thEr n0 25x >> it’s n0t m1n3
+# Salut ! if thEr n0 26x >> it’s n0t m1n3
 ## mes projets:
 
 #### ChromeCast26x 
