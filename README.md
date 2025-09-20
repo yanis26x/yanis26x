@@ -3,8 +3,8 @@
 
 #### ChromeCast26x 
 media player 4 ChromeCast
-#### Seven 
-Jeu 2D Unity **Privé**
+#### UnityPratique2D
+Jeu 2D Unity
 #### yanis26x
 site web
 #### TicTacToe26x
