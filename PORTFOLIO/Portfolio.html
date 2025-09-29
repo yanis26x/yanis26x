@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yanis Djenadi — Portfolio</title>
+  <meta name="description" content="Portfolio de Yanis Djenadi — Support & Réseaux/Systèmes, Développement logiciel." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">@yanis26x</div>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <h1>Yanis Djenadi</h1>
+      <p class="lead">
+       <strong>Développement logiciel</strong> • <strong>Support & Réseaux/Systèmes</strong> •  Étudiant en Techniques de l’informatique (Montréal, QC)
+      </p>
+      <div class="cta">
+        <!-- Mets ton PDF ici si tu en as un -->
+        <a class="btn btn-primary" href="../CV_Stage_Informatique.pdf" download>📄 Télécharger le CV</a>
+        <a class="btn btn-ghost" href="#contact">✉️ Me contacter</a>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about" class="container section">
+      <div class="section-head">
+        <h2>Résumé professionnel</h2>
+        <p class="sub">Qui je suis & ce que je cherche</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <p class="p">
+            Étudiant en Techniques de l’informatique, motivé et polyvalent, avec une base solide en
+            <strong>support technique</strong>, <strong>développement</strong> et <strong>administration réseaux/systèmes</strong>.
+            Passionné par la résolution de problèmes, l’apprentissage continu et les nouvelles technologies.
+          </p>
+          <p class="p">
+            Je recherche un <strong>stage</strong> pour appliquer mes compétences, contribuer à des projets concrets
+            et approfondir mon expérience en TI.
+          </p>
+        </div>
+        <aside class="card mini">
+          <ul class="bullets">
+            <li>Montréal, QC</li>
+            <li>yanis.djenadi@hotmail.com</li>
+            <li>(438) 521-4125</li>
+            <li>@yanis26x</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="skills" class="container section">
+      <div class="section-head">
+        <h2>Compétences</h2>
+        <p class="sub">Techniques & humaines</p>
+      </div>
+
+      <div class="chips">
+        <!-- Dév -->
+        <span class="chip">Java</span>
+        <span class="chip">Python</span>
+        <span class="chip">C#</span>
+        <span class="chip">JavaScript / TypeScript</span>
+        <span class="chip">React / React Native</span>
+        <span class="chip">HTML / CSS / Tailwind</span>
+        <!-- Data -->
+        <span class="chip">MySQL</span>
+        <span class="chip">Nettoyage / pipelines (Node.js)</span>
+        <!-- Réseaux/Systèmes -->
+        <span class="chip">TCP/IP</span>
+        <span class="chip">Routeurs / Switches</span>
+        <span class="chip">Active Directory</span>
+        <span class="chip">Microsoft 365</span>
+        <span class="chip">Linux (Ubuntu/Debian)</span>
+        <span class="chip">Windows 10/11</span>
+        <span class="chip">macOS</span>
+        <!-- Outils -->
+        <span class="chip">Git / GitHub</span>
+        <span class="chip">Docker (bases)</span>
+        <span class="chip">VS Code / IntelliJ IDEA</span>
+        <span class="chip">Unity</span>
+        <!-- Soft skills -->
+        <span class="chip">Communication</span>
+        <span class="chip">Travail d’équipe</span>
+        <span class="chip">Logique & Analyse</span>
+      </div>
+
+      <!-- Barres par domaines pour montrer que ce n’est pas “que web” -->
+      <div class="bars">
+        <div class="bar">
+          <span>Support technique</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+        </div>
+        <div class="bar">
+          <span>Réseaux / Systèmes</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 80%"></div></div>
+        </div>
+        <div class="bar">
+          <span>Développement logiciel</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 95%"></div></div>
+        </div>
+        <div class="bar">
+          <span>Data & Bases</span>
+          <div class="bar-track"><div class="bar-fill" style="width: 65%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS (réalisés) -->
+    <section id="projects" class="container section">
+      <div class="section-head">
+        <h2>Projets réalisés</h2>
+        <p class="sub">Sélection de travaux académiques & personnels</p>
+      </div>
+
+      <div class="grid">
+        <article class="card project">
+          <div class="thumb placeholder"></div>
+          <div class="card-body">
+            <h3>Application de gestion (Java/MySQL)</h3>
+            <p>Développement d’une application complète avec base de données relationnelle.</p>
+            <div class="tags"><span>Java</span><span>MySQL</span></div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"></div>
+          <div class="card-body">
+            <h3>Site web interactif (React + API externe)</h3>
+            <p>Intégration d’API pour afficher des données dynamiques en temps réel.</p>
+            <div class="tags"><span>React</span><span>API</span></div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"></div>
+          <div class="card-body">
+            <h3>Serveur Linux avec services réseaux</h3>
+            <p>Configuration de services DHCP/DNS et gestion de l’environnement.</p>
+            <div class="tags"><span>Linux</span><span>DHCP/DNS</span></div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"></div>
+          <div class="card-body">
+            <h3>Application mobile (React Native)</h3>
+            <p>Développement d’une application multiplateforme (iOS/Android).</p>
+            <div class="tags"><span>React Native</span></div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"></div>
+          <div class="card-body">
+            <h3>Jeu vidéo 2D (Unity/C#)</h3>
+            <p>Scripts de gestion d’ennemis et interface utilisateur.</p>
+            <div class="tags"><span>Unity</span><span>C#</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="education" class="container section">
+      <div class="section-head">
+        <h2>Formation</h2>
+        <p class="sub">Parcours académique</p>
+      </div>
+
+      <div class="timeline">
+        <article class="t-item">
+          <div class="t-dot"></div>
+          <div class="t-content card">
+            <h3>DEC — Techniques de l’informatique</h3>
+            <p class="t-meta">Cégep Marie-Victorin — Montréal, QC | 2022 — Présent (fin prévue 2026)</p>
+            <p>Développement, réseaux/systèmes, support technique, bases de données.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="sub">Langues & réseaux</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:yanis.djenadi@hotmail.com">yanis.djenadi@hotmail.com</a>
+        <a class="contact-card" href="tel:+14385214125">(438) 521-4125</a>
+        <a class="contact-card" href="https://www.linkedin.com/in/yanis-djenadi-058964307/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="contact-card" href="https://github.com/yanis26x" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="contact-card" href="https://yanis26x.github.io/yanis26x/" target="_blank" rel="noreferrer">Site Web</a>
+        <div class="contact-card" style="pointer-events:none">FR (natif), EN (avancé)</div>
+      </div>
+
+      <p class="sub" style="margin-top:12px">
+        Centres d’intérêt : Développement mobile & web, IA appliquée, cloud computing, cybersécurité, résolution de problèmes.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> @yanis26x — Tous droits réservés.</span>
+      <a class="mini" href="../CV_Stage_Informatique.pdf" download>CV (PDF)</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

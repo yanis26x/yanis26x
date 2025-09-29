@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>0Saki26x — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --sub: #9CA3AF;
+      --card: #0c0c0c;
+      --border: #1a1a1a;
+      --primary: #3B82F6;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    /* Titre en haut à gauche */
+    .title {
+      font-weight: 800;
+      font-size: 24px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    /* Layout principal (scroll naturel) */
+    .content { 
+      display: grid;
+      gap: 12px;
+    }
+
+    /* Boutons bleus */
+    .btn {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 14px;
+      transition: transform 0.08s ease, filter 0.08s ease;
+    }
+    .btn:active { transform: translateY(1px); filter: brightness(0.98); }
+    .btn-label { font-size: 16px; font-weight: 900; display: block; }
+    .btn-sub { font-size: 12px; font-weight: 700; color: var(--bg); opacity: 0.9; margin-top: 4px; display: block; }
+
+    /* Carte "À propos" */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 4px;
+    }
+    .card h3 { font-size: 16px; font-weight: 900; margin: 0 0 6px; }
+    .card p { font-size: 14px; line-height: 1.45; font-weight: 600; margin: 0; }
+    .card .bullets { color: var(--sub); font-size: 13px; line-height: 1.5; margin-top: 8px; white-space: pre-line; }
+    .card .footnote { color: var(--sub); font-size: 12px; margin-top: 8px; }
+
+    /* Sections d’ancrage (placeholders) */
+    section { padding: 20px 0 4px; }
+    section h2 { font-size: 18px; margin: 12px 0 10px; font-weight: 800; }
+    .placeholder {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      color: var(--sub);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer { 
+      margin: 24px 0 12px; 
+      color: var(--sub); 
+      font-size: 13px; 
+      text-align: center; 
+    }
+
+    /* Responsive tweaks */
+    @media (min-width: 720px) {
+      .content { gap: 14px; }
+      .btn { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="title">0Saki26x</div>
+  </header>
+
+  <main class="container">
+    <div class="content">
+      <!-- Boutons bleus vers des sections -->
+      <a class="btn" href="#galerie">
+        <span class="btn-label">Galerie</span>
+        <span class="btn-sub">Voir toutes les images</span>
+      </a>
+      <a class="btn" href="#ajouter">
+        <span class="btn-label">Ajouter une image</span>
+        <span class="btn-sub">Depuis la caméra ou la galerie</span>
+      </a>
+      <a class="btn" href="#music">
+        <span class="btn-label">Music</span>
+        <span class="btn-sub">Lecteur audio .mp4/.mp3</span>
+      </a>
+
+      <!-- Bloc À propos -->
+      <div class="card">
+        <h3>À propos de 0Saki26x</h3>
+        <p>
+          0Saki26x est une application minimaliste qui réunit une galerie performante,
+          l’ajout rapide d’images (caméra ou pellicule) et un lecteur audio compatible MP4/MP3.
+          Pensée pour la vitesse et la clarté, elle adopte une interface sombre rehaussée d’accents bleus,
+          optimisée pour mobile et bureau.
+        </p>
+        <div class="bullets">
+• Galerie : consultation fluide et plein écran.
+• Ajout : import instantané depuis tes médias.
+• Audio : lecture simple et fiable (.mp4/.m4a/.mp3).
+        </div>
+        <div class="footnote">Version interne — fonctionnalités en évolution.</div>
+      </div>
+    </div>
+
+    <!-- Sections d’ancrage (remplace par ton contenu réel) -->
+    <section id="galerie">
+      <h2>Galerie</h2>
+      <div class="placeholder">Place pour un grid d’images (miniatures ⇒ plein écran)</div>
+    </section>
+
+    <section id="ajouter">
+      <h2>Ajouter une image</h2>
+      <div class="placeholder">Place pour un formulaire (drag & drop ou input type="file")</div>
+    </section>
+
+    <section id="music">
+      <h2>Music</h2>
+      <div class="placeholder">Place pour un lecteur audio (HTML5 &lt;audio&gt;)</div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> 0Saki26x — Tous droits réservés
+    </footer>
+  </main>
+
+  <script>
+    // Mise à jour de l’année
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
