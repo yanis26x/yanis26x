@@ -40,7 +40,6 @@ body{
 /* Hero */
 .hero{padding:60px 0 36px}
 .hero h1{font-size:36px;line-height:1.2;margin:0 0 10px;font-weight:900}
-.accent{color:var(--primary)}
 .lead{color:var(--sub);max-width:720px;margin:0 0 18px}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 
@@ -52,7 +51,7 @@ body{
 }
 .btn-primary{background:var(--primary);border-color:var(--primary)}
 .btn-ghost{background:var(--card)}
-.btn-mini{height:34px;padding:0 12px;border-radius:10px}
+.btn-mini{height:34px;padding:0 12px;border-radius:10px;font-size:14px}
 
 /* Cards & grid */
 .card{
@@ -85,12 +84,30 @@ body{
 .t-dot{position:absolute;left:-11px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--primary)}
 .t-content h3{margin:0 0 4px;font-size:18px}
 .t-meta{color:var(--sub);margin:0 0 8px}
-.t-tags{display:flex;gap:8px;list-style:none;margin:8px 0 0;padding:0}
-.t-tags li{background:#0f1220;border:1px solid var(--border);border-radius:999px;padding:4px 8px;font-size:12px}
 
 /* Projects */
-.project .thumb{height:160px;border-radius:10px;background:#0f1220;border:1px solid var(--border);margin-bottom:12px}
-.placeholder{background:linear-gradient(135deg,#101010 0%,#0b234a 100%);}
+.project .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.project .tags span{background:#0f1220;border:1px solid var(--border);border-radius:999px;padding:4px 8px;font-size:12px}
+
+/* ✅ Image responsive qui ne déforme pas la page */
+.project-img{
+  width:100%;
+  aspect-ratio:16 / 9;      /* garde un ratio propre */
+  object-fit:cover;          /* recadre sans déformer */
+  border-radius:10px;
+  border:1px solid var(--border);
+  margin-bottom:12px;
+  display:block;
+}
+
+/* Placeholder si jamais tu veux garder des cartes sans image */
+.thumb.placeholder{
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:linear-gradient(135deg,#101010 0%,#0b234a 100%);
+  border-radius:10px;border:1px solid var(--border);
+  margin-bottom:12px;
+}
 
 /* Contact */
 .contact-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
