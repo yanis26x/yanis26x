@@ -7,46 +7,40 @@
   <meta name="description" content="Portfolio de Yanis Djenadi — Support & Réseaux/Systèmes, Développement logiciel." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="../../OST_IMG/26xLogo.png">
-</head> 
+</head>
 <body>
-  <!-- Fond animé -->
-  <div class="bg-blobs" aria-hidden="true">
-    <span class="blob b1"></span>
-    <span class="blob b2"></span>
-    <span class="blob b3"></span>
-  </div>
-
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">@yanis26x</div>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
       <nav class="nav" id="nav">
-        <a href="#about" data-link>À propos</a>
-        <a href="#skills" data-link>Compétences</a>
-        <a href="#projects" data-link>Projets</a>
-        <a href="#education" data-link>Formation</a>
-        <a href="#contact" data-link>Contact</a>
-        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero container" data-animate="stagger">
-      <h1 class="fx-gradient">Yanis Djenadi</h1>
+    <section class="hero container">
+      <h1>Yanis Djenadi</h1>
       <p class="lead">
-        <strong>Développement logiciel</strong> • <strong>Support & Réseaux/Systèmes</strong> • Étudiant en Techniques de l’informatique (Montréal, QC)
+       <strong>Développement logiciel</strong> • <strong>Support & Réseaux/Systèmes</strong> • Étudiant en Techniques de l’informatique (Montréal, QC)
       </p>
       <div class="cta">
-        <a class="btn btn-primary fx-magnetic" href="../CV_Stage_Informatique.pdf" download>📄 Télécharger le CV</a>
-        <a class="btn btn-ghost fx-magnetic" href="#contact">✉️ Me contacter</a>
+        <a class="btn btn-primary" href="../CV_Stage_Informatique.pdf" download>📄 Télécharger le CV</a>
+        <a class="btn btn-ghost" href="#contact">✉️ Me contacter</a>
+        <a class="btn btn-primary" href="../PORTFOLIO/V.animation/index.html" >VERSION ANIMéE</a>
+        
       </div>
     </section>
 
     <!-- À PROPOS -->
-    <section id="about" class="container section" data-animate="fade-up">
+    <section id="about" class="container section">
       <div class="section-head">
         <h2>Résumé professionnel</h2>
         <p class="sub">Qui je suis & ce que je cherche</p>
@@ -76,7 +70,7 @@
     </section>
 
     <!-- COMPÉTENCES -->
-    <section id="skills" class="container section" data-animate="fade-up">
+    <section id="skills" class="container section">
       <div class="section-head">
         <h2>Compétences</h2>
         <p class="sub">Techniques & humaines</p>
@@ -112,29 +106,29 @@
         <span class="chip">Logique & Analyse</span>
       </div>
 
-      <!-- Barres (remplissage animé via data-progress) -->
+      <!-- Barres -->
       <div class="bars">
         <div class="bar">
           <span>Support technique</span>
-          <div class="bar-track"><div class="bar-fill" data-progress="85"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
         </div>
         <div class="bar">
           <span>Réseaux / Systèmes</span>
-          <div class="bar-track"><div class="bar-fill" data-progress="80"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 80%"></div></div>
         </div>
         <div class="bar">
           <span>Développement logiciel</span>
-          <div class="bar-track"><div class="bar-fill" data-progress="95"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 95%"></div></div>
         </div>
         <div class="bar">
           <span>Data & Bases</span>
-          <div class="bar-track"><div class="bar-fill" data-progress="65"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width: 65%"></div></div>
         </div>
       </div>
     </section>
 
 
-    <!-- PROJETS -->
+   <!-- PROJETS -->
 <section id="projects" class="container section" data-animate="fade-up">
   <div class="section-head">
     <h2>Projets réalisés</h2>
@@ -202,7 +196,7 @@
 </section>
 
     <!-- FORMATION -->
-    <section id="education" class="container section" data-animate="fade-up">
+    <section id="education" class="container section">
       <div class="section-head">
         <h2>Formation</h2>
         <p class="sub">Parcours académique</p>
@@ -221,10 +215,10 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="container section" data-animate="fade-up">
+    <section id="contact" class="container section">
       <div class="section-head">
         <h2>Contact</h2>
-        <p class="sub">réseaux</p>
+        <p class="sub">Réseaux</p>
       </div>
 
       <div class="contact-grid">
