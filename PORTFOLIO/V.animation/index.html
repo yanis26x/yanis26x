@@ -8,38 +8,44 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Fond animé -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">@yanis26x</div>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="nav" id="nav">
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
-        <a href="#education">Formation</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-link>À propos</a>
+        <a href="#skills" data-link>Compétences</a>
+        <a href="#projects" data-link>Projets</a>
+        <a href="#education" data-link>Formation</a>
+        <a href="#contact" data-link>Contact</a>
+        <span class="nav-indicator" aria-hidden="true"></span>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero container">
-      <h1>Yanis Djenadi</h1>
+    <section class="hero container" data-animate="stagger">
+      <h1 class="fx-gradient">Yanis Djenadi</h1>
       <p class="lead">
-       <strong>Développement logiciel</strong> • <strong>Support & Réseaux/Systèmes</strong> • Étudiant en Techniques de l’informatique (Montréal, QC)
+        <strong>Développement logiciel</strong> • <strong>Support & Réseaux/Systèmes</strong> • Étudiant en Techniques de l’informatique (Montréal, QC)
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="../CV_Stage_Informatique.pdf" download>📄 Télécharger le CV</a>
-        <a class="btn btn-ghost" href="#contact">✉️ Me contacter</a>
-        <a class="btn btn-primary" href="../PORTFOLIO/V.animation/index.html" >VERSION ANIMéE</a>
-        
+        <a class="btn btn-primary fx-magnetic" href="../CV_Stage_Informatique.pdf" download>📄 Télécharger le CV</a>
+        <a class="btn btn-ghost fx-magnetic" href="#contact">✉️ Me contacter</a>
       </div>
     </section>
 
     <!-- À PROPOS -->
-    <section id="about" class="container section">
+    <section id="about" class="container section" data-animate="fade-up">
       <div class="section-head">
         <h2>Résumé professionnel</h2>
         <p class="sub">Qui je suis & ce que je cherche</p>
@@ -69,7 +75,7 @@
     </section>
 
     <!-- COMPÉTENCES -->
-    <section id="skills" class="container section">
+    <section id="skills" class="container section" data-animate="fade-up">
       <div class="section-head">
         <h2>Compétences</h2>
         <p class="sub">Techniques & humaines</p>
@@ -105,97 +111,68 @@
         <span class="chip">Logique & Analyse</span>
       </div>
 
-      <!-- Barres -->
+      <!-- Barres (remplissage animé via data-progress) -->
       <div class="bars">
         <div class="bar">
           <span>Support technique</span>
-          <div class="bar-track"><div class="bar-fill" style="width: 85%"></div></div>
+          <div class="bar-track"><div class="bar-fill" data-progress="85"></div></div>
         </div>
         <div class="bar">
           <span>Réseaux / Systèmes</span>
-          <div class="bar-track"><div class="bar-fill" style="width: 80%"></div></div>
+          <div class="bar-track"><div class="bar-fill" data-progress="80"></div></div>
         </div>
         <div class="bar">
           <span>Développement logiciel</span>
-          <div class="bar-track"><div class="bar-fill" style="width: 95%"></div></div>
+          <div class="bar-track"><div class="bar-fill" data-progress="95"></div></div>
         </div>
         <div class="bar">
           <span>Data & Bases</span>
-          <div class="bar-track"><div class="bar-fill" style="width: 65%"></div></div>
+          <div class="bar-track"><div class="bar-fill" data-progress="65"></div></div>
         </div>
       </div>
     </section>
 
     <!-- PROJETS -->
-    <section id="projects" class="container section">
-      <div class="section-head">
-        <h2>Projets réalisés</h2>
-        <p class="sub">Sélection de travaux académiques & personnels</p>
-      </div>
+    <!-- PROJETS -->
+<section id="projects" class="container section" data-animate="fade-up">
+  <div class="section-head">
+    <h2>Projets réalisés</h2>
+    <p class="sub">Sélection de travaux académiques & personnels</p>
+  </div>
 
-      <div class="grid">
-        <!-- Projet 1 -->
-        <article class="card project">
-          <!-- Image qui s'adapte sans déformer -->
-          <img src="" alt="" class="project-img" />
-          <div class="card-body">
-            <h3>Application Mobile React Native</h3>
-            <p>Application mobile fait avec ExpoGo</p>
-            <div class="tags"><span>React</span></div>
-            <!-- Bouton GitHub (mets ton lien si tu as un repo) -->
-            <a class="btn btn-mini btn-primary" href="https://github.com/yanis26x/0SaKi" target="_blank" rel="noreferrer">🔗 Voir sur GitHub</a>
-          </div>
-        </article>
+  <ul class="projects-list">
+    <li class="project-item">
+      <h3>📱 Application mobile — 0SaKi</h3>
+      <p>App React Native faite avec Expo Go, navigation et stockage local.</p>
+      <div class="tags"><span>React Native</span><span>Expo</span></div>
+      <a href="https://github.com/yanis26x/0SaKi" target="_blank" class="btn btn-mini btn-primary">🔗 Voir sur GitHub</a>
+    </li>
 
-        <!-- Projet 2 -->
-        <article class="card project">
-          <img src="images/react-api.jpg" alt="" class="project-img" />
-          <div class="card-body">
-            <h3>Calculatrice interactif</h3>
-            <p>bah c'est juste une calculette quoi...</p>
-            <div class="tags"><span>Python</span><span>C#</span></div>
-            <a class="btn btn-mini btn-primary" href="https://github.com/yanis26x/calculatrice26x" target="_blank" rel="noreferrer">🔗 Voir sur GitHub</a>
-          </div>
-        </article>
+    <li class="project-item">
+      <h3>🧮 Calculatrice interactive</h3>
+      <p>Petite calculatrice multiplateforme en Python et C#.</p>
+      <div class="tags"><span>Python</span><span>C#</span></div>
+      <a href="https://github.com/yanis26x/calculatrice26x" target="_blank" class="btn btn-mini btn-primary">🔗 Voir sur GitHub</a>
+    </li>
 
-        <!-- Projet 3 -->
-        <article class="card project">
-          <img src="images/linux-dhcp-dns.jpg" alt="" class="project-img" />
-          <div class="card-body">
-            <h3>Generateur de QRCODE</h3>
-            <p>API</p>
-            <div class="tags"><span>Java</span><span>API</span><span>Python</span></div>
-            <!-- Pas de repo ? Enlève simplement ce bouton -->
-            <a class="btn btn-mini btn-primary" href="https://github.com/yanis26x/QRcode26x" target="_blank" rel="noreferrer">🔗 Voir sur GitHub</a>
-          </div>
-        </article>
+    <li class="project-item">
+      <h3>🧾 Générateur de QR Code</h3>
+      <p>Projet d’API en Java et Python permettant de créer des QR Codes personnalisés.</p>
+      <div class="tags"><span>Java</span><span>API</span><span>Python</span></div>
+      <a href="https://github.com/yanis26x/QRcode26x" target="_blank" class="btn btn-mini btn-primary">🔗 Voir sur GitHub</a>
+    </li>
 
-        <!-- Projet 4 -->
-        <article class="card project">
-          <img src="images/react-native.jpg" alt="" class="project-img" />
-          <div class="card-body">
-            <h3>Collecte de donnees</h3>
-            <p>App multiplateforme iOS/Android, navigation et stockage local.</p>
-            <div class="tags"><span>React Native</span></div>
-            <!-- <a class="btn btn-mini btn-ghost" href="https://github.com/yanis26x/app-react-native" target="_blank" rel="noreferrer">🔗 Voir sur GitHub</a> -->
-          </div>
-        </article>
-
-        <!-- Projet 5 -->
-        <article class="card project">
-          <img src="images/unity-2d.jpg" alt="" class="project-img" />
-          <div class="card-body">
-            <h3>Jeu vidéo 2D (Unity/C#)</h3>
-            <p>IA simple d’ennemis, collisions, UI de victoire et gestion des niveaux.</p>
-            <div class="tags"><span>Unity</span><span>C#</span></div>
-            <a class="btn btn-mini btn-primary" href="https://github.com/yanis26x/run4urLife26x" target="_blank" rel="noreferrer">🔗 Voir sur GitHub</a>
-          </div>
-        </article>
-      </div>
-    </section>
+    <li class="project-item">
+      <h3>🎮 Jeu 2D — Run4UrLife</h3>
+      <p>Jeu en Unity/C# avec IA d’ennemis, collisions et gestion des niveaux.</p>
+      <div class="tags"><span>Unity</span><span>C#</span></div>
+      <a href="https://github.com/yanis26x/run4urLife26x" target="_blank" class="btn btn-mini btn-primary">🔗 Voir sur GitHub</a>
+    </li>
+  </ul>
+</section>
 
     <!-- FORMATION -->
-    <section id="education" class="container section">
+    <section id="education" class="container section" data-animate="fade-up">
       <div class="section-head">
         <h2>Formation</h2>
         <p class="sub">Parcours académique</p>
@@ -214,7 +191,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="container section">
+    <section id="contact" class="container section" data-animate="fade-up">
       <div class="section-head">
         <h2>Contact</h2>
         <p class="sub">Langues & réseaux</p>
