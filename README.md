@@ -8,7 +8,7 @@ I plan to release it someday, stay tuned!
 
 ![alt text](https://github.com/yanis26x/yanis26x/blob/index/OsakiScreen2.jpg)
 
-## Mes apps
+## Mes apps 
 <p align="center">
   <img src="https://github.com/yanis26x/yanis26x/blob/index/0SaKiDisplay.png" width="180" height="180" alt="0SaKi" style="border-radius: 25px; margin: 15px;">
   <img src="https://github.com/yanis26x/yanis26x/blob/index/Echo26xDisplay.png" width="180" height="180" alt="Echo26x" style="border-radius: 25px; margin: 15px;">
