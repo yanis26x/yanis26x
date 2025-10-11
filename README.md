@@ -120,3 +120,5 @@ I plan to release it someday, stay tuned!
 
 </tr>
 </table>
+
+<p align="center">© 2025 <b>yanis26x</b> · Tous droits réservé </p>
