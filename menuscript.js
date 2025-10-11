@@ -65,3 +65,28 @@ function attachRipple(el) {
 document.querySelectorAll('.item').forEach(attachRipple);
 
 
+function updateDateTime() {
+  const now = new Date();
+
+  // Format heure
+  const time = now.toLocaleTimeString("fr-FR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  // Format date
+  const date = now.toLocaleDateString("fr-FR", {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+
+  document.getElementById("time").textContent = time;
+  document.getElementById("date").textContent = date.charAt(0).toUpperCase() + date.slice(1);
+}
+
+// met à jour chaque seconde
+setInterval(updateDateTime, 1000);
+updateDateTime();

@@ -197,3 +197,47 @@ body{
 
 /* Focus */
 a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+
+/* Masquer les anciennes flèches de droite (si tu ne modifies pas encore le HTML) */
+.item > svg.icon { display: none; }
+
+/* Nouvelle flèche carrée à droite */
+.icon-right {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;            /* pousse l’icône complètement à droite */
+  opacity: .9;
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+}
+.item:hover .icon-right {
+  transform: translateX(4px);
+  opacity: 1;
+  filter: brightness(1.25);
+}
+
+.section-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* bloc heure/date */
+.datetime {
+  text-align: right;
+  color: #9CA3AF;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.datetime #time {
+  display: block;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.datetime #date {
+  font-size: 13px;
+  opacity: 0.8;
+}

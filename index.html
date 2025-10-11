@@ -57,15 +57,20 @@
         <!-- Navigation principale -->
         <section class="card" aria-labelledby="nav-title">
           <div class="section-head">
-            <div class="section-row">
-              <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M256 32 20 192l44 64 36-24V448h128V320h56v128h128V232l36 24 44-64Z"
-                />
-              </svg>
-              <h2 class="section-title" id="nav-title">Navigation</h2>
-            </div>
+<div class="section-row">
+  <div class="left-head">
+    <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+      <path fill="currentColor" d="M256 32 20 192l44 64 36-24V448h128V320h56v128h128V232l36 24 44-64Z"/>
+    </svg>
+    <h2 class="section-title" id="nav-title">Navigation</h2>
+  </div>
+
+  <!-- 🕒 Heure et date -->
+  <div class="datetime">
+    <span id="time"></span>
+    <span id="date"></span>
+  </div>
+</div>    
             <p class="section-sub">what do u want from me ?!</p>
           </div>
 
@@ -77,20 +82,13 @@
                   d="M20 6h-4.18C15.4 4.84 14.3 4 13 4h-2c-1.3 0-2.4.84-2.82 2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM9 8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V8z"
                 />
               </svg>
+
               <div class="grow">
                 <div class="item-title">Portfolio</div>
                 <div class="item-sub">Mes projets</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+
+              <span class="emoji-right">🔗</span>
             </a>
 
             <a class="item" role="listitem" href="./contact/contact.html">
@@ -104,19 +102,10 @@
                 <div class="item-title">Contact</div>
                 <div class="item-sub">@yanis26x</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+              <span class="emoji-right">🔗</span>
             </a>
 
-            <a class="item" role="listitem" href="./index2.html">
+            <!-- <a class="item" role="listitem" href="./index2.html">
               <svg class="icon-lg" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3z" />
               </svg>
@@ -124,17 +113,8 @@
                 <div class="item-title">Accueil</div>
                 <div class="item-sub">menu1</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
-            </a>
+<span class="emoji-right">🔗</span>
+            </a> -->
 
             <a class="item" role="listitem" href="./play/play.html">
               <svg class="icon-lg" viewBox="0 0 24 24">
@@ -144,18 +124,8 @@
                 <div class="item-title">Play</div>
                 <div class="item-sub">Mini jeux & fun</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+              <span class="emoji-right">🔗</span>
             </a>
-
 
             <a
               class="item"
@@ -174,35 +144,27 @@
                 <div class="item-sub">Calcule ce qu’il te faut à l’exam</div>
               </div>
 
-              <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+              <span class="emoji-right">🔗</span>
             </a>
 
             <a class="item" role="listitem" href="./cool/coolTEXT.html">
-  <!-- Icône "texte" -->
-  <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="currentColor" d="M4 4h16v2H4zM4 9h10v2H4zM4 14h16v2H4zM4 19h10v2H4z"/>
-  </svg>
+              <!-- Icône "texte" -->
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M4 4h16v2H4zM4 9h10v2H4zM4 14h16v2H4zM4 19h10v2H4z"
+                />
+              </svg>
 
-  <div class="grow">
-    <div class="item-title">Leet Speak Generator</div>
-    <div class="item-sub">Transforme ton texte (a→4, e→3, o→0…)</div>
-  </div>
+              <div class="grow">
+                <div class="item-title">Leet Speak Generator</div>
+                <div class="item-sub">
+                  Transforme ton texte (a→4, e→3, o→0…)
+                </div>
+              </div>
 
-  <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
-    <path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/>
-    <path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/>
-  </svg>
-</a>
-
+              <span class="emoji-right">🔗</span>
+            </a>
 
             <a class="item" role="listitem" href="./music/music.html">
               <svg class="icon-lg" viewBox="0 0 24 24">
@@ -215,16 +177,7 @@
                 <div class="item-title">Music</div>
                 <div class="item-sub">Écoute mes sons</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+              <span class="emoji-right">🔗</span>
             </a>
 
             <a
@@ -244,16 +197,7 @@
                 <div class="item-title">a2ple</div>
                 <div class="item-sub">Projet hébergé</div>
               </div>
-              <svg class="icon" viewBox="0 0 512 512">
-                <path
-                  fill="currentColor"
-                  d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"
-                />
-              </svg>
+              <span class="emoji-right">🔗</span>
             </a>
           </div>
         </section>
@@ -269,8 +213,6 @@
       </div>
     </main>
 
-
     <script src="menuscript.js"></script>
-
   </body>
 </html>
