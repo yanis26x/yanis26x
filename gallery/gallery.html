@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gallery · 26x</title>
+    <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css"/>
+  </head>
+  <body>
+    <!-- Sang AU-DESSUS (même logique que tes autres pages) -->
+    <img src="../OST_IMG/Sang2.png" alt="Sang overlay" class="bloodOnScreen"/>
+
+    <main class="safe" role="main">
+      <div class="wrap" id="root">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-row">
+            <div class="identity">
+              <div class="avatar-wrap">
+                <img src="../OST_IMG/iconAPP/ICON4.png" alt="Avatar de Yanis" class="avatar"/>
+                <span class="presence presence--online" title="En ligne"></span>
+              </div>
+              <div>
+                <h1 class="title">Gallery</h1>
+                <div class="handle">@yanis26x</div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a class="action-btn" href="../index.html" aria-label="Retour au menu">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/>
+                </svg>
+                <span>Retour</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Intro -->
+        <section class="card" aria-labelledby="gal-title" data-animate="fade-up">
+          <div class="section-head">
+            <div class="section-row">
+
+              <h2 class="section-title" id="gal-title">Images</h2>
+            </div>
+            <p class="section-sub">Clique pour agrandir — description incluse</p>
+          </div>
+
+          <!-- Grille d'images -->
+          <div class="gallery" id="gallery" data-animate="stagger">
+            <!-- EXEMPLES — remplace/ajoute tes images, change la desc -->
+            <figure class="g-item" tabindex="0" data-desc="i love this image idk why">
+              <img src="../OST_IMG/imageCool/CestTriste.jpg" alt="Ctriste">
+              <figcaption>c’est triste</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="BloodMask">
+              <img src="../OST_IMG/imageCool/BloodMask.jpeg" alt="BloodMask">
+              <figcaption>BloodMask</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="addicted track cover">
+              <img src="../OST_IMG/imageCool/addicted_track_cover.jpg" alt="addicted">
+              <figcaption>addicted</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="Manhunt">
+              <img src="../OST_IMG/imageCool/manhunt.jpg" alt="Manhunt">
+              <figcaption>Manhunt</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="archive2Cover">
+              <img src="../OST_IMG/imageCool/archive2Cover.jpg" alt="archive2Cover">
+              <figcaption>archive2Cover.jpg</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="Lone">
+              <img src="../OST_IMG/imageCool/lone.jpg" alt="Lone">
+              <figcaption>Lone</figcaption>
+            </figure>
+
+
+            <figure class="g-item" tabindex="0" data-desc="fma">
+              <img src="../OST_IMG/imageCool/fma.jpg" alt="fma">
+              <figcaption>fma</figcaption>
+            </figure>
+
+            <figure class="g-item" tabindex="0" data-desc="242">
+              <img src="../OST_IMG/imageCool/242.g.jpeg" alt="242">
+              <figcaption>242</figcaption>
+            </figure>
+
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+          <p class="footer-text">I NEED MORE BLOOD</p>
+          <div class="footer-line" aria-hidden="true"></div>
+          <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
+        </footer>
+      </div>
+    </main>
+
+    <!-- Lightbox / Modal -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lb-backdrop" id="lbBackdrop"></div>
+      <div class="lb-dialog" role="dialog" aria-modal="true" aria-labelledby="lbCaption">
+        <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+        <img id="lbImage" alt="">
+        <div class="lb-caption">
+          <div class="lb-title" id="lbTitle"></div>
+          <div class="lb-desc" id="lbDesc"></div>
+        </div>
+        <div class="lb-nav">
+          <button class="lb-prev" id="lbPrev" aria-label="Précédent">◀</button>
+          <button class="lb-next" id="lbNext" aria-label="Suivant">▶</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="gallery.js"></script>
+  </body>
+</html>
