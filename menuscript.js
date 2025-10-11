@@ -13,6 +13,13 @@ function applyTheme(theme){
   if (meta) meta.setAttribute("content", "#000000");
 }
 
+// Audio
+const son = document.getElementById('son');
+document.getElementById('playSoundBtn')?.addEventListener('click', ()=> son?.play());
+window.addEventListener('DOMContentLoaded', () => {
+  son?.play().catch(()=>{}); // autoplay si autorisé
+});
+
 (function initTheme(){
   const saved = localStorage.getItem(THEME_KEY);
   if (saved === "light" || saved === "dark") applyTheme(saved);
@@ -56,3 +63,5 @@ function attachRipple(el) {
   });
 }
 document.querySelectorAll('.item').forEach(attachRipple);
+
+
