@@ -46,7 +46,7 @@ I plan to release it someday, stay tuned!
 <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON4.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>MySalat</b><br>
 <sub>Prayer time app with Qibla direction & notifications.</sub><br><br>
-<sub><i>🟢 Out!</i></sub><br><br>
+<sub><i>🟥 Coming soon</i></sub><br><br>
 <a href="https://github.com/yanis26x/MySalat" target="_blank">
   <img src="https://img.shields.io/badge/View%20Repo-30363d?style=for-the-badge&logo=github&logoColor=white" alt="View Repo">
 </a>
@@ -59,7 +59,7 @@ I plan to release it someday, stay tuned!
 <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON4.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>HandDetector26x</b><br>
 <sub>Real-time hand tracking using MediaPipe & OpenCV.</sub><br><br>
-<sub><i>🟢 Out!</i></sub><br><br>
+<sub><i>🟥 Coming soon</i></sub><br><br>
 <a href="https://github.com/yanis26x/HandDetector26x" target="_blank">
   <img src="https://img.shields.io/badge/View%20Repo-30363d?style=for-the-badge&logo=github&logoColor=white" alt="View Repo">
 </a>
