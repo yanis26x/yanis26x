@@ -10,8 +10,9 @@ I plan to release it someday, stay tuned!
 
 ## Mes apps 
 <p align="center">
-  <img src="https://github.com/yanis26x/yanis26x/blob/index/0SaKiDisplay.png" width="180" height="180" alt="0SaKi" style="border-radius: 25px; margin: 15px;">
-  <img src="https://github.com/yanis26x/yanis26x/blob/index/Echo26xDisplay.png" width="180" height="180" alt="Echo26x" style="border-radius: 25px; margin: 15px;">
-  <img src="https://github.com/yanis26x/yanis26x/blob/index/MySalatDisplay.png" width="180" height="180" alt="MySalat" style="border-radius: 25px; margin: 15px;">
+  <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/0SaKiICON.png" width="180" height="180" alt="0SaKi" style="border-radius: 25px; margin: 15px;">
+  <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/Echo26xICON.png" width="180" height="180" alt="Echo26x" style="border-radius: 25px; margin: 15px;">
+  <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON4.png" width="180" height="180" alt="idkyet" style="border-radius: 25px; margin: 15px;">
+  <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON5.png" width="180" height="180" alt="idkyet" style="border-radius: 25px; margin: 15px;">
 </p>
 
