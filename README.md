@@ -11,8 +11,6 @@ I plan to release it someday, stay tuned!
 ## Mes apps 
 ## 💻 Mes apps
 
-## 💻 Mes apps
-
 <table>
 <tr>
 
