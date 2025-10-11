@@ -52,8 +52,36 @@ body{
   background:rgba(0,0,0,0.6);backdrop-filter: blur(8px);
   border-bottom:1px solid var(--border);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
-.brand{font-weight:900;letter-spacing:.5px}
+.header-inner{
+  display:flex;align-items:center;gap:12px;height:56px;
+}
+.brand{
+  font-weight:900;letter-spacing:.5px;
+  margin-right:auto;           /* ✅ reste à gauche */
+}
+
+/* Bouton Retour (à droite) */
+.back-btn.right{
+  margin-left:12px;            /* espace avec la nav */
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border-radius:10px;
+  background: rgba(0,0,0,0.45);
+  border:1px solid rgba(255,255,255,0.15);
+  color:#fff;text-decoration:none;font-size:14px;font-weight:500;
+  transition: all 0.2s ease;
+}
+.back-btn.right:hover{
+  background: rgba(0,0,0,0.65);
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.25);
+}
+.back-btn.right:active{ transform: translateY(0) scale(0.98); }
+.back-btn.right .icon{ width:18px; height:18px; display:block; }
+.back-btn.right:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+
+@media (max-width:420px){
+  .back-btn.right span{ display:none; } /* icône seule sur mini écran */
+}
 
 /* Nav */
 .nav{position:relative;display:flex;gap:18px;align-items:center}
@@ -179,8 +207,10 @@ body{
 /* Mobile nav */
 @media (max-width:840px){
   .burger{display:inline-flex}
-  .nav{position:absolute;inset:56px 0 auto 0;background:rgba(0,0,0,0.95);
-       border-bottom:1px solid var(--border);display:none;flex-direction:column;padding:12px 16px}
+  .nav{
+    position:absolute;inset:56px 0 auto 0;background:rgba(0,0,0,0.95);
+    border-bottom:1px solid var(--border);display:none;flex-direction:column;padding:12px 16px; z-index:60;
+  }
   .nav a{padding:10px 0}
   .nav.open{display:flex}
 }
