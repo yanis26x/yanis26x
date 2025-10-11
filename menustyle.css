@@ -285,3 +285,11 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
   .announce-head{ align-items:flex-start }
   .ah-right{ margin-top:2px }
 }
+/* recrutement */
+.recruit{
+  border-color:#3b0a0a;
+  background:rgba(20,0,0,.55);
+  box-shadow:0 0 20px rgba(255,0,0,.15);
+}
+.recruit .announce-title{color:#ff3b3b}
+.recruit .announce-sub{color:#ddd;font-size:15px;line-height:1.5}
