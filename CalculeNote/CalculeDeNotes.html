@@ -1,58 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="note.css">
-
-    <title>calculeDeNote!</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calcul de notes · 26x</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="note.css" />
 </head>
+<body>
+  <!-- Sang plein écran AU-DESSUS -->
+  <img src="../OST_IMG/sang.png" alt="Blood overlay" class="bloodOnScreen" />
 
+  <main class="safe" role="main">
+    <div class="wrap" id="root">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar de Yanis" class="avatar" />
+              <span class="presence presence--online" title="En ligne"></span>
+            </div>
+            <div>
+              <h1 class="title">Calcul de notes</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
 
+          <div class="actions">
+            <a class="action-btn" href="../index.html" aria-label="Retour au menu">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/>
+              </svg>
+              <span>Menu</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-<body style="font-family: 'Permanent Marker', cursive;
-font-family: 'Rock Salt', cursive;">
-    <header style="color: white;">Yanis26x</header>
-    <a href="/yanis26x/index.html">menu</a>
+      <!-- Formulaire -->
+      <section class="card" aria-labelledby="calc-title">
+        <div class="section-head">
+          <div class="section-row">
+            </svg>
+            <h2 class="section-title" id="calc-title">Tu stress avoue !</h2>
+          </div>
+          <p class="section-sub">Objectif: <b>60%</b></p>
+        </div>
 
-    <h1 style="text-align: center;" >Calcule de notes</h1>
-    <h3 style="text-align: center ; color: white;">tes dans la merde avoue !!!! </h3>
+        <form class="form" id="gradeForm" onsubmit="return false;">
+          <div class="field">
+            <label for="currentAvg">Ta moyenne</label>
+            <input id="currentAvg" type="number" inputmode="decimal" min="0" max="100" placeholder="ex: 72" required />
+          </div>
 
-    <h2 style="color: white;"> remplies les champs </h2>
+          <div class="field">
+            <label for="finalWeight">Poids de l’examen final</label>
+            <input id="finalWeight" type="number" inputmode="decimal" min="0" max="100" placeholder="ex: 40" required />
+          </div>
 
-    <label for="valeur1" style="color: white;">ta moyenne :</label>
-    <input type="number" id="valeur1">
+          <div class="field">
+            <label for="goal">la note de passage</label>
+            <input id="goal" type="number" inputmode="decimal" min="1" max="100" value="60" />
+          </div>
 
-    <label for="valeur2" style="color: white;">exam final compte pr combien ? :</label>
-    <input type="number" id="valeur2">
+          <div class="actions-row">
+            <button class="action-btn primary" id="computeBtn" type="button">Calculer</button>
+            <button class="action-btn" id="resetBtn" type="button">Réinitialiser</button>
+          </div>
 
-    <button onclick="calculerNote()">Calculer</button>
+          <div class="result" id="resultBox" hidden>
+            <div class="result-title">Résultat</div>
+            <p id="resultText" class="result-text"></p>
+          </div>
+        </form>
+      </section>
 
-    <h3 style="color: white;">Résultat :</h3>
-    <p id="resultat" style="color: white;"></p>
+      <!-- Explications -->
+      <section class="card" aria-labelledby="how-title">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/>
+            </svg>
+            <h2 class="section-title" id="how-title">Comment est fait le calcule ?</h2>
+          </div>
+        </div>
+        <p class="para">
+          Formule: <code>besoin = round((objectif − moyenne × (1 − poids)) / poids)</code>, avec les
+          pourcentages exprimés entre <code>0</code> et <code>1</code> pour le calcul. <br/>
+          Exemple: moyenne = 72, poids final = 40% ⇒ besoin ≈ 30% au final pour atteindre 60%.
+        </p>
+      </section>
 
-    <script>
-      function calculerNote() {
-        // Récupérer les valeurs saisies par l'utilisateur
-        var valeur1 = document.getElementById('valeur1').value;
-        var valeur2 = document.getElementById('valeur2').value;
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer-text">will u give me ur blood ?</p>
+        <div class="footer-line" aria-hidden="true"></div>
+        <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
+      </footer>
+    </div>
+  </main>
 
-
-        var resultatt = Math.round((60 - (valeur1 * (1 - (valeur2 / 100)))) / (valeur2 / 100));
-
-        // Afficher le résultat
-        document.getElementById('resultat').innerHTML = "ta besoin de  " + resultatt + "% pour passer...";
-      }
-    </script>
-
-
-
-    
-
+  <script src="note.js"></script>
 </body>
 </html>
