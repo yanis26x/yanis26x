@@ -1,101 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr" data-theme="dark">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>C00L t3xT G3N3r4t0R · 26x</title>
-  <meta name="theme-color" content="#000000" />
-  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cool.css" />
-</head>
-<body>
-  <!-- Sang plein écran AU-DESSUS -->
-  <img src="../OST_IMG/sang.png" alt="Blood overlay" class="bloodOnScreen" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C00L t3xT G3N3r4t0R · 26x</title>
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cool.css" />
+  </head>
+  <body>
+    <!-- Sang plein écran AU-DESSUS -->
+    <img src="../OST_IMG/sang.png" alt="Blood overlay" class="bloodOnScreen" />
 
-  <!-- Son -->
-  <audio id="son" src="../OST_IMG/helloOST.mp3"></audio>
+    <!-- Son -->
+    <audio id="son" src="../OST_IMG/helloOST.mp3"></audio>
 
-  <main class="safe" role="main">
-    <div class="wrap" id="root">
-      <!-- Header -->
-      <header class="header">
-        <div class="header-row">
-          <div class="identity">
-            <div class="avatar-wrap">
-              <img src="../OST_IMG/imageCool/CestTriste.jpg" alt="Avatar de Yanis" class="avatar" />
-              <span class="presence presence--online" title="En ligne"></span>
+    <main class="safe" role="main">
+      <div class="wrap" id="root">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-row">
+            <div class="identity">
+              <div class="avatar-wrap">
+                <img
+                  src="../OST_IMG/imageCool/CestTriste.jpg"
+                  alt="Avatar de Yanis"
+                  class="avatar"
+                />
+                <span class="presence presence--online" title="En ligne"></span>
+              </div>
+              <div>
+                <h1 class="title">C00L t3xT G3N3r4t0R</h1>
+                <div class="handle">@yanis26x</div>
+              </div>
             </div>
-            <div>
-              <h1 class="title">C00L t3xT G3N3r4t0R</h1>
-              <div class="handle">@yanis26x</div>
+
+            <div class="actions">
+              <button
+                class="action-btn"
+                type="button"
+                id="playSoundBtn"
+                aria-label="Jouer le son"
+              >
+                heLlO
+              </button>
+              <a
+                class="action-btn"
+                href="../index.html"
+                aria-label="Retour au menu"
+              >
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"
+                  />
+                </svg>
+                <span>Menu</span>
+              </a>
             </div>
           </div>
+        </header>
 
-          <div class="actions">
-            <button class="action-btn" type="button" id="playSoundBtn" aria-label="Jouer le son">heLlO</button>
-            <a class="action-btn" href="../index.html" aria-label="Retour au menu">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/>
+        <!-- Générateur -->
+        <section class="card" aria-labelledby="gen-title">
+          <div class="section-head">
+            <div class="section-row">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M4 4h16v2H4zM4 9h10v2H4zM4 14h16v2H4zM4 19h10v2H4z"
+                />
               </svg>
-              <span>Menu</span>
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <!-- Générateur -->
-      <section class="card" aria-labelledby="gen-title">
-        <div class="section-head">
-          <div class="section-row">
-            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v2H4zM4 9h10v2H4zM4 14h16v2H4zM4 19h10v2H4z"/></svg>
-            <h2 class="section-title" id="gen-title">Entre un texte & transforme-le</h2>
-          </div>
-          <p class="section-sub">Active des remplacements style “leet”</p>
-        </div>
-
-        <div class="form">
-          <div class="field">
-            <label for="inputText">Ton texte</label>
-            <div class="row">
-              <input id="inputText" type="text" placeholder="ex: salut le monde" />
-              <button class="action-btn primary" id="confirmBtn" type="button">c0nfirmer</button>
+              <h2 class="section-title" id="gen-title">
+                Entre un texte & transforme-le
+              </h2>
             </div>
           </div>
 
-          <div class="options">
-            <label class="opt"><input type="checkbox" id="convertA" /> Transformer <b>a</b> → <b>4</b></label>
-            <label class="opt"><input type="checkbox" id="convertC" /> Transformer <b>c</b> → <b>(</b></label>
+          <div class="form">
+            <div class="field">
+              <label for="inputText">Ton texte</label>
+              <div class="row">
+                <input
+                  id="inputText"
+                  type="text"
+                  placeholder="ex: salut le monde"
+                />
+                <button
+                  class="action-btn primary"
+                  id="confirmBtn"
+                  type="button"
+                >
+                  c0nfirmer
+                </button>
+              </div>
+            </div>
+
+            <div class="options">
+              <label class="opt"
+                ><input type="checkbox" id="convertA" /> Transformer <b>a</b> →
+                <b>4</b></label
+              >
+              <label class="opt"
+                ><input type="checkbox" id="convertC" /> Transformer <b>c</b> →
+                <b>(</b></label
+              >
+            </div>
+
+            <div class="result">
+              <div class="result-title">Résultat</div>
+              <h2 id="output" class="output"></h2>
+            </div>
           </div>
+        </section>
 
-          <div class="result">
-            <div class="result-title">Résultat</div>
-            <h2 id="output" class="output">Salut!</h2>
+        <!-- Tips -->
+        <section class="card" aria-labelledby="tips-title">
+          <div class="section-head">
+            <div class="section-row">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"
+                />
+              </svg>
+              <h2 class="section-title" id="tips-title">À propos</h2>
+            </div>
+            <p class="section-sub">NaNa 0 HaTch1</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Tips -->
-      <section class="card" aria-labelledby="tips-title">
-        <div class="section-head">
-          <div class="section-row">
-            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
-            <h2 class="section-title" id="tips-title">À propos</h2>
-          </div>
-          <p class="section-sub">Des remplacements rapides façon “leet speak”.</p>
-        </div>
-        <p class="para">Tu peux ajouter d'autres mappings (ex: <code>e → 3</code>, <code>o → 0</code>) directement dans le code.</p>
-      </section>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+          <p class="footer-text">pk jai fait ca, jsp c cool....</p>
+          <div class="footer-line" aria-hidden="true"></div>
+          <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
+        </footer>
+      </div>
+    </main>
 
-      <!-- Footer -->
-      <footer class="footer" role="contentinfo">
-        <p class="footer-text">pk jai fait ca, jsp c cool....</p>
-        <div class="footer-line" aria-hidden="true"></div>
-        <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
-      </footer>
-    </div>
-  </main>
-
-  <script src="cool.js"></script>
-</body>
+    <script src="cool.js"></script>
+  </body>
 </html>
