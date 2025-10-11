@@ -9,8 +9,6 @@ I plan to release it someday, stay tuned!
 ![alt text](https://github.com/yanis26x/yanis26x/blob/index/OsakiScreen2.jpg)
 
 ## Mes apps 
-## 💻 Mes apps
-
 <table>
 <tr>
 
