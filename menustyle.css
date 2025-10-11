@@ -241,3 +241,47 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
   font-size: 13px;
   opacity: 0.8;
 }
+
+/* --- Announcement (Echo26x) --- */
+.announce{
+  margin-top:14px;
+  background:#000000;
+  border:1px solid #1a1a1a;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 0 12px rgba(0,0,0,.45);
+}
+.announce-head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:6px;
+}
+.ah-left{display:flex; align-items:center; gap:8px; min-width:0}
+.announce-title{margin:0; font-size:16px; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tag{
+  display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:999px;
+  font-size:12px; font-weight:800; border:1px solid #2a2a2a; color:#e5e7eb; background:#111;
+}
+.tag-soon{ border-color:#3b0a0a; background:#170707; color:#ff4b4b; text-shadow:0 0 10px rgba(255,75,75,.25) }
+
+.ah-right .eta{ color:#9CA3AF; font-size:12px; font-weight:700 }
+
+.announce-sub{ margin:6px 0 8px; color:#ddd; }
+.announce-meta{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px }
+
+
+.announce-actions{ display:flex; gap:8px; flex-wrap:wrap }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:36px; padding:0 12px; border-radius:10px; border:1px solid #1a1a1a;
+  color:#fff; text-decoration:none; font-weight:900;
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  background:#111;
+}
+.btn:hover{ transform:translateY(-1px); filter:brightness(1.05) }
+.btn-mini{ height:32px; padding:0 10px; font-size:14px }
+.btn-primary{ background:#3B82F6; border-color:#3B82F6; box-shadow:0 8px 24px rgba(59,130,246,.25) }
+.btn-ghost{ background:#000000 }
+
+@media (max-width:560px){
+  .announce-head{ align-items:flex-start }
+  .ah-right{ margin-top:2px }
+}
