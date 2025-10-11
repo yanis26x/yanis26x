@@ -24,21 +24,21 @@ I plan to release it someday, stay tuned!
 <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/Echo26xICON.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>Echo26x</b><br>
 <sub>A private chat app.</sub><br><br>
-<sub><i>🟡 Coming soon</i></sub>
+<sub><i>🟥 Coming soon</i></sub>
 </td>
 
 <td align="center" width="250">
 <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON4.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>idkyet</b><br>
-<sub>Experimental concept app — still in early creative stages.</sub><br><br>
-<sub><i>🟡 Coming soon</i></sub>
+<sub>Experimental concept app</sub><br><br>
+<sub><i>🟥 Coming soon</i></sub>
 </td>
 
 <td align="center" width="250">
 <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON5.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>idkyet</b><br>
 <sub>Another upcoming project</sub><br><br>
-<sub><i>🟡 Coming soon</i></sub>
+<sub><i>🟥 Coming soon</i></sub>
 </td>
 </tr>
 </table>
