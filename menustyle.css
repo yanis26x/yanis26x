@@ -60,7 +60,7 @@ body{
   pointer-events: none;
 
   /* ajuste si tu veux plus/moins visible */
-  opacity: 0.2;
+  opacity: 0.3;
 
   /* pas de blend spécial pour garder la couleur du sang */
   mix-blend-mode: normal;
