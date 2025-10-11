@@ -1,209 +1,113 @@
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" href="stylemain.css" />
-        <title>yanis26x</title>
-        <link rel="icon" type="image/x-icon" href="OST_IMG/26xLogo.png" />
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu · 26x</title>
+  <meta name="theme-color" content="#000000" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menustyle.css" />
+  <link rel="icon" type="image/x-icon" href="OST_IMG/26xLogo.png" />
+</head>
+<body>
+  <!-- Sang plein écran (au-dessus du fond noir) -->
+  <img src="../OST_IMG/sang2.png" alt="Blood overlay" class="bloodOnScreen" />
 
-        <style>
-          body {
-            margin: 0;
-            font-weight: 400; /* Plus léger */
-            transition: background 1s ease-in-out;
-          }
-
-          /* Styles de la barre de navigation */
-          .navbar {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-
-            background-color: #000000;
-
-            padding: 15px 20px;
-            /* position: fixed; */
-            top: 0;
-            left: 0;
-            z-index: 1000;
-          }
-          .navbar-logo img {
-            width: 50px;
-            height: 50px;
-          }
-          .navbar a {
-            color: #ff0000;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 18px;
-            font-weight: 300; /* Texte de la navbar plus léger */
-          }
-
-          .main-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 50vh; /* A CHANGER !!!!!!!!!!!!!!!!!!!!!!!!! */
-            padding-top: 80px;
-            box-sizing: border-box;
-            text-align: center;
-            font-size: 24px;
-          }
-
-          div.links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-          }
-          div.links a {
-            padding: 10px 20px;
-            background-color: #000000;
-            text-decoration: none;
-            color: #ff0000;
-            font-weight: 300; /* Texte plus léger */
-            border-radius: 5px;
-          }
-
-          #GFG {
-            color: rgb(255, 6, 6);
-            font-size: 70px;
-          }
-
-          #btnIMAGE {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
-          }
-
-          .bloodOnScreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover; /* Pour que l'image couvre l'écran sans déformation */
-            z-index: 2000; /* Plus haut que tous les autres éléments */
-            opacity: 1; /* Ajuste la transparence pour voir le contenu en dessous */
-            pointer-events: none; /* Empêche l’image de capter les clics */
-          }
-        </style>
-      </head>
-      <body>
-        <!-- Son qui se joue automatiquement -->
-        <audio id="son" src="./OST_IMG/helloOST.mp3"></audio>
-
-        <!-- sang -->
-        <img src="./OST_IMG/sang.png" alt="Image" class="bloodOnScreen" />
-
-        <!-- Barre de navigation -->
-        <nav class="navbar">
-          <div class="navbar-logo">
-            <a
-              style="
-                color: aliceblue;
-                font-family: 'Courier New', Courier, monospace;
-              "
-              >26x</a
-            >
-          </div>
-          <div>
-            <a
-              href="./contact/contact.html"
-              style="color: black; background-color: aliceblue"
-              >@yanis26x everywhere!  </a
-            >
-
-            <a href="./imbecile/tescon.html" style="font-weight: 300">menu</a>
-          </div>
-        </nav>
-        <marquee id="GFG" scrollamount="200" style="color: #ff00ff">
-          wtffffmykupppp???!!
-        </marquee>
-
-        <div class="main-container">
-
-
-          <div class="links">
-            <a href="./play/play.html">play</a>
-            <a href="https://yanis26x.github.io/a2ple/">a2ple</a>
-            <a href="./music/music.html">♫</a>
-            <a href="./PORTFOLIO/Portfolio.html" style="color: #ffffff">PORTFOLIO</a>
-            <a href="./contact/contact.html" style="color: #073ff8" >contact me </a>
-            <a href="./menu.html" style="color: #073ff8" >clean version</a>
+  <main class="safe" role="main">
+    <div class="wrap" id="root">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar de Yanis" class="avatar" />
+              <span class="presence presence--online" title="En ligne"></span>
+            </div>
+            <div>
+              <h1 class="title">Menu</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
           </div>
 
-          <div class="links">
-            <!-- <button onclick="changerBackground()" id="btnIMAGE">try me !  </button> -->
-            <button onclick="document.getElementById('son').play() " id="btnIMAGE">
-              heLLO
+          <!-- Actions -->
+          <div class="actions">
+            <a class="action-btn" href="../index.html" aria-label="Retour à l'accueil">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/>
+              </svg>
+              <span>Retour</span>
+            </a>
+
+            <button id="themeToggle" class="theme-toggle" type="button" aria-label="Basculer le thème">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="5" fill="currentColor"></circle>
+              </svg>
+              <span class="toggle-label">Light</span>
             </button>
-            <a href="./index2/ind2.html" style="color: #dc07f8">26x_V2</a>
           </div>
         </div>
-        <marquee
-          id="GFG"
-          scrollamount="10"
-          style="font-family: 'Courier New', Courier, monospace"
-        >
-          Salut !
-          <img src="./OST_IMG/ad.gif" alt="ad1" />
-          TRY ME NOW00_<button onclick="changerBackground()" id="btnIMAGE">
-            try me
-          </button>
-          2600%^LISTENT O MY muSIC NOW
-          <button
-            onclick="toggleMusique()"
-            style="background-color: red; padding: 10px"
-          >
-            PLAY ME
-          </button>
-        </marquee>
+      </header>
 
-        <audio id="musique" loop>
-          <source src="./OST_IMG/PainFX.mp3" type="audio/mpeg" />
-        </audio>
-      </body>
+      <!-- Navigation principale -->
+      <section class="card" aria-labelledby="nav-title">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+              <path fill="currentColor" d="M256 32 20 192l44 64 36-24V448h128V320h56v128h128V232l36 24 44-64Z"/>
+            </svg>
+            <h2 class="section-title" id="nav-title">Navigation</h2>
+          </div>
+          <p class="section-sub">what do u want from me ?!</p>
+        </div>
 
-      <script>
-        //pour helloooo
-        window.addEventListener("DOMContentLoaded", () => {
-          const audio = document.getElementById("son");
-          audio
-            .play()
-            .catch((error) => console.log("Lecture automatique bloquée :", error));
-        });
+        <div class="list" role="list">
+            <a class="item" role="listitem" href="../PORTFOLIO/Portfolio.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-4.18C15.4 4.84 14.3 4 13 4h-2c-1.3 0-2.4.84-2.82 2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM9 8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V8z"/></svg>
+            <div class="grow"><div class="item-title">Portfolio</div><div class="item-sub">Mes projets</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
 
-        let audio = document.getElementById("musique");
+          <a class="item" role="listitem" href="../contact/contact.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 8V7l-3 2-2-2-2 2-2-2-2 2-2-2-3 2v1l3-2 2 2 2-2 2 2 2-2 2 2 3-2zM3 19v-8l9 6 9-6v8H3z"/></svg>
+            <div class="grow"><div class="item-title">Contact</div><div class="item-sub">@yanis26x</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
 
-        let images = ["./OST_IMG/sillentHill.jpg", "/yanis26x/OST_IMG/xp.jpg"];
-        let index = 0;
+          <a class="item" role="listitem" href="../index.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3z"/></svg>
+            <div class="grow"><div class="item-title">Accueil</div><div class="item-sub">menu1</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
 
-        function changerBackground() {
-          index = (index + 1) % images.length; // Passe à l'image suivante
-          document.body.style.backgroundImage = `url('${images[index]}')`;
-        }
+          <a class="item" role="listitem" href="../play/play.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="m8 5 11 7-11 7z"/></svg>
+            <div class="grow"><div class="item-title">Play</div><div class="item-sub">Mini jeux & fun</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
 
-        function afficherAlerte() {
-          audio.play();
-          alert("Salut !.............appuie sur ok");
+          <a class="item" role="listitem" href="../music/music.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>
+            <div class="grow"><div class="item-title">Music</div><div class="item-sub">Écoute mes sons</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
 
-          document.getElementById("btn").style.display = "none";
-        }
-      </script>
-    </html>
+          <a class="item" role="listitem" href="https://yanis26x.github.io/a2ple/" target="_blank" rel="noopener">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v10h2V5h14v14H9v2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/></svg>
+            <div class="grow"><div class="item-title">a2ple</div><div class="item-sub">Projet hébergé</div></div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer-text">Do—dope sick, I'm having withdrawals, I feel uneasy</p>
+        <div class="footer-line" aria-hidden="true"></div>
+        <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="menuscript.js"></script>
+</body>
+</html>
