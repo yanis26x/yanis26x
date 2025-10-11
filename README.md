@@ -43,7 +43,7 @@ I plan to release it someday, stay tuned!
 </td>
 
 <td align="center" width="250" style="background-color:#0d1117; border-radius:20px; padding:20px;">
-<img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/iconAPP/ICON4.png" width="120" height="120" style="border-radius:20px;"><br>
+<img src="https://github.com/yanis26x/MySalat/blob/main/assets/logoV2.png" width="120" height="120" style="border-radius:20px;"><br>
 <b>MySalat</b><br>
 <sub>Prayer time app with Qibla direction & notifications.</sub><br><br>
 <sub><i>🟥 Coming soon</i></sub><br><br>
