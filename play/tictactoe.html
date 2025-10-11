@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic-Tac-Toe · 26x</title>
+  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
+  <link rel="stylesheet" href="play.css">
+  <style>
+    .board{ display:grid; grid-template-columns: repeat(3,100px); gap:8px; justify-content:center; margin:10px auto }
+    .cell{
+      width:100px;height:100px; display:flex; align-items:center; justify-content:center;
+      font-size:42px; font-weight:800; color:#fff;
+      background:#0b0b0f; border:1px solid var(--border); border-radius:12px; cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .cell:hover{ transform: translateY(-1px); background:#10121a; border-color:#222; }
+    .hud{ text-align:center; color:var(--sub); margin-top:10px }
+    .actions{ display:flex; justify-content:center; margin-top:10px }
+  </style>
+</head>
+<body>
+  <img src="../OST_IMG/sang.png" class="bloodOnScreen" alt="">
+  <main class="safe">
+    <div class="wrap">
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img class="avatar" src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar">
+              <span class="presence presence--online"></span>
+            </div>
+            <div>
+              <h1 class="title">Tic-Tac-Toe</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="action-btn" href="play.html">
+              <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/></svg>
+              <span>Retour</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section class="card in">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/></svg>
+            <h2 class="section-title">Joueur vs Joueur</h2>
+          </div>
+          <p class="section-sub">Clique pour jouer — X commence</p>
+        </div>
+
+        <div class="board" id="board"></div>
+        <div class="hud"><span id="status">Tour: X</span></div>
+        <div class="actions"><button class="action-btn" id="reset">Rejouer</button></div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const boardEl = document.getElementById('board');
+    const statusEl = document.getElementById('status');
+    const resetBtn = document.getElementById('reset');
+
+    let board = Array(9).fill('');
+    let turn = 'X';
+    let over = false;
+
+    function draw(){
+      boardEl.innerHTML = '';
+      board.forEach((v,i)=>{
+        const cell = document.createElement('button');
+        cell.className = 'cell';
+        cell.textContent = v;
+        cell.disabled = !!v || over;
+        cell.addEventListener('click', ()=> play(i));
+        boardEl.appendChild(cell);
+      });
+      statusEl.textContent = over ? statusEl.textContent : `Tour: ${turn}`;
+    }
+
+    function winner(b){
+      const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+      for (const [a,b2,c] of lines){
+        if (board[a] && board[a]===board[b2] && board[a]===board[c]) return board[a];
+      }
+      if (board.every(Boolean)) return 'N'; // nul
+      return null;
+    }
+
+    function play(i){
+      if (board[i]||over) return;
+      board[i]=turn;
+      const w = winner(board);
+      if (w){
+        over = true;
+        statusEl.textContent = w==='N' ? "Match nul." : `Victoire: ${w}`;
+      }else{
+        turn = turn==='X' ? 'O' : 'X';
+        statusEl.textContent = `Tour: ${turn}`;
+      }
+      draw();
+    }
+
+    resetBtn.addEventListener('click', ()=>{
+      board = Array(9).fill(''); turn='X'; over=false; statusEl.textContent='Tour: X'; draw();
+    });
+
+    draw();
+  </script>
+</body>
+</html>

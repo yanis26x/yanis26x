@@ -1,273 +1,133 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
-    <title>snaaaaaaaaaake</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            
-            color: white;
-            margin: 0;
-            height: 100vh;
-            font-family: 'Permanent Marker', cursive;
-    font-family: 'Rock Salt', cursive;
-    background-image: url('/yanis26x/OST_IMG/sillentHill.jpg');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-attachment: fixed; /* Makes the image stay in place when scrolling */
-    background-position: center; /* Centers the image on the screen */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-        }
-
-        body{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 4px;
-           
-        }
-
-        h2 {
-            font-size: 36px;
-            color: #ff6347;
-        }
-
-        canvas {
-            border: 2px solid #ffffff;
-            background-image: url('med.png');
-        }
-
-        .score-container {
-            display: flex;
-            justify-content: space-between;
-            width: 300px;
-            margin-bottom: 20px;
-        }
-
-        .score {
-            font-size: 20px;
-            color: #ff6347;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #ff6347;
-            border: none;
-            border-radius: 5px;
-            color: rgb(0, 0, 0);
-            font-size: 18px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: #ff4500;
-        }
-
-        button:focus {
-            outline: none;
-        }
-
-        .leaderboard {
-            width: 300px;
-           
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .leaderboard h3 {
-            font-size: 24px;
-            color: #ff6347;
-            text-align: center;
-        }
-
-        .leaderboard table {
-            width: 100%;
-            border-collapse: collapse;
-            color: white;
-            text-align: center;
-        }
-
-        .leaderboard th, .leaderboard td {
-            border: 1px solid #ff6347;
-            padding: 8px;
-        }
-
-        .leaderboard th {
-            background-color: #ff6347;
-            color: black;
-        }
-        
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake · 26x</title>
+  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
+  <link rel="stylesheet" href="play.css">
+  <style>
+    canvas{ background:#0b0b0f; border:1px solid var(--border); border-radius:12px; display:block; margin:0 auto; box-shadow: var(--shadow); }
+    .hud{ text-align:center; color:var(--sub); margin:10px 0 0 }
+  </style>
 </head>
 <body>
-    <a href="/yanis26x/index2/ind2.html" style="font: bold;font-size: 45px;color:white">menu</a>
+  <img src="../OST_IMG/sang.png" class="bloodOnScreen" alt="">
+  <main class="safe">
+    <div class="wrap">
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img class="avatar" src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar">
+              <span class="presence presence--online"></span>
+            </div>
+            <div>
+              <h1 class="title">Snake</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="action-btn" href="play.html">
+              <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/></svg>
+              <span>Retour</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-<h2>snaaaaaaaaaake</h2>
-<div class="score-container">
-    <div class="score" id="score">ton record : jsp mdr</div>
-</div>
+      <section class="card in">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M7 11h7a3 3 0 0 1 0 6h-3a1 1 0 1 0 0 2h3a5 5 0 0 0 0-10H7a3 3 0 0 1 0-6h7a1 1 0 0 0 0-2H7a5 5 0 0 0 0 10Z"/></svg>
+            <h2 class="section-title">Flèches pour jouer</h2>
+          </div>
+        </div>
 
-<canvas id="snake" width="400" height="400"></canvas>
+        <canvas id="board" width="420" height="420"></canvas>
+        <div class="hud"><span id="score">Score: 0</span></div>
+      </section>
+    </div>
+  </main>
 
-<button onclick="restartGame()">(retry)</button>
+  <script>
+    const cvs = document.getElementById('board');
+    const ctx = cvs.getContext('2d');
+    const size = 20; // grid
+    const cells = cvs.width / size;
 
-<div id="message">Bravo ! Vous avez atteint un score de 50 ! 🎉</div>
-
-
-<div class="leaderboard">
-    <h3>Classement</h3>
-    <h6 > envoie un screen de ton score et je tajoute ! </h6>
-    <table>
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Yanis</td>
-                <td>∞</td>
-            </tr>
-            <tr>
-                <td>un sdf</td>
-                <td>20</td>
-            </tr>
-            <tr>
-                <td>nassim</td>
-                <td> - 7</td>
-            </tr>
-
-            <tr>
-                <td>mama</td>
-                <td> " laisse moi tranquille "</td>
-            </tr>
-            <tr>
-                <td> Leon </td>
-                <td> 12</td>
-            </tr>
-            <tr>
-                <td> nassim apres avoir dit : "cette x cest la bonne..." </td>
-                <td> 0 , 3</td>
-            </tr>
-            <tr>
-                <td> arda</td>
-                <td> 5</td>
-            </tr>
-            <tr>
-                <td> massilya </td>
-                <td> 2</td>
-            </tr>
-
-        </tbody>
-    </table>
-</div>
-
-<script>
-    const canvas = document.getElementById('snake');
-    const ctx = canvas.getContext('2d');
-
-    const box = 20;
+    let snake = [{x:10,y:10}];
+    let dir = {x:1,y:0};
+    let food = spawnFood();
     let score = 0;
-    let snake = [{ x: 9 * box, y: 9 * box }];
-    let food = generateFood();
-    let direction = '';
-    let gameInterval;
+    let dead = false;
 
-    function generateFood() {
-        let foodX = Math.floor(Math.random() * 20) * box;
-        let foodY = Math.floor(Math.random() * 20) * box;
-        return { x: foodX, y: foodY };
+    function spawnFood(){
+      let f;
+      do{
+        f = { x: Math.floor(Math.random()*cells), y: Math.floor(Math.random()*cells) };
+      }while(snake.some(s=>s.x===f.x && s.y===f.y));
+      return f;
     }
 
-    function collision(snake) {
-        for (let i = 1; i < snake.length; i++) {
-            if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true;
-        }
-        return false;
+    function step(){
+      if (dead) return;
+      const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+      // wrap edges
+      head.x = (head.x + cells) % cells;
+      head.y = (head.y + cells) % cells;
+
+      // self-collide
+      if (snake.some((s,i)=> i>0 && s.x===head.x && s.y===head.y)) {
+        dead = true;
+        document.getElementById('score').textContent = `Perdu. Score: ${score}. Appuie R pour rejouer.`;
+        return;
+      }
+
+      snake.unshift(head);
+
+      if (head.x===food.x && head.y===food.y){
+        score++;
+        document.getElementById('score').textContent = `Score: ${score}`;
+        food = spawnFood();
+      }else{
+        snake.pop();
+      }
+
+      draw();
     }
 
-    document.addEventListener('keydown', changeDirection);
+    function draw(){
+      ctx.clearRect(0,0,cvs.width,cvs.height);
+      // grid bg
+      ctx.fillStyle = "#0f0f14";
+      ctx.fillRect(0,0,cvs.width,cvs.height);
 
-    function changeDirection(event) {
-        if (event.keyCode === 37 && direction !== 'RIGHT') direction = 'LEFT';
-        if (event.keyCode === 38 && direction !== 'DOWN') direction = 'UP';
-        if (event.keyCode === 39 && direction !== 'LEFT') direction = 'RIGHT';
-        if (event.keyCode === 40 && direction !== 'UP') direction = 'DOWN';
+      // food
+      ctx.fillStyle = "#22c55e";
+      ctx.fillRect(food.x*size, food.y*size, size, size);
+
+      // snake
+      ctx.fillStyle = "#7ab6ff";
+      snake.forEach((s,i)=>{
+        ctx.fillRect(s.x*size, s.y*size, size, size);
+      });
     }
 
-    function drawGame() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowUp'    && dir.y !== 1)  dir={x:0,y:-1};
+      if (e.key === 'ArrowDown'  && dir.y !== -1) dir={x:0,y:1};
+      if (e.key === 'ArrowLeft'  && dir.x !== 1)  dir={x:-1,y:0};
+      if (e.key === 'ArrowRight' && dir.x !== -1) dir={x:1,y:0};
+      if (dead && (e.key==='r' || e.key==='R')){
+        snake = [{x:10,y:10}]; dir={x:1,y:0}; food=spawnFood(); score=0; dead=false;
+        document.getElementById('score').textContent = `Score: ${score}`;
+        draw();
+      }
+    });
 
-        for (let i = 0; i < snake.length; i++) {
-            ctx.fillStyle = i === 0 ? '#32CD32' : '#ffffff';
-            ctx.fillRect(snake[i].x, snake[i].y, box, box);
-        }
-
-        ctx.fillStyle = '#ff6347';
-        ctx.fillRect(food.x, food.y, box, box);
-
-        let snakeX = snake[0].x;
-        let snakeY = snake[0].y;
-
-        if (direction === 'LEFT') snakeX -= box;
-        if (direction === 'UP') snakeY -= box;
-        if (direction === 'RIGHT') snakeX += box;
-        if (direction === 'DOWN') snakeY += box;
-
-        if (snakeX === food.x && snakeY === food.y) {
-            score++;
-            document.getElementById('score').textContent = 'Score: ' + score;
-            food = generateFood();
-        } else {
-            snake.pop();
-        }
-
-        let newHead = { x: snakeX, y: snakeY };
-        snake.unshift(newHead);
-
-        if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(snake)) {
-            clearInterval(gameInterval);
-            endGame();
-        }
-    }
-
-    function startGame() {
-        document.getElementById('message').style.display = 'none';
-        gameInterval = setInterval(drawGame, 100);
-    }
-
-    function endGame() {
-        if (score >= 50) {
-            document.getElementById('message').textContent = 'enfin !! 19461549';
-        } else {
-            document.getElementById('message').textContent = 'Lame! u only did ' + score + ' lol';
-        }
-        document.getElementById('message').style.display = 'block';
-    }
-
-    function restartGame() {
-        score = 0;
-        document.getElementById('score').textContent = 'Score: ' + score;
-        snake = [{ x: 9 * box, y: 9 * box }];
-        food = generateFood();
-        direction = '';
-        clearInterval(gameInterval);
-        startGame();
-    }
-
-    startGame();
-</script>
-
+    draw();
+    setInterval(step, 120);
+  </script>
 </body>
 </html>

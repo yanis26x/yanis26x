@@ -1,113 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="play.css">
-    <title>PLAYY</title>
-    <link rel="icon" href="med.png" type="image/png"> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Play · 26x</title>
+  <meta name="theme-color" content="#000000" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
+  <link rel="stylesheet" href="play.css" />
 </head>
 <body>
+  <!-- Sang plein écran AU-DESSUS -->
+  <img src="../OST_IMG/sang.png" alt="Blood overlay" class="bloodOnScreen" />
 
-    <!-- Son qui se joue automatiquement -->
-    <audio id="son" src="/yanis26x/OST_IMG/helloOST.mp3"></audio>
+  <main class="safe" role="main">
+    <div class="wrap" id="root">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar de Yanis" class="avatar" />
+              <span class="presence presence--online" title="En ligne"></span>
+            </div>
+            <div>
+              <h1 class="title">Play</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
 
-    <!-- SANG -->
-    <img src="/yanis26x/OST_IMG/sang.png" alt="Image" class="bloodOnScreen" id="bloodImage"> 
-
-    <!-- Barre de navigation -->
-    <nav class="navbar">
-        <div class="navbar-logo">
-            <a style="color: aliceblue;">26x </a>
+          <div class="actions">
+            <a class="action-btn" href="../index.html" aria-label="Retour à l'accueil">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/></svg>
+              <span>Accueil</span>
+            </a>
+          </div>
         </div>
-        <div>
-            <a href="/yanis26x/index.html" style="font-weight: 300;">menu</a>
-        </div>
-        <div class="emojiNAV">
-                0_0
-        </div>
-    
-    </nav>
+      </header>
 
- 
-
-    
-
-    <div class="idk">
-        <h1 style="text-decoration: underline;">les jeux</h1>
-        <h2>de tout les jeux qui existe tu vien jouer a ca ?....</h2>
-        <h3>si c ton delire </h3>
-
-    </div>
-
-
-    <div class="idk2">
-      
-        <h2> </h2>
-        <h3>Choisi le jeux que tu veux jouer ! </h3>
-
-    </div>
-    <div class="choix">
-        <button onclick="DevinerNombre()">play</button>
-        <button onclick="location.href='snake.html'">snake</button>
-    
- 
-    </div>
-
-
-    <div class="opacity_sang">
-        <marquee id="GFG" scrollamount="100" >
-            joue a kingdom Heart 2 !
-        </marquee >
-    </div>
-  
-
-    <div class="content">
-        <div class="left">
-            <h2>regle le sang :</h2>
-        <input type="range" min="0" max="1" step="0.01" value="1" id="opacitySlider">
-            
-
+      <!-- Choix des jeux -->
+      <section class="card" aria-labelledby="games-title">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m8 5 11 7-11 7z"/></svg>
+            <h2 class="section-title" id="games-title">Jeux</h2>
+          </div>
+          <p class="section-sub">what do u want 2 play ?!</p>
         </div>
 
-        <div class="right">
-            <h2>change l'image!</h2>
-            <button onclick="changerBackground()" id="btnIMAGE">try me !  </button>
+        <div class="list" role="list">
+          <a class="item" role="listitem" href="guess.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M10 18h4v-2h-4v2Zm2-16a7 7 0 0 0-7 7h2a5 5 0 0 1 10 0c0 3-3 3.5-3 6h-2c0-3.5 3-4 3-6a3 3 0 0 0-3-3 3 3 0 0 0-3 3H5a7 7 0 0 1 7-7Z"/></svg>
+            <div class="grow">
+              <div class="item-title">Devine le nombre</div>
+              <div class="item-sub">Trouve le nombre secret (1–100)</div>
+            </div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
+
+          <a class="item" role="listitem" href="snake.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M7 11h7a3 3 0 0 1 0 6h-3a1 1 0 0 0 0 2h3a5 5 0 0 0 0-10H7a3 3 0 0 1 0-6h7a1 1 0 0 0 0-2H7a5 5 0 0 0 0 10Z"/></svg>
+            <div class="grow">
+              <div class="item-title">Snake</div>
+              <div class="item-sub">Classique — flèches pour jouer</div>
+            </div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
+
+          <a class="item" role="listitem" href="tictactoe.html">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/></svg>
+            <div class="grow">
+              <div class="item-title">Tic-Tac-Toe</div>
+              <div class="item-sub">Joueur vs Joueur</div>
+            </div>
+            <svg class="icon" viewBox="0 0 512 512"><path fill="currentColor" d="M432 80a16 16 0 0 1 11.31 27.31l-224 224a16 16 0 1 1-22.62-22.62l224-224A16 16 0 0 1 432 80Z"/><path fill="currentColor" d="M432 320a16 16 0 0 1-16-16V160H208a16 16 0 0 1 0-32h224a16 16 0 0 1 16 16v160a16 16 0 0 1-16 16Z"/></svg>
+          </a>
         </div>
-    </div>
+      </section>
 
+      <!-- Outils visuels -->
+      <section class="card" aria-labelledby="tools-title">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12v2h-6v6h-2v-6H8v-2h6V6h2v6h6Z"/></svg>
+            <h2 class="section-title" id="tools-title">Outils</h2>
+          </div>
+          <p class="section-sub">Ajuste l’ambiance</p>
+        </div>
 
-    <div class="idk2">
-      
-        <h2> </h2>
-        <h3>Loving someone is never a waste - NaNa 0saK1 </h3>
+        <div class="tools">
+          <label class="slider">
+            Opacité du sang
+            <input id="bloodOpacity" type="range" min="0" max="1" step="0.01" value="0.9" />
+          </label>
 
-    </div>
+          <button class="action-btn" id="cycleBg" type="button">
+            Changer le fond
+          </button>
+        </div>
+      </section>
 
-    
-
-    <footer>
-        <small>© 2025 26x, tous droits de vous egorger est réservés.</small>
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer-text">Skittles got me feeling tranquil, they're so relieving</p>
+        <div class="footer-line" aria-hidden="true"></div>
+        <p class="copyright">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
       </footer>
+    </div>
+  </main>
 
-    <script src="index2Js.js"></script>
-
+  <script src="play.js"></script>
 </body>
-
-<script>
-
-
-// Essaye de jouer le son automatiquement
-window.addEventListener("DOMContentLoaded", () => {
-        const audio = document.getElementById("son");
-        audio.play().catch(error => console.log("Lecture automatique bloquée :", error));
-    });
-
-</script>
-
-
 </html>

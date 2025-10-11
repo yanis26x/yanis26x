@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devine le nombre · 26x</title>
+  <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <img src="../OST_IMG/sang.png" alt="Blood overlay" class="bloodOnScreen" />
+  <main class="safe">
+    <div class="wrap">
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img class="avatar" src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar">
+              <span class="presence presence--online"></span>
+            </div>
+            <div>
+              <h1 class="title">Devine le nombre</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="action-btn" href="play.html">
+              <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/></svg>
+              <span>Retour</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section class="card in">
+        <div class="section-head">
+          <div class="section-row">
+            <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 18h4v-2h-4v2Z"/></svg>
+            <h2 class="section-title">Trouve le nombre (1–100)</h2>
+          </div>
+          <p class="section-sub">Tu as 10 essais. Bonne chance !</p>
+        </div>
+
+        <div class="game">
+          <input id="guessInput" type="number" min="1" max="100" placeholder="Ton nombre…" style="padding:10px;border-radius:10px;border:1px solid var(--border);background:#111;color:#fff">
+          <button id="guessBtn" class="action-btn" type="button">Valider</button>
+        </div>
+
+        <p id="feedback" class="section-sub" style="margin-top:10px"></p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const secret = Math.floor(Math.random()*100) + 1;
+    let tries = 10;
+    const input = document.getElementById('guessInput');
+    const btn = document.getElementById('guessBtn');
+    const fb = document.getElementById('feedback');
+
+    function play(){
+      const v = parseInt(input.value,10);
+      if (isNaN(v) || v<1 || v>100){ fb.textContent = "Entre un nombre entre 1 et 100."; return; }
+      if (tries<=0){ fb.textContent = "Partie terminée. Recharge pour rejouer."; return; }
+      tries--;
+      if (v === secret){ fb.textContent = `GG ! ${v} est correct. Il te restait ${tries} essais.`; btn.disabled=true; }
+      else if (v < secret){ fb.textContent = `Trop bas. Essais restants: ${tries}`; }
+      else { fb.textContent = `Trop haut. Essais restants: ${tries}`; }
+      if (tries===0 && v!==secret){ fb.textContent = `Perdu 😅 Le nombre était ${secret}.`; btn.disabled=true; }
+      input.value = "";
+      input.focus();
+    }
+    btn.addEventListener('click', play);
+    input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') play(); });
+  </script>
+</body>
+</html>
