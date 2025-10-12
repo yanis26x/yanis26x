@@ -84,7 +84,7 @@
     .clouds .cloud:nth-child(3){ top:26%; --dur:38s; animation-delay:-18s; transform:scale(.85)}
     .clouds .cloud:nth-child(4){ top:12%; --dur:80s; animation-delay:-12s; transform:scale(1.3)}
     .clouds .cloud:nth-child(5){ top:30%; --dur:55s; animation-delay:-44s }
-    .clouds .cloud:nth-child(6){ top:22%; --dur:68s; animation-delay:-5s; transform:scale(1.2)}
+    .clouds .cloud:nth-child(6){ top:22%; --dur:68s; transform:scale(1.2)}
 
     /* petals */
     #petals{position:absolute; inset:0; pointer-events:none; overflow:hidden}
@@ -139,7 +139,7 @@
       </svg>
     </div>
 
-    <!-- Hello Kitty‑style (SVG, no external images) -->
+    <!-- Hello Kitty-style (SVG, no external images) -->
     <svg class="npc" viewBox="0 0 200 200" aria-label="Hello Kitty style character" vector-effect="non-scaling-stroke">
       <ellipse cx="100" cy="178" rx="56" ry="14" fill="rgba(0,0,0,.18)" />
       <g stroke="#e5e5e5" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
@@ -169,12 +169,15 @@
       <div id="text" class="text"></div>
       <div class="hud">
         <div id="choices" class="choices" aria-label="Choix"></div>
-        <div class="hint">Appuie 1/2 pour choisir · R pour recommencer</div>
+        <div class="hint">Appuie 1/2 pour choisir · R pour recommencer · M pour couper la musique</div>
       </div>
     </div>
 
-    <div class="credit">Fan‑made UI · Images SVG intégrées</div>
+    <div class="credit">Fan-made UI · Images SVG intégrées</div>
   </div>
+
+  <!-- BACKGROUND MUSIC (loop + autoplay-friendly) -->
+  <audio id="bgm" src="bgm.mp3" preload="auto" loop playsinline></audio>
 
   <script>
     // =========================
@@ -192,12 +195,12 @@
       // Common preface: always spoken before branching content
       bleed: { speaker: "Hello Kitty", text: `Bleed 4 me` },
 
-      // Path A — friendly story
+      // Path A — friendly story (contient du texte dark pour l'ambiance horreur)
       ok_story: {
         speaker: "Hello Kitty",
-        text: `Thank you! You're so sweet. So, my day? I woke up early, tied my favorite bow, baked tiny heart‑cookies, and picked petals by the beach. I love gentle mornings, sketching ribbons, and writing postcards to friends. Maybe later I’ll host a tea picnic with strawberry milk and soft songs.`,
+        text: `Thank you! You're so sweet. So, my day? I woke up early, tied my favorite bow, baked tiny heart-cookies, i will commit suici , im tired of living, cant do nun without drugs and picked petals by the beach. I love gentle mornings, sketching ribbons, and writing postcards to friends. Maybe later I’ll host a tea picnic with strawberry milk and sof90mg it songs.`,
         choices: [
-          { label: "Préparer le pique‑nique", next: "picnic" },
+          { label: "Préparer le pique-nique", next: "picnic" },
           { label: "Se balader sous les cerisiers", next: "walk" }
         ]
       },
@@ -209,34 +212,34 @@
 Ayy, w***up, hey— [bleep]
 C****d C*******z on the beat— we keep it neat
 C***a in my cup, I’m lean— just kidding, it’s tea
-[producer tag bleeped — la‑la‑la, meow‑meow, beep‑bee‑eep]
+[producer tag bleeped — la-la-la, meow-meow, beep-bee-eep]
 
 Baby, C***a— pour a four? Nah, pour some peach tea
 S***k pack got me sleepy— nah, clouds are just dreamy
-dope‑s***? No way— I’m clean, breathing easy
+dope-s***? No way— I’m clean, breathing easy
 Skittles? Tasting rainbows— vibe feeling breezy
-Sprinkle‑sprinkle in the blunt? Nah, sprinkle confetti
+Sprinkle-sprinkle in the blunt? Nah, sprinkle confetti
 Bad thoughts in my head? Poof— gone already
-Bank‑bankrolls expanding— pockets look hefty
+Bank-bankrolls expanding— pockets look hefty
 Test me? You can’t beat me— I’m too steady
 S** energy peaking— uh, switch it to cheery
 Told her that I love her— okay, keep it friendly
 R*** weed? We keep it legal— freebies
 S** me? Nah— keep it PG, please
-Yes‑yes, good vibes only— never too sneaky
+Yes-yes, good vibes only— never too sneaky
 Can’t trust a b****?— beep— we keep it peachy
-Money‑money’s tempting— but kindness feeds me
+Money-money’s tempting— but kindness feeds me
 Guap satisfaction? Meh— hearts complete me
-Money‑money around me— but not clingy
+Money-money around me— but not clingy
 Mantras on my mind— staying zen, living easy
 Lean blunts? No thanks— Pocky sticks crispy
-BOOG‑BOOGIE— confidence high, feeling nifty
+BOOG-BOOGIE— confidence high, feeling nifty
 Thought we were homies— if you finesse me— [bleep] it, forgive, see?
 P***y won’t press me— we not stressing
-Bad‑bad vibes exit— we not sweating
-Soon as I— [bleep‑bleep]— okay, we’re ending!
+Bad-bad vibes exit— we not sweating
+Soon as I— [bleep-bleep]— okay, we’re ending!
 
-la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s the energy ✨`,
+la-la meow-meow • pink skies over sea • be kind, stay sweet • that’s the energy ✨`,
         choices: [
           { label: "Aller à la boutique rubans", next: "shop" },
           { label: "Chiller à la plage", next: "beach" }
@@ -245,10 +248,10 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
 
       picnic: { speaker: "Hello Kitty", text: `On déplie la nappe rose à pois ! Tu t'occupes des fraises ou des biscuits cœur ?`, choices:[ {label:"Fraises", next:"wrap"},{label:"Biscuits", next:"wrap"} ] },
       walk:   { speaker: "Hello Kitty", text: `Écoute le vent… les pétales dansent. Tu veux qu’on cueille quelques fleurs ?`, choices:[ {label:"Oui", next:"wrap"},{label:"Non, continuons", next:"wrap"} ] },
-      shop:   { speaker: "Hello Kitty", text: `Bienvenue au royaume des nœuds ! Rose bonbon, bleu ciel… lequel te va ?`, choices:[ {label:"Rose bonbon", next:"wrap"},{label:"Bleu ciel", next:"wrap"} ] },
+      shop:   { speaker: "Hello Kitty", text: `i will commit suici ,im tired of living, cant do nun without drugs, By333 By333! `, choices:[ {label:"Rose bonbon", next:"wrap"},{label:"Bleu ciel", next:"wrap"} ] },
       beach:  { speaker: "Hello Kitty", text: `Le bruit des vagues est apaisant. Château de sable ou sieste au soleil ?`, choices:[ {label:"Château", next:"wrap"},{label:"Sieste", next:"wrap"} ] },
 
-      wrap: { speaker: "Hello Kitty", text: `Quelle jolie journée ! On pourra continuer plus tard. Appuie sur R si tu veux recommencer une autre histoire ✨`, restart:true }
+      wrap: { speaker: "Hello Kitty", text: `Quelle jolie journée ! on pourra continuer plus tard. appuie sur R si tu veux recommencer une autre histoire ✨`, restart:true }
     };
 
     // =========================
@@ -260,6 +263,8 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
       ok.push(()=> console.assert(Array.isArray(DIALOGUE.start.choices) && DIALOGUE.start.choices.length === 2, 'Test: start has two choices'));
       ok.push(()=> console.assert(!!DIALOGUE.bleed && !DIALOGUE.bleed.choices, 'Test: bleed node exists and has no choices'));
       ok.push(()=> console.assert(!!DIALOGUE.ok_story && !!DIALOGUE.no_song, 'Test: branch nodes exist'));
+      ok.push(()=> console.assert(document.getElementById('bgm') instanceof HTMLAudioElement, 'Test: bgm element exists'));
+      ok.push(()=> console.assert(document.getElementById('bgm').loop === true, 'Test: bgm is looping'));
       ok.forEach(f=>f());
     })();
 
@@ -269,6 +274,7 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
     const nameEl = document.getElementById('name');
     const textEl = document.getElementById('text');
     const choicesEl = document.getElementById('choices');
+    const bgm = document.getElementById('bgm');
 
     let current = 'start';
     let typing = false;    // empêche de skipper pendant l’animation
@@ -304,11 +310,30 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
     })();
 
     // =========================
-    // Typewriter
+    // Typewriter (+ ducking BGM)
     // =========================
     function wait(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+    function rampVolume(target, ms=200){
+      if (!bgm) return;
+      const start = bgm.volume;
+      const steps = Math.max(1, Math.round(ms/30));
+      let n = 0;
+      const id = setInterval(()=>{
+        n++;
+        bgm.volume = start + (target - start) * (n/steps);
+        if (n >= steps) clearInterval(id);
+      }, 30);
+    }
+
+    const BGM_BASE_VISIBLE = 0.4;
+    const BGM_BASE_HIDDEN  = 0.05;
+    let bgmBase = BGM_BASE_VISIBLE;
+
     async function typeText(s){
       typing = true;
+      // duck
+      rampVolume(Math.max(0.15, bgmBase*0.45), 140);
       textEl.innerHTML = '';
       for (let i=0;i<s.length;i++){
         const ch = s[i];
@@ -320,6 +345,8 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
       caret.className = 'cursor';
       textEl.appendChild(caret);
       typing = false;
+      // unduck
+      rampVolume(bgmBase, 220);
     }
 
     // =========================
@@ -361,6 +388,8 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
       if (!node.choices) return;
       const choice = node.choices[i];
       if (!choice) return;
+      // Jumpscare sting si "Fuck No" -> no_song
+      if (choice.next === 'no_song') setTimeout(sting, 100);
       // Always say 'Bleed 4 me' before going to the chosen content
       pendingNext = choice.next;
       showNode('bleed');
@@ -369,15 +398,79 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
     function restart(){ showNode('start'); }
 
     // =========================
-    // Input bindings (no Next button)
+    // BACKGROUND MUSIC: autoplay + fade-in + fallbacks
+    // =========================
+    (function setupBGM(){
+      if (!bgm) return;
+
+      // base volume selon visibilité
+      bgmBase = document.hidden ? BGM_BASE_HIDDEN : BGM_BASE_VISIBLE;
+      bgm.volume = 0;
+      bgm.loop = true;
+
+      function fadeIn(){
+        rampVolume(bgmBase, 3000); // fade-in 3s
+      }
+
+      function tryPlay(){
+        bgm.play()
+          .then(()=> setTimeout(fadeIn, 300))
+          .catch(()=> {
+            // Autoplay bloqué -> on attend la première interaction
+            const resume = ()=>{
+              bgm.play().then(()=> fadeIn()).catch(()=>{/* noop */});
+              window.removeEventListener('pointerdown', resume);
+              window.removeEventListener('keydown', resume);
+            };
+            window.addEventListener('pointerdown', resume, { once:true });
+            window.addEventListener('keydown', resume, { once:true });
+          });
+      }
+
+      window.addEventListener('load', tryPlay);
+
+      // baisse auto quand onglet caché
+      document.addEventListener('visibilitychange', ()=>{
+        bgmBase = document.hidden ? BGM_BASE_HIDDEN : BGM_BASE_VISIBLE;
+        rampVolume(bgmBase, 300);
+      });
+    })();
+
+    // =========================
+    // Input bindings
     // =========================
     async function unlockAudio(){ if (!audioReady){ audioReady = true; await AudioEngine.resume(); } }
     document.addEventListener('pointerdown', unlockAudio, { once:false });
     document.addEventListener('keydown', (e)=>{
       if (!audioReady) AudioEngine.resume().then(()=>{ audioReady = true; });
       if (e.key.toLowerCase() === 'r') restart();
+      
       if (/^[1-9]$/.test(e.key)) choose(parseInt(e.key,10)-1);
     });
+
+    // =========================
+    // Jumpscare sting (bruit bref)
+    // =========================
+    function sting(){
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const o = ctx.createOscillator(), g = ctx.createGain(), n = ctx.createBufferSource();
+      // bruit / souffle court
+      const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.25, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i=0;i<data.length;i++) data[i] = (Math.random()*2-1) * (1 - i/data.length);
+      n.buffer = buffer;
+
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(180, ctx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 0.25);
+
+      g.gain.setValueAtTime(0.0001, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.6, ctx.currentTime + 0.03);
+      g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.32);
+
+      n.connect(g); o.connect(g); g.connect(ctx.destination);
+      n.start(); o.start(); o.stop(ctx.currentTime + 0.33);
+    }
 
     // =========================
     // Extras: petals + parallax
@@ -414,6 +507,21 @@ la‑la meow‑meow • pink skies over sea • be kind, stay sweet • that’s
       window.addEventListener('mousemove', move);
       window.addEventListener('resize', ()=>{ w=innerWidth; h=innerHeight; });
     })();
+
+    // =========================
+    // Flow helpers
+    // =========================
+    function choose(i){
+      const node = DIALOGUE[current];
+      if (!node.choices) return;
+      const choice = node.choices[i];
+      if (!choice) return;
+      if (choice.next === 'no_song') setTimeout(sting, 100);
+      pendingNext = choice.next;
+      showNode('bleed');
+    }
+
+    function restart(){ showNode('start'); }
 
     // =========================
     // Boot
