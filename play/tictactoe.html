@@ -7,27 +7,74 @@
   <link rel="icon" type="image/x-icon" href="../OST_IMG/26xLogo.png">
   <link rel="stylesheet" href="play.css">
   <style>
+    :root{
+      --border:#1d1f28;
+      --card:#0b0b0f;
+      --text:#fff;
+      --sub:#9CA3AF;
+      --accent:#3B82F6;
+    }
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
     .board{ display:grid; grid-template-columns: repeat(3,100px); gap:8px; justify-content:center; margin:10px auto }
     .cell{
       width:100px;height:100px; display:flex; align-items:center; justify-content:center;
-      font-size:42px; font-weight:800; color:#fff;
       background:#0b0b0f; border:1px solid var(--border); border-radius:12px; cursor:pointer;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
     .cell:hover{ transform: translateY(-1px); background:#10121a; border-color:#222; }
-    .hud{ text-align:center; color:var(--sub); margin-top:10px }
+    .cell:disabled{ cursor:default; opacity:.9 }
+    .cell img{ width:70%; height:70%; object-fit:contain; user-select:none; pointer-events:none; }
+    .hud{ text-align:center; color:var(--sub); margin-top:10px; display:flex; gap:6px; align-items:center; justify-content:center }
+    .hud .mini{ width:18px; height:18px; object-fit:contain; transform:translateY(2px); }
     .actions{ display:flex; justify-content:center; margin-top:10px }
+    .action-btn{
+      display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:10px;
+      background:#11131a; border:1px solid var(--border); color:var(--text); text-decoration:none; cursor:pointer;
+    }
+    .action-btn:hover{ background:#141826; border-color:#2a2f3d }
+    .card.in{ background:#0c0e14; border:1px solid var(--border); border-radius:16px; padding:16px }
+    .section-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px }
+    .section-row{ display:flex; align-items:center; gap:8px }
+    .section-title{ margin:0; font-size:18px; color:var(--text) }
+    .section-sub{ margin:0; color:var(--sub) }
+
+    /* MODAL (popup) */
+    .modal{
+      position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55);
+      z-index:50; padding:16px;
+    }
+    .modal.open{ display:grid }
+    .modal-card{
+      width:min(92vw,420px); background:#0c0e14; border:1px solid var(--border); border-radius:18px;
+      padding:20px; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,.5);
+      animation:pop .15s ease-out;
+    }
+    @keyframes pop{ from{ transform:scale(.95); opacity:0 } to{ transform:scale(1); opacity:1 } }
+    .modal-title{ color:#fff; font-size:22px; font-weight:800; margin:0 0 6px }
+    .modal-sub{ color:var(--sub); margin:0 0 16px }
+    .modal .buttons{ display:flex; justify-content:center; gap:10px }
+    .btn-primary{ background:var(--accent); border:none; padding:10px 14px; border-radius:10px; color:#fff; font-weight:700; cursor:pointer }
+    .btn-ghost{ background:#121522; border:1px solid var(--border); padding:10px 14px; border-radius:10px; color:#fff; cursor:pointer }
+
+    /* Section lien GitHub */
+    .promo{
+      margin:18px auto 0; max-width:520px; padding:14px;
+      border-radius:14px; border:1px dashed #2a2e3a; background:#0b0d13;
+      text-align:center; color:var(--sub)
+    }
+    .promo a{ color:#fff; text-decoration:none; font-weight:800; border-bottom:1px solid #2a2f3d }
+    .promo a:hover{ color:var(--accent); border-color:var(--accent) }
   </style>
 </head>
 <body>
-  <img src="../OST_IMG/sang.png" class="bloodOnScreen" alt="">
+  <img src="../OST_IMG/sang.png" class="bloodOnScreen" alt="" />
   <main class="safe">
     <div class="wrap">
       <header class="header">
         <div class="header-row">
           <div class="identity">
             <div class="avatar-wrap">
-              <img class="avatar" src="../OST_IMG/iconAPP/0SaKiICON.png" alt="Avatar">
+              <img class="avatar" src="../OST_IMG/imageCool/CestTriste.jpg" alt="Avatar">
               <span class="presence presence--online"></span>
             </div>
             <div>
@@ -54,41 +101,97 @@
         </div>
 
         <div class="board" id="board"></div>
-        <div class="hud"><span id="status">Tour: X</span></div>
+        <div class="hud"><img id="turnIcon" class="mini" alt="tour" src="../OST_IMG/x.png"><span id="status">Tour: X</span></div>
         <div class="actions"><button class="action-btn" id="reset">Rejouer</button></div>
       </section>
+
+      <!-- Section promo GitHub -->
+      <div class="promo">
+        Taime !? Va voir <a href="https://github.com/yanis26x/TicTacToe26x" target="_blank" rel="noopener noreferrer">mon logiciel TicTacToe26x sur GitHub</a>
+      </div>
     </div>
   </main>
 
+  <!-- MODAL -->
+  <div class="modal" id="resultModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <h3 class="modal-title" id="modalTitle">Résultat</h3>
+      <p class="modal-sub" id="modalDesc">Victoire !</p>
+      <div class="buttons">
+        <button class="btn-primary" id="playAgain">Rejouer</button>
+        <button class="btn-ghost" id="closeModal">Fermer</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // --- images pour X et O (change les chemins si besoin)
+    const IMG = {
+      X: "../OST_IMG/x.png",
+      O: "../OST_IMG/o.png"
+    };
+
+    // (Optionnel) préchargement
+    ["X","O"].forEach(k => { const im = new Image(); im.src = IMG[k]; });
+
     const boardEl = document.getElementById('board');
     const statusEl = document.getElementById('status');
     const resetBtn = document.getElementById('reset');
+    const turnIcon = document.getElementById('turnIcon');
+
+    const modal = document.getElementById('resultModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const playAgainBtn = document.getElementById('playAgain');
+    const closeModalBtn = document.getElementById('closeModal');
 
     let board = Array(9).fill('');
     let turn = 'X';
     let over = false;
+
+    function setTurnUI() {
+      statusEl.textContent = over ? statusEl.textContent : `Tour: ${turn}`;
+      turnIcon.src = turn === 'X' ? IMG.X : IMG.O;
+      turnIcon.alt = `Tour ${turn}`;
+    }
 
     function draw(){
       boardEl.innerHTML = '';
       board.forEach((v,i)=>{
         const cell = document.createElement('button');
         cell.className = 'cell';
-        cell.textContent = v;
         cell.disabled = !!v || over;
+        cell.setAttribute('aria-label', v ? `Case ${i+1} : ${v}` : `Case ${i+1} vide`);
+        if (v){
+          const img = document.createElement('img');
+          img.src = v === 'X' ? IMG.X : IMG.O;
+          img.alt = v;
+          cell.appendChild(img);
+        }
         cell.addEventListener('click', ()=> play(i));
         boardEl.appendChild(cell);
       });
-      statusEl.textContent = over ? statusEl.textContent : `Tour: ${turn}`;
+      setTurnUI();
     }
 
     function winner(b){
       const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
       for (const [a,b2,c] of lines){
-        if (board[a] && board[a]===board[b2] && board[a]===board[c]) return board[a];
+        if (b[a] && b[a]===b[b2] && b[a]===b[c]) return b[a];
       }
-      if (board.every(Boolean)) return 'N'; // nul
+      if (b.every(Boolean)) return 'N'; // nul
       return null;
+    }
+
+    function openModal(title, desc){
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
     }
 
     function play(i){
@@ -97,17 +200,30 @@
       const w = winner(board);
       if (w){
         over = true;
-        statusEl.textContent = w==='N' ? "Match nul." : `Victoire: ${w}`;
+        const message = w==='N' ? "Match nul." : `Victoire: ${w}`;
+        statusEl.textContent = message;
+        openModal("Fin de partie", message);
       }else{
         turn = turn==='X' ? 'O' : 'X';
-        statusEl.textContent = `Tour: ${turn}`;
+        setTurnUI();
       }
       draw();
     }
 
-    resetBtn.addEventListener('click', ()=>{
-      board = Array(9).fill(''); turn='X'; over=false; statusEl.textContent='Tour: X'; draw();
-    });
+    function resetGame(){
+      board = Array(9).fill('');
+      turn='X';
+      over=false;
+      statusEl.textContent='Tour: X';
+      setTurnUI();
+      closeModal();
+      draw();
+    }
+
+    resetBtn.addEventListener('click', resetGame);
+    playAgainBtn.addEventListener('click', resetGame);
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
 
     draw();
   </script>
