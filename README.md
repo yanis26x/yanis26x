@@ -10,11 +10,11 @@ I plan to release it someday, **stay tuned!**
   </a>
   &nbsp;
   <a href="https://github.com/yanis26x/yanis26x/blob/index/CV_Stage_Informatique.pdf">
-    <img alt="Télécharger mon CV" src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20mon%20CV-0A66C2?style=for-the-badge">
+    <img alt="Télécharger mon CV" src="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
   </a>
 </p>
 
-![alt text](https://github.com/yanis26x/yanis26x/blob/index/OsakiScreen2.jpg)
+![alt text](https://github.com/yanis26x/yanis26x/blob/index/nimp/OsakiScreen2.jpg)
 
 <p align="center">© 2025 <b>yanis26x</b> · Tous droits réservé </p>
  
