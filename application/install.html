@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Installer mes apps · 26x</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/x-icon" href="./OST_IMG/26xLogo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="install.css" />
+</head>
+<body>
+  <main class="safe" role="main">
+    <div class="wrap" id="top">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-row">
+          <div class="identity">
+            <div class="avatar-wrap">
+              <img src="/../OST_IMG/imageCool/CestTriste.jpg" alt="Avatar de Yanis" class="avatar" />
+              <span class="presence presence--online" title="En ligne"></span>
+            </div>
+            <div>
+              <h1 class="title">Installer mes apps</h1>
+              <div class="handle">@yanis26x</div>
+            </div>
+          </div>
+          <a class="action-btn" href="/../index.html">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M14.7 6.3a1 1 0 0 1 0 1.4L10.41 12l4.3 4.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.42 0Z"/>
+            </svg>
+            <span>Menu</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Comment installer -->
+      <section class="card in" aria-labelledby="how-title" id="install-how">
+        <div class="section-head">
+          <div class="section-row">
+            <h2 class="section-title" id="how-title">Comment installer (via Expo Go)</h2>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <b>Installe <span class="nowrap">Expo Go</span></b>
+            <div class="store-badges">
+              <a class="badge" href="https://apps.apple.com/app/expo-go/id982107779" target="_blank" rel="noreferrer">iOS — App Store</a>
+              <a class="badge" href="https://play.google.com/store/apps/details?id=host.exp.exponent" target="_blank" rel="noreferrer">Android — Google Play</a>
+            </div>
+          </li>
+          <li>
+            <b>Ouvre l’app</b> : clique sur le lien du projet ou scanne son QR code.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Projets -->
+      <section class="projects">
+        <!-- Project Card: 0SaKi26x -->
+        <article class="project card collapsible" data-project="osaki">
+          <header class="project-head">
+            <img class="app-icon" src="/../OST_IMG/imageCool/CestTriste.jpg" alt="Icône 0SaKi26x">
+            <div class="project-titles">
+              <h3 class="project-title">0SaKi26x</h3>
+              <p class="project-desc">Images + musique + QrCode.</p>
+            </div>
+            <div class="project-cta">
+              <a class="btn primary" href="https://expo.dev/preview/update?message=App+0SaKi26x&updateRuntimeVersion=1.0.0&createdAt=2025-10-15T19%3A12%3A56.597Z&slug=exp&projectId=3e2507b1-a87e-40d6-9758-7217398155f4&group=b917554a-85d1-4202-b836-0cf2f4d4f02d" target="_blank" rel="noreferrer">Ouvrir dans Expo</a>
+              <button class="expand-btn" aria-expanded="false" aria-controls="osaki-content">Voir plus</button>
+            </div>
+          </header>
+
+          <div id="osaki-content" class="collapsible-content">
+            <div class="banner">
+              <!-- image verticale si dispo -->
+              <img src="/../nimp/OsakiScreen2.jpg" alt="Aperçu 0SaKi26x" class="banner-img">
+            </div>
+
+            <div class="details two-col">
+              <div class="col">
+                <h4 class="section-mini-title">À propos</h4>
+                <p class="longer">
+                  0SaKi26x permet de voire et ajouter des images trop cool + ecouter de la musique + generer un QrCode. — C'est ma premiere applicationn. Jai essayer de faire une UI sans Sang... Interface minimaliste.
+                </p>
+
+                <h4 class="section-mini-title">Fonctionnalités</h4>
+                <ul class="features">
+                  <li>Image</li>
+                  <li>Musique</li>
+                  <li>QRCODE</li>
+                  <li>Utilisation de la biblioteque de photo et la camera </li>
+                </ul>
+
+                <div class="links-row">
+                  <a class="btn secondary" href="https://github.com/yanis26x/0SaKi" target="_blank" rel="noreferrer">GitHub</a>
+                  <a class="btn tertiary" href="https://www.youtube.com/watch?v=KJiTlvWPyUg" target="_blank" rel="noreferrer">Vidéo démo</a>
+                </div>
+
+              </div>
+
+              <div class="col right-aside">
+                <img class="qr" src="/../OST_IMG/QrcodeOsaki.png" alt="QR 0SaKi26x">
+                <p class="qr-caption">Scanne pour ouvrir</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: MySalat -->
+        <article class="project card collapsible" data-project="mysalat">
+          <header class="project-head">
+            <img class="app-icon" src="/../nimp/logoV5.png" alt="Icône MySalat">
+            <div class="project-titles">
+              <h3 class="project-title">MySalat</h3>
+              <p class="project-desc">Horaires de prière & Qibla, notifications, thèmes.</p>
+            </div>
+            <div class="project-cta">
+              <a class="btn primary" href="https://expo.dev/preview/update?message=cleanup&updateRuntimeVersion=1.0.0&createdAt=2025-10-15T18%3A49%3A27.552Z&slug=exp&projectId=c0003c16-6c9e-414f-817e-4a7278303424&group=40bc1e19-90aa-4458-a4e6-613c2ca97802" target="_blank" rel="noreferrer">Ouvrir dans Expo</a>
+              <button class="expand-btn" aria-expanded="false" aria-controls="mysalat-content">Voir plus</button>
+            </div>
+          </header>
+
+          <div id="mysalat-content" class="collapsible-content">
+            <div class="banner">
+              <img src="/../nimp/MySalatV2Show.png" alt="Aperçu MySalat" class="banner-img">
+            </div>
+
+            <div class="details two-col">
+              <div class="col">
+                <h4 class="section-mini-title">À propos</h4>
+                <p class="longer">
+                  Heures de prière automatiques selon ta localisation, notifications avant l’appel, boussole Qibla, plusieurs thèmes, 99 noms, guide des ablutions.
+                </p>
+
+                <h4 class="section-mini-title">Fonctionnalités</h4>
+                <ul class="features">
+                  <li>Horaires précis (localisation)</li>
+                  <li>Notifications personnalisables</li>
+                  <li>Direction de la Qibla</li>
+                  <li>Thèmes & 99 noms</li>
+                </ul>
+
+                <div class="links-row">
+                  <a class="btn secondary" href="https://github.com/yanis26x/MySalat" target="_blank" rel="noreferrer">GitHub</a>
+                  <a class="btn tertiary" href="https://youtube.com/shorts/X3Ul-3ZSmvY?feature=share" target="_blank" rel="noreferrer">Vidéo démo</a>
+                </div>
+              </div>
+
+              <div class="col right-aside">
+                <img class="qr" src="/../OST_IMG/QrcodeMySalat.png" alt="QR MySalat">
+                <p class="qr-caption">Scanne pour ouvrir</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Echo26x (Soon) -->
+        <article class="project card collapsible" data-project="echo">
+          <header class="project-head">
+            <img class="app-icon" src="/../OST_IMG/imageCool/parental2.jpg" alt="Icône Echo26x">
+            <div class="project-titles">
+              <h3 class="project-title">
+                Echo26x
+                <span class="pill soon-blink" aria-live="polite">RELEASING SOON</span>
+              </h3>
+              <p class="project-desc">Application de messagerie temps réel.</p>
+            </div>
+            <div class="project-cta">
+              <a class="btn primary disabled" href="javascript:void(0)" aria-disabled="true" tabindex="-1">Lien Expo à venir</a>
+              <button class="expand-btn" aria-expanded="false" aria-controls="echo-content">Voir plus</button>
+            </div>
+          </header>
+
+          <div id="echo-content" class="collapsible-content">
+            <!-- Pas d'image pour l’instant -->
+            <div class="placeholder no-banner">Prévisualisation à venir</div>
+
+            <div class="details one-col">
+              <div class="col">
+                <h4 class="section-mini-title">À propos</h4>
+                <p class="longer">
+                  Messagerie minimaliste et rapide : textes, vocaux, images. UX épurée, fluidité en priorité, compatible iOS/Android via Expo.
+                </p>
+
+                <h4 class="section-mini-title">Fonctionnalités prévues</h4>
+                <ul class="features">
+                  <li>Messages en temps réel</li>
+                  <li>Vocaux et pièces jointes</li>
+                  <li>UI 26x</li>
+                  <li>Rapide d'utilisation</li>
+                </ul>
+
+                <div class="links-row">
+                  <a class="btn secondary" href="https://github.com/yanis26x/Echo26x" target="_blank" rel="noreferrer">GitHub</a>
+                  <a class="btn tertiary" href="https://youtu.be/y2KCOBugjk0?si=GJwhRLXS3UljZePN" target="_blank" rel="noreferrer">Vidéo démo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <p class="footer-text">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="install.js"></script>
+</body>
+</html>
