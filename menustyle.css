@@ -307,3 +307,26 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
   transition: opacity 0.5s ease;
 }
 
+/* ---- Blood opacity panel ---- */
+.blood-controls{
+  display:flex; gap:10px; align-items:center;
+}
+.blood-range{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height:8px; border-radius:999px;
+  background:#151515; outline:none; border:1px solid var(--card-border);
+}
+.blood-range::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--accent); border:1px solid #1a1a1a;
+  box-shadow:0 4px 12px rgba(59,130,246,.35);
+  cursor:pointer;
+}
+.blood-range::-moz-range-thumb{
+  width:18px; height:18px; border:none; border-radius:50%;
+  background:var(--accent); cursor:pointer;
+}
+.blood-value{
+  color:var(--card-sub); font-weight:800; font-size:14px;
+}

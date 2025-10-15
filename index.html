@@ -305,6 +305,31 @@
           </div>
         </section>
 
+        <!-- Contrôle opacité du sang -->
+<section class="card" aria-labelledby="blood-title">
+  <div class="section-head">
+    <div class="section-row">
+      <h2 class="section-title" id="blood-title">Effet sang — opacité</h2>
+      <div class="blood-value"><span id="bloodOpacityValue">30%</span></div>
+    </div>
+    <p class="section-sub">Do U need more blood ?</p>
+  </div>
+
+  <div class="blood-controls">
+    <input
+      id="bloodOpacity"
+      class="blood-range"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value="0.30"
+      aria-label="Opacité du sang"
+    />
+    <button id="resetOpacity" class="btn btn-mini">Reset</button>
+  </div>
+</section>
+
         <!-- Footer -->
         <footer class="footer" role="contentinfo">
           <p class="footer-text">

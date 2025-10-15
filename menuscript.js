@@ -196,3 +196,42 @@ updateDateTime();
     }
   });
 })();
+
+// === Opacité du sang ===
+(function(){
+  const DEFAULT_BLOOD_OPACITY = 0.30;
+  const img = document.querySelector('.bloodOnScreen');
+  const range = document.getElementById('bloodOpacity');
+  const valueEl = document.getElementById('bloodOpacityValue');
+  const resetBtn = document.getElementById('resetOpacity');
+  if(!img || !range || !valueEl) return;
+
+  // charger valeur sauvegardée ou CSS courante
+  const saved = localStorage.getItem('bloodOpacity');
+  const initial = saved !== null
+    ? Math.min(1, Math.max(0, parseFloat(saved)))
+    : (parseFloat(getComputedStyle(img).opacity) || DEFAULT_BLOOD_OPACITY);
+
+  function render(v){
+    img.style.opacity = String(v);
+    range.value = v.toFixed(2);
+    valueEl.textContent = Math.round(v*100) + '%';
+  }
+
+  render(initial);
+
+  range.addEventListener('input', (e)=>{
+    const v = parseFloat(e.target.value);
+    render(v);
+  });
+
+  range.addEventListener('change', (e)=>{
+    const v = parseFloat(e.target.value);
+    localStorage.setItem('bloodOpacity', String(v));
+  });
+
+  resetBtn?.addEventListener('click', ()=>{
+    render(DEFAULT_BLOOD_OPACITY);
+    localStorage.setItem('bloodOpacity', String(DEFAULT_BLOOD_OPACITY));
+  });
+})();
