@@ -120,22 +120,17 @@ updateDateTime();
 
 
   // pour la music du menu 
-  // === Musique en boucle + bouton Play/Pause ===
+// === Musique en boucle + bouton Play/Pause (autoplay béton) ===
 (() => {
   const audio = document.getElementById("son");
   const btn = document.getElementById("audioToggle");
   const label = document.getElementById("audio-label");
-
   if (!audio || !btn || !label) return;
 
-  // Pré-réglages
   audio.loop = true;
-  audio.volume = 0.35; // volume doux
+  audio.volume = 0.35;
 
-  // On mémorise la préférence de l’utilisateur
-  const KEY = "audio:playing"; // "1" = play, "0" = pause
-  const saved = localStorage.getItem(KEY);
-  let wantPlay = saved === "1"; // par défaut: pause
+  const KEY = "audio:playing"; // "1" play, "0" pause
 
   const setUI = (isPlaying) => {
     label.textContent = isPlaying ? "Pause" : "Play";
@@ -147,9 +142,10 @@ updateDateTime();
       await audio.play();
       localStorage.setItem(KEY, "1");
       setUI(true);
-    } catch (e) {
-      // Les navigateurs bloquent parfois l’autoplay : on attend un geste
+      return true;
+    } catch {
       setUI(false);
+      return false;
     }
   };
 
@@ -159,38 +155,44 @@ updateDateTime();
     setUI(false);
   };
 
-  // Clic sur le bouton Play/Pause
+  // Bouton Play/Pause
   btn.addEventListener("click", async () => {
     if (audio.paused) {
-      await tryPlay();
+      const ok = await tryPlay();
+      if (ok && audio.muted) audio.muted = false;
     } else {
       doPause();
     }
   });
 
-  // Démarrage automatique APRÈS la première interaction (politique autoplay)
-  const armAutoplay = () => {
-    const onFirstInteraction = async () => {
-      if (wantPlay) await tryPlay();
-      window.removeEventListener("pointerdown", onFirstInteraction);
-      window.removeEventListener("keydown", onFirstInteraction);
-    };
-    window.addEventListener("pointerdown", onFirstInteraction, { once: true });
-    window.addEventListener("keydown", onFirstInteraction, { once: true });
+  // 🔊 Unmute dès le 1er geste (clic/touche/touch)
+  const unmute = () => {
+    if (!audio.paused) audio.muted = false;
+    window.removeEventListener("pointerdown", unmute);
+    window.removeEventListener("keydown", unmute);
+    window.removeEventListener("touchstart", unmute);
   };
+  window.addEventListener("pointerdown", unmute, { once: true });
+  window.addEventListener("keydown", unmute, { once: true });
+  window.addEventListener("touchstart", unmute, { once: true });
 
-  // Si l’utilisateur voulait “play” la dernière fois, on prépare l’autoplay
-  if (wantPlay) {
-    setUI(false); // en attente d'interaction
-    armAutoplay();
-  } else {
-    setUI(false);
-  }
+  // ---- INIT ----
+  (async () => {
+    // Par défaut → play (sauf si l’utilisateur avait mis pause)
+    const saved = localStorage.getItem(KEY);
+    const wantPlay = saved == null ? true : saved === "1";
+    if (!wantPlay) return setUI(false);
 
-  // Optionnel: si l’onglet redevient actif et qu’on était en “play”, on relance
+    // Autoplay autorisé car muted dans le HTML
+    const ok = await tryPlay();
+    // (si jamais ça échoue, le clic sur Play lancera quand même)
+  })();
+
+  // Si on revient sur l’onglet et qu’on voulait “play”, relance si besoin
   document.addEventListener("visibilitychange", async () => {
     if (!document.hidden && localStorage.getItem(KEY) === "1" && audio.paused) {
-      await tryPlay();
+      const ok = await tryPlay();
+      if (ok && audio.muted) audio.muted = false;
     }
   });
 })();
