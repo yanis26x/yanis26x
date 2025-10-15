@@ -293,3 +293,17 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
 }
 .recruit .announce-title{color:#ff3b3b}
 .recruit .announce-sub{color:#ddd;font-size:15px;line-height:1.5}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#changing-text {
+  display: inline-block;
+  animation: fade 5s infinite;
+  transition: opacity 0.5s ease;
+}
+

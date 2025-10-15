@@ -90,3 +90,28 @@ function updateDateTime() {
 // met à jour chaque seconde
 setInterval(updateDateTime, 1000);
 updateDateTime();
+
+//pour changer le texte Salut ! 
+
+  const texts = [
+    "Salut !",
+    "By333 By333!",
+    "my funds increasing, yours looking chibi",
+    "Do—dope sick, I'm having withdrawals, I feel uneasy",
+    "Skittles got me feeling tranquil, they're so relieving",
+    "Money—money, I gotta have it, its so intriguing",
+    "Guap gives me satisfaction, it just completes me",
+    "Money—money, I keep it 'round me, I'm very clingy",
+    "want sum more ?"
+  ];
+
+    const textElement = document.getElementById("changing-text");
+  let index = 0;
+
+  function changeText() {
+    textElement.textContent = texts[index];
+    index = (index + 1) % texts.length;
+  }
+
+  changeText();
+  setInterval(changeText, 4000); //5000
