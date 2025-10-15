@@ -13,7 +13,8 @@
     <link rel="icon" type="image/x-icon" href="OST_IMG/26xLogo.png" />
   </head>
   <body>
-    <audio id="son" src="../OST_IMG/helloOST.mp3"></audio>
+    <audio id="son" src="kh2.mp3" preload="auto" loop></audio>
+
     <!-- Sang plein écran (au-dessus du fond noir) -->
     <img src="./OST_IMG/Sang2.png" alt="Blood overlay" class="bloodOnScreen" />
 
@@ -50,6 +51,13 @@
                 </svg>
                 <span class="toggle-label">Light</span>
               </button>
+               <button
+    id="audioToggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Lire ou mettre en pause la musique" >
+    <span class="toggle-label" id="audio-label">Play</span>
+  </button>
             </div>
           </div>
         </header>
