@@ -5,12 +5,12 @@ The goal is to create a smooth, modern, and secure communication experience for 
 I plan to release it someday, **stay tuned!**
 
 <p align="center">
-  <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html">
-    <img alt="Portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
+  <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html" target="_blank" rel="noopener noreferrer">
+    <img alt="Aller sur mon portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
   </a>
   &nbsp;
-  <a href="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
-    <img alt="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
+  <a href="https://raw.githubusercontent.com/yanis26x/yanis26x/index/nimp/CV_Stage_Informatique.pdf" target="_blank" rel="noopener noreferrer">
+    <img alt="Télécharger mon CV (PDF)" src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20mon%20CV-0A66C2?style=for-the-badge&logo=adobeacrobatreader&logoColor=white">
   </a>
 </p>
 
