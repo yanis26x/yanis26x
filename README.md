@@ -10,7 +10,7 @@ I plan to release it someday, **stay tuned!**
   </a>
   &nbsp;
   <a href="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
-    <img alt="Télécharger mon CV" src="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
+    <img alt="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
   </a>
 </p>
 
