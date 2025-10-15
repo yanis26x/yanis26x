@@ -9,7 +9,7 @@ I plan to release it someday, **stay tuned!**
     <img alt="Portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
   </a>
   &nbsp;
-  <a href="https://github.com/yanis26x/yanis26x/blob/index/CV_Stage_Informatique.pdf">
+  <a href="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
     <img alt="Télécharger mon CV" src="https://github.com/yanis26x/yanis26x/blob/index/nimp/CV_Stage_Informatique.pdf">
   </a>
 </p>
