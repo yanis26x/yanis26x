@@ -2,90 +2,203 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Politique de Confidentialité — Qibla+</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:0;padding:24px;max-width:900px}
-    h1,h2{line-height:1.25} code,pre{background:#f6f8fa;padding:.2em .4em;border-radius:6px}
-    .lang-switch{margin:12px 0 24px}
-    hr{border:0;border-top:1px solid #e5e7eb;margin:24px 0}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Qibla+</title>
+
+  <meta name="description" content="Qibla+ Privacy Policy. No account, no ads. Location is used only for prayer times and Qibla direction." />
+  <link rel="canonical" href="https://example.com/privacy" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Privacy Policy — Qibla+" />
+  <meta property="og:description" content="No account, no ads, on-device data. Qibla+ respects your privacy." />
+  <meta property="og:type" content="website" />
+  <!-- Optionnel: remplace par l'URL de ton visuel -->
+  <meta property="og:image" content="https://example.com/assets/qibla-plus-og.png" />
+
+  <!-- Favicon / Touch icon (optionnel) -->
+  <link rel="icon" href="../nimp/Qibla_logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../nimp/Qibla_logo.png" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
 </head>
 <body>
-  <h1>Politique de Confidentialité — Qibla+</h1>
-  <div class="lang-switch"><a href="#en">English version below</a></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <!-- Mets le bon chemin vers ton logo (PNG/SVG) -->
+        <img class="logo-img" src="../nimp/Qibla_logo.png" alt="Qibla+ logo" />
+        <div class="titles">
+          <span class="app">Qibla+</span>
+          <span class="page">Confidentialité / Privacy</span>
+        </div>
+      </div>
 
-  <p><strong>Dernière mise à jour :</strong> 01 novembre 2025</p>
+      <nav class="controls" aria-label="Language">
+        <button class="btn ghost" id="btn-fr" aria-pressed="true" data-lang="fr">FR</button>
+        <button class="btn ghost" id="btn-en" aria-pressed="false" data-lang="en">EN</button>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Résumé</h2>
-  <ul>
-    <li>Qibla+ n’exige <strong>aucune création de compte</strong> et n’affiche <strong>aucune publicité</strong>.</li>
-    <li>La <strong>localisation</strong> est utilisée uniquement pour calculer les <strong>horaires de prière</strong> et la <strong>boussole Qibla</strong>.</li>
-    <li>Aucune donnée personnelle n’est vendue ni partagée à des fins de marketing.</li>
-  </ul>
+  <main class="wrap main-content">
+    <!-- HERO FR -->
+    <section class="hero" id="hero-fr">
+      <h1 class="h1">Politique de Confidentialité</h1>
+      <p class="muted">Dernière mise à jour :
+        <time datetime="2025-11-01" id="last-updated-fr">01 novembre 2025</time>
+      </p>
+      <div class="badges">
+        <span class="badge">Pas de compte</span>
+        <span class="badge">Pas de pubs</span>
+        <span class="badge">Données en local</span>
+      </div>
+    </section>
 
-  <h2>Données que nous traitons</h2>
-  <p><strong>Localisation</strong> (iOS Core Location) : utilisée pour déterminer les horaires de prière et la direction de la Qibla. La position n’est ni stockée sur un serveur, ni partagée à des tiers. Vous pouvez retirer l’autorisation dans les Réglages iOS.</p>
-  <p><strong>Données locales</strong> (sur votre appareil) : préférences (thème, langue) et réglages de l’app. Ces données restent en local.</p>
-  <p><strong>Nous n’utilisons pas</strong> de suivi publicitaire, d’analytics tiers, ni de SDK publicitaires.</p>
+    <!-- FR -->
+    <section id="section-fr" data-section="fr" lang="fr">
+      <div class="card aero">
+        <span class="sheen" aria-hidden="true"></span>
+        <h2>Résumé</h2>
+        <ul>
+          <li>Qibla+ n’exige <strong>aucune création de compte</strong> et n’affiche <strong>aucune publicité</strong>.</li>
+          <li>La <strong>localisation</strong> est utilisée uniquement pour calculer les <strong>horaires de prière</strong> et la <strong>boussole Qibla</strong>.</li>
+          <li>Aucune donnée personnelle n’est vendue ni partagée à des fins de marketing.</li>
+        </ul>
+        <div class="callout">
+          <strong>Transparence :</strong> nous ne collectons pas de données d’identification. Vos préférences restent sur votre appareil.
+        </div>
+      </div>
 
-  <h2>Base légale & finalités</h2>
-  <p>Traitement fondé sur votre consentement (autorisation de localisation) pour fournir les fonctionnalités principales de l’app.</p>
+      <div class="grid">
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Données que nous traitons</h2>
+          <p><strong>Localisation</strong> (iOS Core Location) : utilisée pour déterminer les horaires de prière et la direction de la Qibla. La position n’est ni stockée sur un serveur, ni partagée à des tiers. Vous pouvez retirer l’autorisation dans les Réglages iOS.</p>
+          <p><strong>Données locales</strong> (sur votre appareil) : préférences (thème, langue) et réglages de l’app. Ces données restent en local.</p>
+          <p><strong>Nous n’utilisons pas</strong> de suivi publicitaire, d’analytics tiers, ni de SDK publicitaires.</p>
+        </div>
 
-  <h2>Partage</h2>
-  <p>Aucun partage de vos données personnelles avec des tiers à des fins de marketing. Des services systèmes Apple (notifications, permissions) peuvent être utilisés pour le fonctionnement normal de l’app.</p>
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Base légale &amp; finalités</h2>
+          <p>Traitement fondé sur votre <strong>consentement</strong> (autorisation de localisation) pour fournir les fonctionnalités principales de l’app.</p>
 
-  <h2>Conservation</h2>
-  <p>Les préférences sont conservées localement sur votre appareil et supprimées si vous désinstallez l’app. Aucune base de données distante n’est utilisée pour vos données personnelles.</p>
+          <h3>Partage</h3>
+          <p>Aucun partage de vos données personnelles avec des tiers à des fins de marketing. Des services systèmes Apple (notifications, permissions) peuvent être utilisés pour le fonctionnement normal de l’app.</p>
 
-  <h2>Enfants</h2>
-  <p>L’app est destinée à un large public et ne collecte pas sciemment de données sur les enfants.</p>
+          <h3>Conservation</h3>
+          <p>Les préférences sont conservées localement et supprimées si vous désinstallez l’app. Aucune base de données distante n’est utilisée pour vos données personnelles.</p>
+        </div>
+      </div>
 
-  <h2>Vos droits</h2>
-  <p>Vous pouvez à tout moment retirer la permission de localisation dans les Réglages iOS, réinitialiser l’app ou la désinstaller pour supprimer les données locales.</p>
+      <div class="grid">
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Enfants</h2>
+          <p>L’app est destinée à un large public et ne collecte pas sciemment de données sur les enfants.</p>
+        </div>
 
-  <h2>Contact</h2>
-  <p>Pour toute question : <a href="mailto:yanis.djenadi@hotmail.com">yanis.djenadi@hotmail.com</a></p>
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Vos droits</h2>
+          <p>Vous pouvez retirer la permission de localisation dans les Réglages iOS à tout moment, réinitialiser l’app, ou la désinstaller pour supprimer les données locales.</p>
+        </div>
+      </div>
 
-  <h2>Mises à jour</h2>
-  <p>Nous pourrons modifier cette politique en cas d’évolution des fonctionnalités. La date en haut de page indique la dernière mise à jour.</p>
+      <div class="card aero">
+        <span class="sheen" aria-hidden="true"></span>
+        <h2>Contact</h2>
+        <p>Pour toute question : <a href="mailto:yanis26x@gmail.com">yanis26x@gmail.com</a></p>
 
-  <hr id="en" />
+        <h2>Mises à jour</h2>
+        <p>Nous pourrons modifier cette politique en cas d’évolution des fonctionnalités. La date en haut de page indique la dernière mise à jour.</p>
+      </div>
+    </section>
 
-  <h1>Privacy Policy — Qibla+</h1>
-  <p><strong>Last updated:</strong> November 1, 2025</p>
+    <!-- HERO EN -->
+    <section class="hero" id="hero-en" hidden>
+      <h1 class="h1">Privacy Policy</h1>
+      <p class="muted">Last updated:
+        <time datetime="2025-11-01" id="last-updated-en">November 1, 2025</time>
+      </p>
+      <div class="badges">
+        <span class="badge">No account</span>
+        <span class="badge">No ads</span>
+        <span class="badge">On-device only</span>
+      </div>
+    </section>
 
-  <h2>Summary</h2>
-  <ul>
-    <li>No account is required and the app contains no ads.</li>
-    <li><strong>Location</strong> is used only to compute <strong>prayer times</strong> and the <strong>Qibla compass</strong>.</li>
-    <li>No personal data is sold or shared for marketing purposes.</li>
-  </ul>
+    <!-- EN -->
+    <section id="section-en" data-section="en" lang="en" hidden>
+      <div class="card aero">
+        <span class="sheen" aria-hidden="true"></span>
+        <h2>Summary</h2>
+        <ul>
+          <li>No account is required and the app contains no ads.</li>
+          <li><strong>Location</strong> is used only to compute <strong>prayer times</strong> and the <strong>Qibla compass</strong>.</li>
+          <li>No personal data is sold or shared for marketing purposes.</li>
+        </ul>
+        <div class="callout">
+          <strong>Transparency:</strong> we do not collect identifying data. Your preferences stay on your device.
+        </div>
+      </div>
 
-  <h2>Data We Process</h2>
-  <p><strong>Location</strong> (iOS Core Location): used to determine prayer times and Qibla direction. Your position is not stored on a server and not shared with third parties. You can revoke access in iOS Settings.</p>
-  <p><strong>Local data</strong> (on-device): preferences (theme, language) and app settings. This data stays on your device.</p>
-  <p><strong>We do not use</strong> ad tracking, third-party analytics, or ad SDKs.</p>
+      <div class="grid">
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Data We Process</h2>
+          <p><strong>Location</strong> (iOS Core Location): used to determine prayer times and Qibla direction. Your position is not stored on a server and not shared with third parties. You can revoke access in iOS Settings.</p>
+          <p><strong>Local data</strong> (on-device): preferences (theme, language) and app settings. This data stays on your device.</p>
+          <p><strong>We do not use</strong> ad tracking, third-party analytics, or ad SDKs.</p>
+        </div>
 
-  <h2>Legal Basis & Purpose</h2>
-  <p>Processing is based on your consent (location permission) to provide the app’s core functionality.</p>
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Legal Basis &amp; Purpose</h2>
+          <p>Processing is based on your <strong>consent</strong> (location permission) to provide the app’s core functionality.</p>
 
-  <h2>Sharing</h2>
-  <p>No sharing of your personal data with third parties for marketing. Apple system services (notifications, permissions) may be used for normal app operation.</p>
+          <h3>Sharing</h3>
+          <p>No sharing of your personal data with third parties for marketing. Apple system services (notifications, permissions) may be used for normal app operation.</p>
 
-  <h2>Retention</h2>
-  <p>Preferences are stored locally and removed when you uninstall the app. No remote database is used for your personal data.</p>
+          <h3>Retention</h3>
+          <p>Preferences are stored locally and removed when you uninstall the app. No remote database is used for your personal data.</p>
+        </div>
+      </div>
 
-  <h2>Children</h2>
-  <p>The app targets a general audience and does not knowingly collect data from children.</p>
+      <div class="grid">
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Children</h2>
+          <p>The app targets a general audience and does not knowingly collect data from children.</p>
+        </div>
 
-  <h2>Your Choices</h2>
-  <p>You may revoke location access in iOS Settings at any time and remove local data by deleting the app.</p>
+        <div class="card aero">
+          <span class="sheen" aria-hidden="true"></span>
+          <h2>Your Choices</h2>
+          <p>You may revoke location access in iOS Settings at any time and remove local data by deleting the app.</p>
+        </div>
+      </div>
 
-  <h2>Contact</h2>
-  <p>Questions: <a href="mailto:yanis.djenadi@hotmail.com">yanis.djenadi@hotmail.com</a></p>
+      <div class="card aero">
+        <span class="sheen" aria-hidden="true"></span>
+        <h2>Contact</h2>
+        <p>Questions: <a href="mailto:yanis26x@gmail.com">yanis26x@gmail.com</a></p>
 
-  <h2>Changes</h2>
-  <p>We may update this policy as features evolve. The date at the top reflects the latest change.</p>
+        <h2>Changes</h2>
+        <p>We may update this policy as features evolve. The date at the top reflects the latest change.</p>
+      </div>
+    </section>
+
+    <div class="top-link">
+      <a href="#" id="back-to-top" class="btn link">↑ Back to top</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <small>© <span id="year"></span> yanis26x. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
 </html>
