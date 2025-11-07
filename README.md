@@ -1,6 +1,19 @@
 # Salut ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 
+<p align="center">
+  <table>
+    <tr>
+      <td align="left" valign="middle">
+        <h1>INSTALL QIBLA++ ON APPSTORE!!!</h1>
+      </td>
+      <td align="right" valign="middle">
+        <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/appstore_Qibla.JPG" alt="Qibla++" width="320">
+      </td>
+    </tr>
+  </table>
+</p>
+
 Currently working on **Echo26x**, a messaging app that I'm developing myself.
 The goal is to create a smooth, modern, and secure communication experience for users.
 I plan to release it someday, **stay tuned!**
