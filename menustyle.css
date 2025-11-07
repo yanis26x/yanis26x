@@ -330,3 +330,54 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
 .blood-value{
   color:var(--card-sub); font-weight:800; font-size:14px;
 }
+
+/* ===== Marquee compact (1 seul texte) ===== */
+.marquee-shell{
+  position: fixed;
+  top: 50%; left: 0; width: 100vw; height: 0;
+  transform: translateY(-50%);           /* centré verticalement */
+  z-index: 10050;                        /* au-dessus du sang (9999) */
+  pointer-events: none;                  /* n'intercepte pas les clics */
+}
+
+.marquee-chip{
+  position: relative;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,.7);
+  border-radius: 12px;
+  color: #fff; text-decoration: none; font-weight: 900; letter-spacing: .6px;
+  white-space: nowrap;
+  pointer-events: auto;                  /* lien cliquable */
+  border: 2px solid rgba(255,60,60,.9);
+  box-shadow: 0 0 16px rgba(255,60,60,.35);
+  animation: marquee-move 12s linear infinite, marquee-blink .9s ease-in-out infinite;
+  will-change: transform, box-shadow, filter;
+}
+
+/* logo */
+.marquee-logo{
+  width: 34px; height: 34px; border-radius: 9px; object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+/* texte */
+.marquee-text{ font-size: 15px; text-shadow: 0 1px 0 #000; }
+
+/* déplacement: de +100vw (hors écran droite) à -100% (hors écran gauche) */
+@keyframes marquee-move{
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* clignote rouge sur le chip uniquement */
+@keyframes marquee-blink{
+  0%,100% { box-shadow: 0 0 12px rgba(255,60,60,.25); filter: drop-shadow(0 0 6px rgba(255,0,0,.2)); }
+  50%     { box-shadow: 0 0 26px rgba(255,60,60,.6);  filter: drop-shadow(0 0 16px rgba(255,0,0,.55)); }
+}
+
+/* moins d'animations si préférence system */
+@media (prefers-reduced-motion: reduce){
+  .marquee-chip{ animation: marquee-blink .9s ease-in-out infinite; }
+}
