@@ -14,6 +14,7 @@ I plan to release it someday, **stay tuned!**
     <img alt="Télécharger mon CV (PDF)" src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20mon%20CV-0A66C2?style=for-the-badge&logo=adobeacrobatreader&logoColor=white">
   </a>
 </p>
+
 ![alt text](https://github.com/yanis26x/yanis26x/blob/index/nimp/OsakiScreen2.jpg)
 
 
