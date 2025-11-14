@@ -33,7 +33,7 @@ html[data-theme="light"]{
 /* ---------- BASE ---------- */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{
+body{ 
   min-height:100vh;
   font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   color:var(--card-text);

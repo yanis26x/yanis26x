@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Silly stuff — @yanis26x</title>
+    <meta name="theme-color" content="#000000" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style principal spécifique à cette page -->
+    <link rel="stylesheet" href="sillyStuff.css" />
+    <link rel="icon" type="image/x-icon" href="../../OST_IMG/26xLogo.png" />
+  </head>
+  <body>
+    <!-- ▶︎ Marquee Qibla++ compact -->
+    <div class="marquee-shell" aria-live="polite">
+      <a
+        class="marquee-chip"
+        href="https://apps.apple.com/app/id6754793667"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          class="marquee-logo"
+          src="../../nimp/Qibla_logo.png"
+          alt="Qibla+ logo"
+        />
+        <span class="marquee-text">
+          INSTALL QIBLA++ NOW ON THE APPSTORE !!!!!</span
+        >
+      </a>
+    </div>
+
+    <!-- Musique KH2 -->
+    <audio
+      id="son"
+      src="../../kh2.mp3"
+      preload="auto"
+      loop
+      autoplay
+      playsinline
+    ></audio>
+
+    <!-- Sang plein écran (au-dessus du fond noir) -->
+    <img
+      src="../../OST_IMG/Sang2.png"
+      alt="Blood overlay"
+      class="bloodOnScreen"
+    />
+
+    <main class="safe" role="main">
+      <div class="wrap" id="root">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-row">
+            <div class="identity">
+              <div class="avatar-wrap">
+                <img
+                  src="../../OST_IMG/imageCool/CestTriste.jpg"
+                  alt="Avatar de Yanis"
+                  class="avatar"
+                />
+                <span
+                  class="presence presence--online"
+                  title="En ligne"
+                ></span>
+              </div>
+              <div>
+                <h1 class="title">Silly stuff</h1>
+                <div class="handle">@yanis26x</div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+              <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Basculer le thème"
+              >
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="5" fill="currentColor"></circle>
+                </svg>
+                <span class="toggle-label">Light</span>
+              </button>
+              <button
+                id="audioToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Lire ou mettre en pause la musique"
+              >
+                <span class="toggle-label" id="audio-label">Pause</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Navigation secondaire : Silly stuff -->
+        <section class="card" aria-labelledby="nav-title">
+          <div class="section-head">
+            <div class="section-row">
+              <div class="left-head">
+                <h2 class="section-title" id="nav-title">
+                  <span id="changing-text"></span>
+                </h2>
+              </div>
+
+              <!-- 🕒 Heure et date -->
+              <div class="datetime">
+                <span id="time"></span>
+                <span id="date"></span>
+              </div>
+            </div>
+            <p class="section-sub">petites expériences vite fait…</p>
+          </div>
+
+          <div class="list" role="list">
+            <!-- Play -->
+            <a
+              style="background-color: rgba(0, 101, 233, 0.11)"
+              class="item"
+              role="listitem"
+              href="../../play/play.html"
+            >
+              <svg class="icon-lg" viewBox="0 0 24 24">
+                <path fill="currentColor" d="m8 5 11 7-11 7z" />
+              </svg>
+              <div class="grow">
+                <div class="item-title">Play</div>
+                <div class="item-sub">Mini jeux</div>
+              </div>
+              <span class="emoji-right">🎮</span>
+            </a>
+
+            <!-- Calcule Notes -->
+            <a
+              style="background-color: rgba(0, 101, 233, 0.11)"
+              class="item"
+              role="listitem"
+              href="../../CalculeNote/CalculeDeNotes.html"
+            >
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 4h10V4H7v2Zm2 4h2v2H9v-2Zm0 4h2v2H9v-2Zm4-4h2v2h-2v-2Zm0 4h2v2h-2v-2Zm-4 4h6v2H9v-2Z"
+                />
+              </svg>
+              <div class="grow">
+                <div class="item-title">Calcule ta note</div>
+                <div class="item-sub">Calcule ce qu’il te faut à l’exam</div>
+              </div>
+              <span class="emoji-right">📊</span>
+            </a>
+
+            <!-- Generateur Texte -->
+            <a
+              style="background-color: rgba(0, 101, 233, 0.11)"
+              class="item"
+              role="listitem"
+              href="../../cool/coolTEXT.html"
+            >
+              <svg class="icon-lg" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M4 4h16v2H4zM4 9h10v2H4zM4 14h16v2H4zM4 19h10v2H4z"
+                />
+              </svg>
+              <div class="grow">
+                <div class="item-title">Leet Speak Generator</div>
+                <div class="item-sub">Tr4NSF0rM T0N T3xT3</div>
+              </div>
+              <span class="emoji-right">⌨️</span>
+            </a>
+
+            <!-- A2ple -->
+            <a
+              style="background-color: rgba(0, 101, 233, 0.11)"
+              class="item"
+              role="listitem"
+              href="https://yanis26x.github.io/a2ple/"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg class="icon-lg" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M19 3H5a2 2 0 0 0-2 2v10h2V5h14v14H9v2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"
+                />
+              </svg>
+              <div class="grow">
+                <div class="item-title">a2ple</div>
+                <div class="item-sub">Projet hébergé</div>
+              </div>
+              <span class="emoji-right">🍏</span>
+            </a>
+          </div>
+
+          <!-- Lien retour -->
+          <div class="back-wrap">
+            <a class="back-link" href="../../index.html">
+              ← Retour au menu principal
+            </a>
+          </div>
+        </section>
+
+        <!-- Contrôle opacité du sang -->
+        <section class="card" aria-labelledby="blood-title">
+          <div class="section-head">
+            <div class="section-row">
+              <h2 class="section-title" id="blood-title">Effet sang — opacité</h2>
+              <div class="blood-value">
+                <span id="bloodOpacityValue">30%</span>
+              </div>
+            </div>
+            <p class="section-sub">Do U need more blood ?</p>
+          </div>
+
+          <div class="blood-controls">
+            <input
+              id="bloodOpacity"
+              class="blood-range"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.30"
+              aria-label="Opacité du sang"
+            />
+            <button id="resetOpacity" class="btn btn-mini">Reset</button>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+          <p class="footer-text">
+            Hey Hachi, no matter how much or how often people hurt each other, loving someone is never a waste.
+          </p>
+          <div class="footer-line" aria-hidden="true"></div>
+          <p class="copyright">
+            © 2025 <b>yanis26x</b> · Tous droits réservés
+          </p>
+        </footer>
+      </div>
+    </main>
+
+    <script src="sillyStuff.js"></script>
+  </body>
+</html>
