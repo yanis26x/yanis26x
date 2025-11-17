@@ -34,4 +34,3 @@ I plan to release it someday, **stay tuned!**
 <p align="center">© 2025 <b>yanis26x</b> · Tous droits réservé </p>
 
 
-
