@@ -234,4 +234,45 @@ updateDateTime();
     render(DEFAULT_BLOOD_OPACITY);
     localStorage.setItem('bloodOpacity', String(DEFAULT_BLOOD_OPACITY));
   });
+
+    const textEl = document.getElementById("dynamic-text");
+
+  const messages = [
+    "Need friends ?",
+    "Feeling alone ?",
+    "Want me 2 help u ?",
+    "need someone to talk 2 ?",
+    "im here 4 u, Come talk 2 me",
+    "Click me !",
+    "Need friends ?",
+    "Feeling alone ?",
+    "Want me 2 help u ?",
+    "need someone to talk 2 ?",
+    "Ok i guess u dont need friends",
+    "......",
+    "me 2 then!",
+    "Got more swag than u",
+    "run me yo blood",
+    "@#!$%&*",
+    ".....",
+    "When them vamps outside, lil' bitch, you better be ready",
+    "When the stars align, lil' bitch, you better be ready",
+    "I won't take my time, lil' bitch, you know I'm ready",
+    "I want it right now, lil' bitch, you know I'm ready"
+
+  ];
+
+  let index = 0;
+
+  function updateText() {
+    textEl.classList.add("fade-out");
+
+    setTimeout(() => {
+      index = (index + 1) % messages.length;
+      textEl.textContent = messages[index];
+      textEl.classList.remove("fade-out");
+    }, 400); // temps du fade-out / fade-in
+  }
+
+  setInterval(updateText, 1500);
 })();

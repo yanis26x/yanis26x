@@ -381,3 +381,15 @@ a:focus-visible, button:focus-visible{ outline:2px solid #fff; outline-offset:2p
 @media (prefers-reduced-motion: reduce){
   .marquee-chip{ animation: marquee-blink .9s ease-in-out infinite; }
 }
+#dynamic-btn {
+  position: relative;
+}
+
+#dynamic-text {
+  display: inline-block;
+  transition: opacity 0.4s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
