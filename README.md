@@ -16,7 +16,6 @@
 Currently working on **Echo26x**, a messaging app that I'm developing myself.
 The goal is to create a smooth, modern, and secure communication experience for users.
 I plan to release it someday, **stay tuned!**
-
 <p align="center">
   <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html" target="_blank" rel="noopener noreferrer">
     <img alt="Aller sur mon portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
