@@ -29,4 +29,5 @@ I plan to release it someday, **stay tuned!**
 
 ![alt text](https://github.com/yanis26x/yanis26x/blob/index/nimp/OsakiScreen2.jpg)
 
+
 <p align="center">© 2025 <b>yanis26x</b> · Tous droits réservé </p>
