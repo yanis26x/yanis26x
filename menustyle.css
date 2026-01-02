@@ -405,3 +405,126 @@ html[data-theme="dark"] .blood-range{
   transform: translateY(-2px);
   filter: brightness(1.1);
 }
+
+/* --- Recruit + Comments row --- */
+.recruit-row{
+  display:flex;
+  gap:12px;
+  align-items: stretch;
+}
+
+.recruit-row .recruit{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* --- Comment rotator box (right) --- */
+.comment-rotator{
+  flex: 0 0 320px;
+  max-width: 360px;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  padding: 12px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+
+.cr-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 8px;
+}
+
+.cr-badge{
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(255,255,255,.03);
+}
+
+.cr-time{
+  font-size: 12px;
+  color: var(--card-sub);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cr-user{
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.cr-text{
+  color: var(--card-sub);
+  font-weight: 600;
+  line-height: 1.35;
+  font-size: 13px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive: en dessous sur mobile */
+@media (max-width: 720px){
+  .recruit-row{
+    flex-direction: column;
+  }
+  .comment-rotator{
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+}
+
+/* --- Comment rotator with avatar --- */
+.cr-body{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+}
+
+.cr-avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  flex: 0 0 auto;
+  object-fit:cover;
+  border:1px solid var(--card-border);
+  box-shadow: 0 4px 10px rgba(0,0,0,.35);
+}
+
+.cr-content{
+  flex:1;
+  min-width:0;
+}
+
+.cr-user{
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* texte commentaire */
+.cr-text{
+  color: var(--card-sub);
+  font-weight: 600;
+  line-height: 1.35;
+  font-size: 13px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* mentions @user en bleu */
+.cr-text .mention{
+  color: #3B82F6; /* bleu */
+  font-weight: 700;
+}

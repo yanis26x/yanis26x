@@ -297,3 +297,157 @@ setInterval(changeText, 4000);
 
   setInterval(updateText, 1500);
 })();
+
+
+
+
+
+//     {
+//     user: "nassim25x",
+//     text: " @ines.dz jsuis daccord avec toi !! c'esst une merde ce type"
+//   },
+//     {
+//     user: "ines.dz",
+//     text: "@ferme ta gueule toi personne ta demander ton avis, imbecile"
+//   },
+//   {
+//     user: "aLaRechercheDuBonheur",
+//     text: "Ce site est aussi utile que toi dans la vie"
+//   },
+//   {
+//     user: "SATAN",
+//     text: "@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici"
+//   },
+//   {
+//     user: "sarah.privv",
+//     text: "jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les chien sal comme toi!"
+//   },
+//   {
+//     user: "1kramm",
+//     text: "maintenant jcomprend pk personne veut etre son ami mdrrr, quesquil est moche en plus, il a pas compris haloween c 1 jour dans lannée mdrrrr"
+//   },
+//     {
+//     user: "Xxx_manassé_xxX",
+//     text: "HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥"
+//   }
+// ];
+
+
+// --- Rotating comments (one at a time) ---
+// Avatars locaux: ./OST_IMG/pfp/
+
+(function commentRotator(){
+  const crUserEl = document.getElementById("crUser");
+  const crTextEl = document.getElementById("crText");
+  const crTimeEl = document.getElementById("crTime");
+  const crAvatarEl = document.getElementById("crAvatar");
+
+  if (!crUserEl || !crTextEl || !crTimeEl || !crAvatarEl) return;
+
+  // Commentaires toxiques / négatifs (sans menaces)
+  const comments = [
+    {
+      user: "karim_92",
+      avatar: "https://i.pravatar.cc/150?img=14",
+      text: "T’as voulu faire le mec original mais t juste gênant fdp"
+    },
+    {
+      user: "TuCritiqueMaisTuClique44",
+      avatar: "https://i.pravatar.cc/150?img=4",
+      text: "ta dla chance tes pas devant moi sinnon jtaurais deja cracher a la geule toccard!"
+    },
+    {
+      user: "nadinee__",
+      avatar: "./OST_IMG/pfp/user3.png",
+      text: "jespere que ce mec meurt bientot tellement son site est degueulasse"
+    },
+    {
+      user: "00aya",
+      avatar: "./OST_IMG/pfp/aya.jpg",
+      text: "y croit il a dead ca en + mdrrrr, jcomprend pk il a pas damis loll"
+    },
+    {
+      user: "ines.dz",
+      avatar: "./OST_IMG/pfp/ines.jpg",
+      text: "tes pas le couteaux le plus tranchant du tiroir toi! mdr tyra pas loin dans la vie avec ton site de connard"
+    },
+    {
+      user: "nassim25x",
+      avatar: "./OST_IMG/pfp/user6.png",
+      text: " @ines.dz jsuis daccord avec toi !! c'esst une merde ce type"
+    },
+         {
+     user: "ines.dz",
+     avatar: "./OST_IMG/pfp/ines.jpg",
+     text: "@nassim25x ferme ta gueule toi personne ta demander ton avis, imbecile"
+   },
+    {
+      user: "aLaRechercheDuBonheur",
+      avatar: "./OST_IMG/pfp/drogues.jpg",
+      text: "Ce site est aussi utile que toi dans la vie"
+    },
+    {
+      user: "SATAN",
+      avatar: "./OST_IMG/pfp/satan.png",
+      text: "@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici"
+    },
+    {
+      user: "sarah.privv",
+      avatar: "./OST_IMG/pfp/helloKitty.jpg",
+      text: "jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les chien sal comme toi!"
+    },
+    {
+      user: "1kramm",
+      avatar: "https://i.pravatar.cc/150?img=19",
+      text: "maintenant jcomprend pk personne veut etre son ami mdrrr, quesquil est moche en plus, il a pas compris haloween c 1 jour dans lannée mdrrrr"
+    },
+    {
+      user: "Xxx_manasse_xxX",
+      avatar: "https://i.pravatar.cc/150?img=65",
+      text: "HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥"
+    }
+  ];
+
+  let index = 0;
+  let start = Date.now();
+
+  function formatAgo(ms){
+    const totalSec = Math.max(0, Math.floor(ms / 1000));
+    const min = Math.floor(totalSec / 60);
+    const sec = totalSec % 60;
+
+    if (min <= 0) return `il y a ${sec} seconde${sec > 1 ? "s" : ""}`;
+    return `il y a ${min} minute${min > 1 ? "s" : ""} et ${sec} seconde${sec > 1 ? "s" : ""}`;
+  }
+
+  // Transforme @username en mention bleue
+  function parseMentions(text){
+    return text.replace(/@([a-zA-Z0-9_.]+)/g, '<span class="mention">@$1</span>');
+  }
+
+  function render(){
+    const c = comments[index];
+
+    crUserEl.textContent = c.user;
+    crTextEl.innerHTML = parseMentions(c.text);
+    crAvatarEl.src = c.avatar;
+
+    start = Date.now();
+    crTimeEl.textContent = "il y a 0 seconde";
+  }
+
+  function next(){
+    index = (index + 1) % comments.length;
+    render();
+  }
+
+  render();
+
+  // timer
+  setInterval(() => {
+    crTimeEl.textContent = formatAgo(Date.now() - start);
+  }, 1000);
+
+  // rotation
+  setInterval(next, 8000);
+})();

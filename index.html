@@ -15,13 +15,7 @@
   </head>
 
   <body>
-    <!-- ▶︎ Marquee Qibla++ compact -->
-    <!-- <div class="marquee-shell" aria-live="polite">
-      <a class="marquee-chip" href="https://apps.apple.com/app/id6754793667" target="_blank" rel="noopener">
-        <img class="marquee-logo" src="./nimp/Qibla_logo.png" alt="Qibla+ logo">
-        <span class="marquee-text">INSTALL QIBLA++ NOW ON THE APPSTORE !!!!!</span>
-      </a>
-    </div> -->
+
 
     <audio id="son" src="kh2.mp3" preload="auto" loop autoplay playsinline></audio>
 
@@ -165,37 +159,58 @@
               <span class="emoji-right">🔗</span>
             </a>
 
-            <!-- Recrutement / aide -->
-            <div class="announce recruit" data-animate="fade-up">
-              <div class="announce-head">
-                <div class="ah-left">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
-                    />
-                  </svg>
-                  <h3 class="announce-title">ughh...</h3>
-                </div>
-              </div>
+            <!-- Recrutement / aide + Commentaires (à droite) -->
+<div class="recruit-row" data-animate="fade-up">
+  <!-- Recrutement / aide -->
+  <div class="announce recruit">
+    <div class="announce-head">
+      <div class="ah-left">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
+          />
+        </svg>
+        <h3 class="announce-title">ughh...</h3>
+      </div>
+    </div>
 
-              <p class="announce-sub">
-                Website will be deleted soon. Thank you 4 visiting <br />
-                Need something? <b>Come talk to me</b>
-              </p>
+    <p class="announce-sub">
+      Website will be deleted soon. Thank you 4 visiting <br />
+      Need something? <b>Come talk to me</b>
+    </p>
 
-              <div class="announce-actions">
-                <a
-                  id="dynamic-btn"
-                  class="btn btn-mini btn-primary"
-                  href="./contact/contact.html"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <span id="dynamic-text">Need friends ?</span>
-                </a>
-              </div>
-            </div>
+    <div class="announce-actions">
+      <a
+        id="dynamic-btn"
+        class="btn btn-mini btn-primary"
+        href="./contact/contact.html"
+        target="_blank"
+        rel="noopener"
+      >
+        <span id="dynamic-text">Need friends ?</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Comment rotator (à droite) -->
+  <aside class="comment-rotator" aria-live="polite">
+    <div class="cr-head">
+      <span class="cr-badge">Comments</span>
+      <span class="cr-time" id="crTime">il y a 0 seconde</span>
+    </div>
+
+    <div class="cr-body">
+  <img id="crAvatar" class="cr-avatar" src="" alt="avatar" />
+  <div class="cr-content">
+    <div class="cr-user" id="crUser">—</div>
+    <div class="cr-text" id="crText">—</div>
+  </div>
+</div>
+
+  </aside>
+</div>
+
 
             <!-- 🔥 SECTION QIBLA++ CLIGNOTANTE -->
             <section class="qibla-promo">
