@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yanis26x</title>
     <meta name="theme-color" content="#000000" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -12,26 +13,19 @@
     <link rel="stylesheet" href="menustyle.css" />
     <link rel="icon" type="image/x-icon" href="OST_IMG/26xLogo.png" />
   </head>
+
   <body>
+    <!-- ▶︎ Marquee Qibla++ compact -->
+    <!-- <div class="marquee-shell" aria-live="polite">
+      <a class="marquee-chip" href="https://apps.apple.com/app/id6754793667" target="_blank" rel="noopener">
+        <img class="marquee-logo" src="./nimp/Qibla_logo.png" alt="Qibla+ logo">
+        <span class="marquee-text">INSTALL QIBLA++ NOW ON THE APPSTORE !!!!!</span>
+      </a>
+    </div> -->
 
-<!-- ▶︎ Marquee Qibla++ compact -->
-<!-- <div class="marquee-shell" aria-live="polite">
-  <a class="marquee-chip" href="https://apps.apple.com/app/id6754793667" target="_blank" rel="noopener">
-    <img class="marquee-logo" src="./nimp/Qibla_logo.png" alt="Qibla+ logo">
-    <span class="marquee-text">INSTALL QIBLA++ NOW ON THE APPSTORE !!!!!</span>
-  </a>
-</div> -->
+    <audio id="son" src="kh2.mp3" preload="auto" loop autoplay playsinline></audio>
 
-
-<audio id="son"
-       src="kh2.mp3"
-       preload="auto"
-       loop
-       autoplay
-       playsinline>
-</audio>
-
-    <!-- Sang plein écran (au-dessus du fond noir) -->
+    <!-- Sang plein écran (au-dessus du fond) -->
     <img src="./OST_IMG/Sang2.png" alt="Blood overlay" class="bloodOnScreen" />
 
     <main class="safe" role="main">
@@ -61,19 +55,22 @@
                 class="theme-toggle"
                 type="button"
                 aria-label="Basculer le thème"
+                aria-pressed="false"
               >
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="5" fill="currentColor"></circle>
-                </svg>
-                <span class="toggle-label">Light</span>
+                <span class="toggle-emoji" id="themeEmoji" aria-hidden="true">🌙</span>
+                <span class="toggle-label" id="themeLabel">Light</span>
               </button>
-               <button
-    id="audioToggle"
-    class="theme-toggle"
-    type="button"
-    aria-label="Lire ou mettre en pause la musique" >
-    <span class="toggle-label" id="audio-label">Play</span>
-  </button>
+
+              <button
+                id="audioToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Lire ou mettre en pause la musique"
+                aria-pressed="false"
+              >
+                <span class="toggle-emoji" aria-hidden="true">🎧</span>
+                <span class="toggle-label" id="audio-label">Play</span>
+              </button>
             </div>
           </div>
         </header>
@@ -84,10 +81,9 @@
             <div class="section-row">
               <div class="left-head">
                 <h2 class="section-title" id="nav-title">
-  <span id="changing-text"></span>
-</h2>
+                  <span id="changing-text"></span>
+                </h2>
               </div>
-              
 
               <!-- 🕒 Heure et date -->
               <div class="datetime">
@@ -97,6 +93,7 @@
             </div>
             <p class="section-sub">what do u want from me ?!</p>
           </div>
+
           <div class="list" role="list">
             <!-- Portfolio -->
             <a
@@ -105,20 +102,13 @@
               role="listitem"
               href="./PORTFOLIO/Portfolio.html"
             >
-              <!-- <svg class="icon-lg" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M20 6h-4.18C15.4 4.84 14.3 4 13 4h-2c-1.3 0-2.4.84-2.82 2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM9 8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V8z"
-                />
-              </svg> -->
-
               <div class="grow">
                 <div class="item-title">Portfolio</div>
                 <div class="item-sub">Mes projets</div>
               </div>
-
               <span class="emoji-right">🔗</span>
             </a>
+
             <!-- Contact -->
             <a
               style="background-color: rgba(0, 101, 233, 0.11)"
@@ -126,13 +116,13 @@
               role="listitem"
               href="./contact/contact.html"
             >
-
               <div class="grow">
                 <div class="item-title">Contact</div>
                 <div class="item-sub">@yanis26x</div>
               </div>
               <span class="emoji-right">🔗</span>
             </a>
+
             <!-- Application -->
             <a
               style="background-color: rgba(0, 101, 233, 0.11)"
@@ -140,13 +130,13 @@
               role="listitem"
               href="./application/install.html"
             >
-
               <div class="grow">
                 <div class="item-title">Application mobile</div>
                 <div class="item-sub">applications mobile à télécharger</div>
               </div>
               <span class="emoji-right">🔗</span>
             </a>
+
             <!-- Gallery -->
             <a
               style="background-color: rgba(0, 101, 233, 0.11)"
@@ -154,14 +144,12 @@
               role="listitem"
               href="./gallery/gallery.html"
             >
-
               <div class="grow">
                 <div class="item-title">Gallery</div>
                 <div class="item-sub">Zoom + descriptions</div>
               </div>
               <span class="emoji-right">🔗</span>
             </a>
-            
 
             <!-- Silly stuff -->
             <a
@@ -170,7 +158,6 @@
               role="listitem"
               href="./nimp/sillyStuff/SillyStuff.html"
             >
-
               <div class="grow">
                 <div class="item-title">Silly stuff</div>
                 <div class="item-sub">vite fait..</div>
@@ -178,100 +165,105 @@
               <span class="emoji-right">🔗</span>
             </a>
 
-          <!-- Recrutement / aide -->
-          <div class="announce recruit" data-animate="fade-up">
-            <div class="announce-head">
-              <div class="ah-left">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill="currentColor"
-                    d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
-                  />
-                </svg>
-                <h3 class="announce-title">ughh...</h3>
+            <!-- Recrutement / aide -->
+            <div class="announce recruit" data-animate="fade-up">
+              <div class="announce-head">
+                <div class="ah-left">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
+                    />
+                  </svg>
+                  <h3 class="announce-title">ughh...</h3>
+                </div>
+              </div>
+
+              <p class="announce-sub">
+                Website will be deleted soon. Thank you 4 visiting <br />
+                Need something? <b>Come talk to me</b>
+              </p>
+
+              <div class="announce-actions">
+                <a
+                  id="dynamic-btn"
+                  class="btn btn-mini btn-primary"
+                  href="./contact/contact.html"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span id="dynamic-text">Need friends ?</span>
+                </a>
               </div>
             </div>
 
-            <p class="announce-sub">
-              Website will be deleted soon. Thank you 4 visiting <br/>
-              Need something? <b>Come talk to me</b> 
-              
-            </p>
+            <!-- 🔥 SECTION QIBLA++ CLIGNOTANTE -->
+            <section class="qibla-promo">
+              <div class="qibla-inner">
+                <img
+                  src="./nimp/Qibla_logo.png"
+                  class="qibla-logo"
+                  alt="Qibla++ logo"
+                />
 
-            <div class="announce-actions">
-<a
-  id="dynamic-btn"
-  class="btn btn-mini btn-primary"
-  href="./contact/contact.html"
-  target="_blank"
-  rel="noopener"
->
-  <span id="dynamic-text">Need friends ?</span>
-</a>
-            </div>
+                <h2 class="qibla-title">Qibla++</h2>
+
+                <div class="qibla-buttons">
+                  <a
+                    class="btn qibla-download"
+                    href="https://apps.apple.com/app/id6754793667"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Download
+                  </a>
+
+                  <a class="btn qibla-more" href="./qibla/qibla.html">
+                    En savoir plus
+                  </a>
+                </div>
+              </div>
+            </section>
           </div>
-
-<!-- 🔥 SECTION QIBLA++ CLIGNOTANTE -->
-<section class="qibla-promo">
-  <div class="qibla-inner">
-    <img src="./nimp/Qibla_logo.png" class="qibla-logo" alt="Qibla++ logo">
-
-    <h2 class="qibla-title">Qibla++</h2>
-
-    <div class="qibla-buttons">
-      <a 
-        class="btn qibla-download" 
-        href="https://apps.apple.com/app/id6754793667"
-        target="_blank"
-        rel="noopener">
-        Download
-      </a>
-
-      <a 
-        class="btn qibla-more" 
-        href="./qibla/qibla.html">
-        En savoir plus
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
         </section>
 
         <!-- Contrôle opacité du sang -->
-<section class="card" aria-labelledby="blood-title">
-  <div class="section-head">
-    <div class="section-row">
-      <h2 class="section-title" id="blood-title">Effet sang — opacité</h2>
-      <div class="blood-value"><span id="bloodOpacityValue">30%</span></div>
-    </div>
-    <p class="section-sub">U need more blood ?</p>
-  </div>
+        <section class="card" aria-labelledby="blood-title">
+          <div class="section-head">
+            <div class="section-row">
+              <h2 class="section-title" id="blood-title">Effet sang — opacité</h2>
+              <div class="blood-value">
+                <span id="bloodOpacityValue">30%</span>
+              </div>
+            </div>
+            <p class="section-sub">U need more blood ?</p>
+          </div>
 
-  <div class="blood-controls">
-    <input
-      id="bloodOpacity"
-      class="blood-range"
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      value="0.30"
-      aria-label="Opacité du sang"
-    />
-    <button id="resetOpacity" class="btn btn-mini">Reset</button>
-  </div>
-</section>
+          <div class="blood-controls">
+            <input
+              id="bloodOpacity"
+              class="blood-range"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.30"
+              aria-label="Opacité du sang"
+            />
+            <button id="resetOpacity" class="btn btn-mini">Reset</button>
+          </div>
+        </section>
 
         <!-- Footer -->
         <footer class="footer" role="contentinfo">
           <p class="footer-text">
-            Hey Hachi, no matter how much or how often people hurt each other, loving someone is never a waste.
+            Hey Hachi, no matter how much or how often people hurt each other,
+            loving someone is never a waste.
           </p>
           <div class="footer-line" aria-hidden="true"></div>
-          <p class="copyright">© 2026 <b>yanis26x</b> · Tous droits réservés</p>
+          <p class="copyright">
+            © 2026 <b>yanis26x</b> · Tous droits réservés
+          </p>
         </footer>
       </div>
     </main>
