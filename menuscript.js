@@ -384,7 +384,7 @@ setInterval(changeText, 4000);
     {
       user: "aLaRechercheDuBonheur",
       avatar: "./OST_IMG/pfp/drogues.jpg",
-      text: "Ce site est aussi utile que toi dans la vie"
+      text: "ton site est aussi utile que toi dans la vie"
     },
     {
       user: "SATAN",
