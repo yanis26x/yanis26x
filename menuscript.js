@@ -410,6 +410,11 @@ setInterval(changeText, 4000);
       user: "yanis26x (mec genant)",
       avatar: "./OST_IMG/imageCool/CestTriste.jpg",
       text: "heuuu.. si vous voulez votre propre commentaire, dites le moi..."
+    },
+    {
+      user: "yousshayat",
+      avatar: "./OST_IMG/imageCool/youssef.jpg",
+      text: "le site crée pour le mossad, supprime connard!!"
     }
   ];
 
