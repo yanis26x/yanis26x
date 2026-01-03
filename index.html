@@ -15,278 +15,259 @@
   </head>
 
   <body>
-    <img
-  src="./OST_IMG/imageCool/CestTriste.jpg"
-  alt=""
-  class="screen-overlay"
-  aria-hidden="true"
-/>
-
-
+    <!-- background overlay (changeable image) -->
+    <img id="bgOverlay" src="./OST_IMG/imageCool/CestTriste.jpg" alt="" class="screen-overlay" aria-hidden="true" />
 
     <audio id="son" src="kh2.mp3" preload="auto" loop autoplay playsinline></audio>
 
-    <!-- Sang plein écran (au-dessus du fond) -->
-    <img src="./OST_IMG/Sang2.png" alt="Blood overlay" class="bloodOnScreen" />
+    <!-- blood overlay -->
+    <img id="bloodImg" src="./OST_IMG/Sang2.png" alt="Blood overlay" class="bloodOnScreen" />
 
     <main class="safe" role="main">
       <div class="wrap" id="root">
-        <!-- Header -->
-        <header class="header">
-          <div class="header-row">
-            <div class="identity">
-              <div class="avatar-wrap">
-                <img
-                  src="./OST_IMG/imageCool/242.g.jpeg"
-                  alt="Avatar de Yanis"
-                  class="avatar"
-                />
-                <span class="presence presence--online" title="En ligne"></span>
-              </div>
-              <div>
-                <h1 class="title">Menu</h1>
-                <div class="handle">@yanis26x</div>
-              </div>
-            </div>
 
-            <!-- Actions -->
-            <div class="actions">
-              <button
-                id="themeToggle"
-                class="theme-toggle"
-                type="button"
-                aria-label="Basculer le thème"
-                aria-pressed="false"
-              >
-                <span class="toggle-emoji" id="themeEmoji" aria-hidden="true">🌙</span>
-                <span class="toggle-label" id="themeLabel">Light</span>
-              </button>
+        <!-- ===== TOP BAR ===== -->
+        <header class="topbar">
+          <div class="top-left">
+        <div class="brand">
+  <div class="brand-identity">
+    <div class="brand-avatar spin">
+      <img src="./OST_IMG/imageCool/CestTriste.jpg" alt="Avatar" />
+    </div>
 
-              <button
-                id="audioToggle"
-                class="theme-toggle"
-                type="button"
-                aria-label="Lire ou mettre en pause la musique"
-                aria-pressed="false"
-              >
-                <span class="toggle-emoji" aria-hidden="true">🎧</span>
-                <span class="toggle-label" id="audio-label">Play</span>
-              </button>
+    <div class="brand-text">
+      <div class="brand-title">
+        <span class="menuWord">h3llo</span>
+        <span class="liveBadge jumpy">26x</span>
+      </div>
+      <div class="brand-sub">@yanis26x</div>
+    </div>
+  </div>
+</div>
+
+          </div>
+
+          <div class="top-mid">
+            <div class="datetime2">
+              <div id="time" class="time2">--:--:--</div>
+              <div id="date" class="date2">---</div>
             </div>
+          </div>
+
+          <div class="top-right">
+            <button id="audioToggle" class="pill" type="button" aria-pressed="false" aria-label="Musique">
+              <span class="pill-ico">🎧</span>
+              <span id="audio-label" class="pill-txt">Play</span>
+            </button>
+
+            <button id="themeToggle" class="pill" type="button" aria-pressed="false" aria-label="Theme">
+              <span id="themeEmoji" class="pill-ico">🌙</span>
+              <span id="themeLabel" class="pill-txt">Light</span>
+            </button>
+
+      
           </div>
         </header>
 
-        <!-- Navigation principale -->
-        <section class="card" aria-labelledby="nav-title">
-          <div class="section-head">
-            <div class="section-row">
-              <div class="left-head">
-                <h2 class="section-title" id="nav-title">
-                  <span id="changing-text"></span>
-                </h2>
+        <!-- ===== GRID MAIN ===== -->
+        <section class="grid">
+
+          <!-- LEFT COLUMN -->
+          <div class="col">
+
+            <!-- NAV CARD -->
+            <section class="panel panel-nav">
+              <div class="panel-head">
+                <div class="panel-title">
+                  <span id="changing-text" class="headline"></span>
+                </div>
+                <div class="panel-sub">XX xXX XXXx Xx xxxXxX cool! try it : NaNa 0Sak1</div>
+                <h3>blablablablablablba im a vampp</h3>
               </div>
 
-              <!-- 🕒 Heure et date -->
-              <div class="datetime">
-                <span id="time"></span>
-                <span id="date"></span>
+              <div class="navGrid">
+                <a class="navItem" href="./PORTFOLIO/Portfolio.html">
+                  <div class="navTxt">
+                    <div class="navTitle">Portfolio</div>
+                    <div class="navSub">Mes projets</div>
+                  </div>
+                  <div class="navEmoji">🔗</div>
+                </a>
+
+                <!-- <a class="navItem" href="./contact/contact.html">
+                  <div class="navTxt">
+                    <div class="navTitle">Contact</div>
+                    <div class="navSub">@yanis26x</div>
+                  </div>
+                  <div class="navEmoji">💬</div>
+                </a> -->
+
+                <a class="navItem" href="./application/install.html">
+                  <div class="navTxt">
+                    <div class="navTitle">Application mobile</div>
+                    <div class="navSub">downloads + demos</div>
+                  </div>
+                  <div class="navEmoji">📱</div>
+                </a>
+
+                <!-- <a class="navItem" href="./gallery/gallery.html">
+                  <div class="navTxt">
+                    <div class="navTitle">Gallery</div>
+                    <div class="navSub">Zoom + descriptions</div>
+                  </div>
+                  <div class="navEmoji">🖼️</div>
+                </a> -->
+
+                <!-- <a class="navItem" href="./nimp/sillyStuff/SillyStuff.html">
+                  <div class="navTxt">
+                    <div class="navTitle">Silly stuff</div>
+                    <div class="navSub">vite fait..</div>
+                  </div>
+                  <div class="navEmoji">🤡</div>
+                </a> -->
               </div>
-            </div>
-            <p class="section-sub">what do u want from me ?!</p>
-          </div>
+            </section>
 
-          <div class="list" role="list">
-            <!-- Portfolio -->
-            <a
-              style="background-color: rgba(0, 101, 233, 0.11)"
-              class="item"
-              role="listitem"
-              href="./PORTFOLIO/Portfolio.html"
-            >
-              <div class="grow">
-                <div class="item-title">Portfolio</div>
-                <div class="item-sub">Mes projets</div>
+
+             <!-- COMMENTS -->
+               <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">Comments</div>
+               
+                <div class="panel-sub"><span id="crTime">il y a 0 seconde</span></div>
+                
               </div>
-              <span class="emoji-right">🔗</span>
-            </a>
 
-            <!-- Contact -->
-            <a
-              style="background-color: rgba(0, 101, 233, 0.11)"
-              class="item"
-              role="listitem"
-              href="./contact/contact.html"
-            >
-              <div class="grow">
-                <div class="item-title">Contact</div>
-                <div class="item-sub">@yanis26x</div>
-              </div>
-              <span class="emoji-right">🔗</span>
-            </a>
-
-            <!-- Application -->
-            <a
-              style="background-color: rgba(0, 101, 233, 0.11)"
-              class="item"
-              role="listitem"
-              href="./application/install.html"
-            >
-              <div class="grow">
-                <div class="item-title">Application mobile</div>
-                <div class="item-sub">applications mobile à télécharger</div>
-              </div>
-              <span class="emoji-right">🔗</span>
-            </a>
-
-            <!-- Gallery -->
-            <a
-              style="background-color: rgba(0, 101, 233, 0.11)"
-              class="item"
-              role="listitem"
-              href="./gallery/gallery.html"
-            >
-              <div class="grow">
-                <div class="item-title">Gallery</div>
-                <div class="item-sub">Zoom + descriptions</div>
-              </div>
-              <span class="emoji-right">🔗</span>
-            </a>
-
-            <!-- Silly stuff -->
-            <a
-              style="background-color: rgba(0, 101, 233, 0.11)"
-              class="item"
-              role="listitem"
-              href="./nimp/sillyStuff/SillyStuff.html"
-            >
-              <div class="grow">
-                <div class="item-title">Silly stuff</div>
-                <div class="item-sub">vite fait..</div>
-              </div>
-              <span class="emoji-right">🔗</span>
-            </a>
-
-            <!-- Recrutement / aide + Commentaires (à droite) -->
-<div class="recruit-row" data-animate="fade-up">
-  <!-- Recrutement / aide -->
-  <div class="announce recruit">
-    <div class="announce-head">
-      <div class="ah-left">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 15h-2v-2h2v2Zm0-4h-2V7h2v6Z"
-          />
-        </svg>
-        <h3 class="announce-title">ughh...</h3>
-      </div>
-    </div>
-
-    <p class="announce-sub">
-      Website will be deleted soon. Thank you 4 visiting <br />
-      Need something? <b>Come talk to me</b>
-    </p>
-
-    <div class="announce-actions">
-      <a
-        id="dynamic-btn"
-        class="btn btn-mini btn-primary"
-        href="./contact/contact.html"
-        target="_blank"
-        rel="noopener"
-      >
-        <span id="dynamic-text">Need friends ?</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Comment rotator (à droite) -->
-  <aside class="comment-rotator" aria-live="polite">
-    <div class="cr-head">
-      <span class="cr-badge">Comments</span>
-      <span class="cr-time" id="crTime">il y a 0 seconde</span>
-    </div>
-
-    <div class="cr-body">
-  <img id="crAvatar" class="cr-avatar" src="" alt="avatar" />
-  <div class="cr-content">
-    <div class="cr-user" id="crUser">—</div>
-    <div class="cr-text" id="crText">—</div>
-  </div>
-</div>
-
-  </aside>
-</div>
-
-
-            <!-- 🔥 SECTION QIBLA++ CLIGNOTANTE -->
-            <section class="qibla-promo">
-              <div class="qibla-inner">
-                <img
-                  src="./nimp/Qibla_logo.png"
-                  class="qibla-logo"
-                  alt="Qibla++ logo"
-                />
-
-                <h2 class="qibla-title">Qibla++</h2>
-
-                <div class="qibla-buttons">
-                  <a
-                    class="btn qibla-download"
-                    href="https://apps.apple.com/app/id6754793667"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Download
-                  </a>
-
-                  <a class="btn qibla-more" href="./qibla/qibla.html">
-                    En savoir plus
-                  </a>
+              <div class="commentBox">
+                <img id="crAvatar" class="cr-avatar" src="" alt="avatar" />
+                <div class="commentTxt">
+                  <div class="cr-user" id="crUser">—</div>
+                  <div class="cr-text" id="crText">—</div>
                 </div>
               </div>
             </section>
-          </div>
-        </section>
 
-        <!-- Contrôle opacité du sang -->
-        <section class="card" aria-labelledby="blood-title">
-          <div class="section-head">
-            <div class="section-row">
-              <h2 class="section-title" id="blood-title">Effet sang — opacité</h2>
-              <div class="blood-value">
-                <span id="bloodOpacityValue">30%</span>
+            <!-- CONTACT PANEL -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">Talk to me</div>
+                <div class="panel-sub">Website will be deleted soon. Thank you 4 visiting
+Need something? or want XXX XXXX XX? Come talk to me. Like what?! </div>
+
               </div>
-            </div>
-            <p class="section-sub">U need more blood ?</p>
+
+              <div class="ctaRow">
+                <a class="ctaBtn" href="./contact/contact.html">Contact</a>
+                <div class="ctaHint" id="ctaHint">ugh??</div>
+              </div>
+            </section>
+
+
+
+
+
+            <!-- FEATURED APP (Qibla++) - CLEAN -->
+            <section class="panel featured">
+              <div class="featured-head">
+                <div class="featured-left">
+                  <img src="./nimp/Qibla_logo.png" class="featured-logo" alt="Qibla++ logo" />
+                  <div>
+                    <div class="featured-title">Qibla++</div>
+                    <div class="featured-sub">featured app · clean & aligned</div>
+                  </div>
+                </div>
+                <div class="sparkle">✦</div>
+              </div>
+
+              <div class="featured-actions">
+                <a class="ctaBtn" href="https://apps.apple.com/app/id6754793667" target="_blank" rel="noopener">Download</a>
+                <a class="ghostBtn" href="./qibla/qibla.html">En savoir plus</a>
+              </div>
+            </section>
+
           </div>
 
-          <div class="blood-controls">
-            <input
-              id="bloodOpacity"
-              class="blood-range"
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value="0.30"
-              aria-label="Opacité du sang"
-            />
-            <button id="resetOpacity" class="btn btn-mini">Reset</button>
-          </div>
+          <!-- RIGHT COLUMN -->
+          <aside class="col rightCol">
+
+            <!-- DANCING IMAGE -->
+            <section class="panel dancer">
+              <div class="panel-head">
+                <div class="panel-title">helpp</div>
+                <div class="panel-sub">SPEAKERS, THEY NEVER LEARN</div>
+              </div>
+
+              <div class="dancerStage">
+                <img id="moodImg" class="moodImg" src="./OST_IMG/imageCool/242.g.jpeg" alt="mood" />
+                <div class="stageGlow"></div>
+              </div>
+
+              <div class="miniRow">
+                <button id="nextMood" class="miniBtn" type="button">Next</button>
+                <div class="miniHint" id="moodHint">help.</div>
+              </div>
+            </section>
+
+           
+      
+
+            <!-- MESSAGE OF THE DAY (ROTATING) -->
+            <section class="panel motd">
+              <div class="panel-head">
+                <div class="panel-title">oups..</div>
+                <div class="panel-sub">im asking 4 xxxx</div>
+              </div>
+
+              <div class="motdBubble" id="motdText">—</div>
+              <div class="motdDots" id="motdDots"></div>
+            </section>
+
+                        <!-- BLOOD CONTROL -->
+            <section class="panel">
+              <div class="panel-head">
+                <div class="panel-title">Blood opacity</div>
+                <div class="panel-sub">U need more blood ?</div>
+              </div>
+
+              <div class="bloodRow">
+                <input
+                  id="bloodOpacity"
+                  class="blood-range"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  value="0.30"
+                  aria-label="Opacité du sang"
+                />
+                <div class="bloodPct" id="bloodOpacityValue">30%</div>
+                <button id="resetOpacity" class="miniBtn" type="button">Reset</button>
+              </div>
+            </section>
+
+          </aside>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer" role="contentinfo">
-          <p class="footer-text">
+        <!-- ===== BOTTOM BAR ===== -->
+        <footer class="bottombar">
+          <div class="bb-left">what do u want from me ?!</div>
+          <div class="bb-right">
+            <a class="bbLink" href="./PORTFOLIO/Portfolio.html">Portfolio</a>
+            <a class="bbLink" href="./contact/contact.html">Contact</a>
+            <a class="bbLink" href="./application/install.html">Apps</a>
+            <a class="bbLink" href="./gallery/gallery.html">Gallery</a>
+            <a class="bbLink" href="./nimp/sillyStuff/SillyStuff.html">Silly</a>
+          </div>
+        </footer>
+
+        <footer class="footer2">
+          <div class="quote">
             Hey Hachi, no matter how much or how often people hurt each other,
             loving someone is never a waste.
-          </p>
-          <div class="footer-line" aria-hidden="true"></div>
-          <p class="copyright">
-            © 2026 <b>yanis26x</b> · Tous droits réservés
-          </p>
+          </div>
+          <div class="copy">© 2026 <b>yanis26x</b> · Tous droits réservés</div>
         </footer>
+
       </div>
     </main>
 

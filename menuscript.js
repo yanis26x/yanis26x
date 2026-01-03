@@ -1,12 +1,16 @@
 /* =========================
-   THEME TOGGLE (BACKGROUND WHITE IN LIGHT)
+   HELPERS
 ========================= */
 const root = document.documentElement;
-const THEME_KEY = "menu-theme";
+const $ = (q) => document.querySelector(q);
 
-const themeBtn = document.getElementById("themeToggle");
-const themeLabel = document.getElementById("themeLabel");
-const themeEmoji = document.getElementById("themeEmoji");
+/* =========================
+   THEME TOGGLE (Dark=black+blue, Light=white+pink)
+========================= */
+const THEME_KEY = "menu-theme";
+const themeBtn = $("#themeToggle");
+const themeLabel = $("#themeLabel");
+const themeEmoji = $("#themeEmoji");
 
 function setMetaThemeColor(hex) {
   const meta = document.querySelector('meta[name="theme-color"]');
@@ -21,12 +25,12 @@ function applyTheme(theme) {
   if (t === "dark") {
     themeLabel.textContent = "Light";
     themeEmoji.textContent = "🌙";
-    themeBtn.setAttribute("aria-pressed", "false");
+    themeBtn?.setAttribute("aria-pressed", "false");
     setMetaThemeColor("#000000");
   } else {
     themeLabel.textContent = "Dark";
     themeEmoji.textContent = "☀️";
-    themeBtn.setAttribute("aria-pressed", "true");
+    themeBtn?.setAttribute("aria-pressed", "true");
     setMetaThemeColor("#ffffff");
   }
 }
@@ -40,49 +44,6 @@ themeBtn?.addEventListener("click", () => {
   const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
   applyTheme(current === "light" ? "dark" : "light");
 });
-
-/* =========================
-   CARDS REVEAL ON SCROLL (STAGGER)
-========================= */
-const cards = document.querySelectorAll(".card");
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const delay = [...cards].indexOf(el) * 160;
-        el.style.animationDelay = `${delay}ms`;
-        el.classList.add("in");
-        io.unobserve(el);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-cards.forEach((card) => io.observe(card));
-
-/* =========================
-   RIPPLE ON ITEMS
-========================= */
-function attachRipple(el) {
-  el.addEventListener("click", (e) => {
-    const rect = el.getBoundingClientRect();
-    const ripple = document.createElement("span");
-    ripple.className = "ripple";
-
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
-
-    ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
-
-    el.appendChild(ripple);
-    ripple.addEventListener("animationend", () => ripple.remove());
-  });
-}
-document.querySelectorAll(".item").forEach(attachRipple);
 
 /* =========================
    DATE + TIME
@@ -103,8 +64,8 @@ function updateDateTime() {
     year: "numeric",
   });
 
-  const timeEl = document.getElementById("time");
-  const dateEl = document.getElementById("date");
+  const timeEl = $("#time");
+  const dateEl = $("#date");
   if (!timeEl || !dateEl) return;
 
   timeEl.textContent = time;
@@ -114,7 +75,7 @@ setInterval(updateDateTime, 1000);
 updateDateTime();
 
 /* =========================
-   CHANGING TEXT
+   CHANGING TEXT (top headline)
 ========================= */
 const texts = [
   "Salut !",
@@ -127,10 +88,8 @@ const texts = [
   "Money—money, I keep it 'round me, I'm very clingy",
   "want sum more ?",
 ];
-
-const textElement = document.getElementById("changing-text");
+const textElement = $("#changing-text");
 let textIndex = 0;
-
 function changeText() {
   if (!textElement) return;
   textElement.textContent = texts[textIndex];
@@ -143,9 +102,9 @@ setInterval(changeText, 4000);
    AUDIO PLAY/PAUSE (persist)
 ========================= */
 (() => {
-  const audio = document.getElementById("son");
-  const btn = document.getElementById("audioToggle");
-  const label = document.getElementById("audio-label");
+  const audio = $("#son");
+  const btn = $("#audioToggle");
+  const label = $("#audio-label");
   if (!audio || !btn || !label) return;
 
   audio.loop = true;
@@ -185,7 +144,6 @@ setInterval(changeText, 4000);
     }
   });
 
-  // Unmute dès le 1er geste user (navigateur)
   const unmute = () => {
     if (!audio.paused) audio.muted = false;
     window.removeEventListener("pointerdown", unmute);
@@ -199,7 +157,6 @@ setInterval(changeText, 4000);
   (async () => {
     const saved = localStorage.getItem(KEY);
     const wantPlay = saved == null ? true : saved === "1";
-
     if (!wantPlay) return setUI(false);
 
     audio.muted = true;
@@ -216,14 +173,14 @@ setInterval(changeText, 4000);
 })();
 
 /* =========================
-   BLOOD OPACITY (persist) + DYNAMIC BUTTON TEXT
+   BLOOD OPACITY (persist)
 ========================= */
 (function () {
   const DEFAULT_BLOOD_OPACITY = 0.3;
-  const img = document.querySelector(".bloodOnScreen");
-  const range = document.getElementById("bloodOpacity");
-  const valueEl = document.getElementById("bloodOpacityValue");
-  const resetBtn = document.getElementById("resetOpacity");
+  const img = $("#bloodImg") || document.querySelector(".bloodOnScreen");
+  const range = $("#bloodOpacity");
+  const valueEl = $("#bloodOpacityValue");
+  const resetBtn = $("#resetOpacity");
 
   if (!img || !range || !valueEl) return;
 
@@ -255,139 +212,127 @@ setInterval(changeText, 4000);
     render(DEFAULT_BLOOD_OPACITY);
     localStorage.setItem("bloodOpacity", String(DEFAULT_BLOOD_OPACITY));
   });
-
-  // Dynamic button text (Need friends?)
-  const textEl = document.getElementById("dynamic-text");
-  if (!textEl) return;
-
-  const messages = [
-    "Need friends ?",
-    "Feeling alone ?",
-    "Want me 2 help u ?",
-    "need someone to talk 2 ?",
-    "im here 4 u, Come talk 2 me",
-    "Click me !",
-    "Need friends ?",
-    "Feeling alone ?",
-    "Want me 2 help u ?",
-    "need someone to talk 2 ?",
-    "Ok i guess u dont need friends",
-    "......",
-    "me 2 then!",
-    "Got more swag than u",
-    "run me yo blood",
-    "@#!$%&*",
-    ".....",
-    "When them vamps outside, lil' bitch, you better be ready",
-    "When the stars align, lil' bitch, you better be ready",
-    "I won't take my time, lil' bitch, you know I'm ready",
-    "I want it right now, lil' bitch, you know I'm ready",
-  ];
-
-  let i = 0;
-
-  function updateText() {
-    textEl.classList.add("fade-out");
-    setTimeout(() => {
-      i = (i + 1) % messages.length;
-      textEl.textContent = messages[i];
-      textEl.classList.remove("fade-out");
-    }, 400);
-  }
-
-  setInterval(updateText, 1500);
 })();
 
+/* =========================
+   MOOD IMAGE (changes every 20s) + background overlay sync
+========================= */
+const moodImg = $("#moodImg");
+const bgOverlay = $("#bgOverlay");
+const moodHint = $("#moodHint");
+const nextMoodBtn = $("#nextMood");
 
+const moodImages = [
+  "./OST_IMG/imageCool/242.g.jpeg",
+  "./OST_IMG/imageCool/CestTriste.jpg",
+  "./OST_IMG/imageCool/BloodMask.jpeg",
+  "./OST_IMG/imageCool/lamp_cover.jpg",
+  "./OST_IMG/imageCool/sora.png",
+  "./OST_IMG/imageCool/lisa.jpg",
+];
 
+let moodIndex = 0;
 
-// ];
+function setMood(i){
+  if (!moodImg) return;
+  moodIndex = (i + moodImages.length) % moodImages.length;
 
+  moodImg.style.opacity = "0";
+  setTimeout(() => {
+    moodImg.src = moodImages[moodIndex];
+    moodImg.style.opacity = "1";
+    if (bgOverlay) bgOverlay.src = moodImages[moodIndex];
+    if (moodHint) moodHint.textContent = "mhmm…";
+  }, 180);
+}
 
-// --- Rotating comments (one at a time) ---
-// Avatars locaux: ./OST_IMG/pfp/
+function nextMood(){
+  setMood(moodIndex + 1);
+}
 
+setMood(0);
+setInterval(nextMood, 20000);
+nextMoodBtn?.addEventListener("click", nextMood);
+
+/* =========================
+   MOTD (Message du jour) rotator
+========================= */
+const motdText = $("#motdText");
+const motdDots = $("#motdDots");
+
+const motd = [
+  "i dont XXXXXX anymore.",
+  "its all your fault.",
+  "XXXXXXXXX",
+  "XXXXXXXXX",
+  "NEED MORE XXXXXX",
+  "0kay?!.",
+];
+
+let motdIndex = 0;
+
+function renderDots(){
+  if (!motdDots) return;
+  motdDots.innerHTML = "";
+  motd.forEach((_, idx) => {
+    const s = document.createElement("span");
+    if (idx === motdIndex) s.classList.add("on");
+    motdDots.appendChild(s);
+  });
+}
+
+function setMotd(i){
+  if (!motdText) return;
+  motdIndex = (i + motd.length) % motd.length;
+
+  motdText.style.transform = "translateY(6px)";
+  motdText.style.opacity = "0";
+  setTimeout(() => {
+    motdText.textContent = motd[motdIndex];
+    motdText.style.transform = "translateY(0)";
+    motdText.style.opacity = "1";
+    renderDots();
+  }, 160);
+}
+
+setMotd(0);
+setInterval(() => setMotd(motdIndex + 1), 5000);
+
+/* =========================
+   RANDOM BUTTON (force new mood + new texts + new motd)
+========================= */
+$("#randomBtn")?.addEventListener("click", () => {
+  nextMood();
+  changeText();
+  setMotd(motdIndex + 1);
+});
+
+/* =========================
+   COMMENTS ROTATOR (same logic)
+========================= */
 (function commentRotator(){
-  const crUserEl = document.getElementById("crUser");
-  const crTextEl = document.getElementById("crText");
-  const crTimeEl = document.getElementById("crTime");
-  const crAvatarEl = document.getElementById("crAvatar");
+  const crUserEl = $("#crUser");
+  const crTextEl = $("#crText");
+  const crTimeEl = $("#crTime");
+  const crAvatarEl = $("#crAvatar");
 
   if (!crUserEl || !crTextEl || !crTimeEl || !crAvatarEl) return;
 
-  // Commentaires toxiques / négatifs (sans menaces)
   const comments = [
-    {
-      user: "karim_92",
-      avatar: "https://i.pravatar.cc/150?img=14",
-      text: "T’as voulu faire le mec original mais t juste gênant fdp"
-    },
-    {
-      user: "TuCritiqueMaisTuClique44",
-      avatar: "https://i.pravatar.cc/150?img=4",
-      text: "ta dla chance tes pas devant moi sinnon jtaurais deja cracher a la geule toccard!"
-    },
-    {
-      user: "nadinee__",
-      avatar: "./OST_IMG/pfp/user3.png",
-      text: "jespere que ce mec meurt bientot tellement son site est degueulasse"
-    },
-    {
-      user: "00aya",
-      avatar: "https://i.pravatar.cc/150?img=5",
-      text: "y croit il a dead ca en + mdrrrr, jcomprend pk il a pas damis loll"
-    },
-    {
-      user: "ines.dz",
-      avatar: "./OST_IMG/pfp/ines.jpg",
-      text: "tes pas le couteaux le plus tranchant du tiroir toi! mdr tyra pas loin dans la vie avec ton site de connard"
-    },
-    {
-      user: "nassim25x",
-      avatar: "./OST_IMG/pfp/nassim.jpg",
-      text: " @ines.dz jsuis daccord avec toi !! c'esst une merde ce type"
-    },
-         {
-     user: "ines.dz",
-     avatar: "./OST_IMG/pfp/ines.jpg",
-     text: "@nassim25x ferme ta gueule toi personne ta demander ton avis, imbecile"
-   },
-    {
-      user: "aLaRechercheDuBonheur",
-      avatar: "./OST_IMG/pfp/drogues.jpg",
-      text: "ton site est aussi utile que toi dans la vie"
-    },
-    {
-      user: "SATAN",
-      avatar: "./OST_IMG/pfp/satan.png",
-      text: "@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici"
-    },
-    {
-      user: "sarah.privv",
-      avatar: "./OST_IMG/pfp/helloKitty.jpg",
-      text: "jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les chien sal comme toi!"
-    },
-    {
-      user: "1kramm",
-      avatar: "https://i.pravatar.cc/150?img=19",
-      text: "maintenant jcomprend pk personne veut etre son ami mdrrr, quesquil est moche en plus, il a pas compris haloween c 1 jour dans lannée mdrrrr"
-    },
-    {
-      user: "Xxx_manasse_xxX",
-      avatar: "https://i.pravatar.cc/150?img=65",
-      text: "HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥"
-    },
-    {
-      user: "yanis26x (mec genant)",
-      avatar: "./OST_IMG/imageCool/CestTriste.jpg",
-      text: "heuuu.. si vous voulez votre propre commentaire, dites le moi..."
-    },
-    {
-      user: "yousshayat",
-      avatar: "./OST_IMG/pfp/youssef.jpg",
-      text: "le site crée pour le mossad, supprime connard!!"
-    },
-
+    { user:"karim_92", avatar:"https://i.pravatar.cc/150?img=14", text:"T’as voulu faire le mec original mais t juste gênant fdp" },
+    { user:"TuCritiqueMaisTuClique44", avatar:"https://i.pravatar.cc/150?img=4", text:"ta dla chance tes pas devant moi sinnon jtaurais deja cracher a la geule toccard!" },
+    { user:"nadinee__", avatar:"./OST_IMG/pfp/user3.png", text:"jespere que ce mec meurt bientot tellement son site est degueulasse" },
+    { user:"00aya", avatar:"https://i.pravatar.cc/150?img=5", text:"y croit il a dead ca en + mdrrrr, jcomprend pk il a pas damis loll" },
+    { user:"ines.dz", avatar:"./OST_IMG/pfp/ines.jpg", text:"tes pas le couteaux le plus tranchant du tiroir toi! mdr tyra pas loin dans la vie avec ton site de connard" },
+    { user:"nassim25x", avatar:"./OST_IMG/pfp/nassim.jpg", text:" @ines.dz jsuis daccord avec toi !! c'esst une merde ce type" },
+    { user:"ines.dz", avatar:"./OST_IMG/pfp/ines.jpg", text:"@nassim25x ferme ta gueule toi personne ta demander ton avis, imbecile" },
+    { user:"aLaRechercheDuBonheur", avatar:"./OST_IMG/pfp/drogues.jpg", text:"ton site est aussi utile que toi dans la vie" },
+    { user:"SATAN", avatar:"./OST_IMG/pfp/satan.png", text:"@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici" },
+    { user:"sarah.privv", avatar:"./OST_IMG/pfp/helloKitty.jpg", text:"jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les animaux sal comme toi!" },
+    { user:"1kramm", avatar:"https://i.pravatar.cc/150?img=19", text:"maintenant jcomprend pk il a pas de meuf, quesquil est moche en plus, c pr ca jle regarde tjr mal" },
+    { user:"Xxx_manasse_xxX", avatar:"https://i.pravatar.cc/150?img=63", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
+    { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. si vous voulez votre propre commentaire, dites le moi..." },
+    { user:"yousshayat", avatar:"./OST_IMG/pfp/youssef.jpg", text:"le site crée pour le mossad, supprime connard!!" },
   ];
 
   let index = 0;
@@ -402,14 +347,12 @@ setInterval(changeText, 4000);
     return `il y a ${min} minute${min > 1 ? "s" : ""} et ${sec} seconde${sec > 1 ? "s" : ""}`;
   }
 
-  // Transforme @username en mention bleue
   function parseMentions(text){
     return text.replace(/@([a-zA-Z0-9_.]+)/g, '<span class="mention">@$1</span>');
   }
 
   function render(){
     const c = comments[index];
-
     crUserEl.textContent = c.user;
     crTextEl.innerHTML = parseMentions(c.text);
     crAvatarEl.src = c.avatar;
@@ -425,11 +368,9 @@ setInterval(changeText, 4000);
 
   render();
 
-  // timer
   setInterval(() => {
     crTimeEl.textContent = formatAgo(Date.now() - start);
   }, 1000);
 
-  // rotation
   setInterval(next, 8000);
 })();
