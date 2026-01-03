@@ -334,7 +334,7 @@ setInterval(changeText, 4000);
     },
     {
       user: "00aya",
-      avatar: "./OST_IMG/pfp/aya.jpg",
+      avatar: "https://i.pravatar.cc/150?img=5",
       text: "y croit il a dead ca en + mdrrrr, jcomprend pk il a pas damis loll"
     },
     {
