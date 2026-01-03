@@ -330,8 +330,8 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"SATAN", avatar:"./OST_IMG/pfp/satan.png", text:"@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici" },
     { user:"sarah.privv", avatar:"./OST_IMG/pfp/helloKitty.jpg", text:"jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les animaux sal comme toi!" },
     { user:"1kramm", avatar:"https://i.pravatar.cc/150?img=19", text:"maintenant jcomprend pk il a pas de meuf, quesquil est moche en plus, c pr ca jle regarde tjr mal" },
-    { user:"Xxx_manasse_xxX", avatar:"https://i.pravatar.cc/150?img=63", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
-    { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. si vous voulez votre propre commentaire, dites le moi..." },
+    { user:"Xxx_friend_xxX", avatar:"https://i.pravatar.cc/150?img=63", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
+    { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. merci?! si vous voulez ajouter un commentaire ecrivez le moi mp et jvais lajouter avec tous seu quils ont deja fait , byee..." },
     { user:"yousshayat", avatar:"./OST_IMG/pfp/youssef.jpg", text:"le site crée pour le mossad, supprime connard!!" },
   ];
 
