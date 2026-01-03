@@ -413,7 +413,7 @@ setInterval(changeText, 4000);
     },
     {
       user: "yousshayat",
-      avatar: "./OST_IMG/imageCool/youssef.jpg",
+      avatar: "./OST_IMG/pfp/youssef.jpg",
       text: "le site crée pour le mossad, supprime connard!!"
     }
   ];
