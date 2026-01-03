@@ -301,35 +301,6 @@ setInterval(changeText, 4000);
 
 
 
-
-//     {
-//     user: "nassim25x",
-//     text: " @ines.dz jsuis daccord avec toi !! c'esst une merde ce type"
-//   },
-//     {
-//     user: "ines.dz",
-//     text: "@ferme ta gueule toi personne ta demander ton avis, imbecile"
-//   },
-//   {
-//     user: "aLaRechercheDuBonheur",
-//     text: "Ce site est aussi utile que toi dans la vie"
-//   },
-//   {
-//     user: "SATAN",
-//     text: "@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici"
-//   },
-//   {
-//     user: "sarah.privv",
-//     text: "jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les chien sal comme toi!"
-//   },
-//   {
-//     user: "1kramm",
-//     text: "maintenant jcomprend pk personne veut etre son ami mdrrr, quesquil est moche en plus, il a pas compris haloween c 1 jour dans lannée mdrrrr"
-//   },
-//     {
-//     user: "Xxx_manassé_xxX",
-//     text: "HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥"
-//   }
 // ];
 
 
@@ -415,6 +386,11 @@ setInterval(changeText, 4000);
       user: "yousshayat",
       avatar: "./OST_IMG/pfp/youssef.jpg",
       text: "le site crée pour le mossad, supprime connard!!"
+    },
+    {
+      user: "francois-lacroix du pont (ivam) ",
+      avatar: "https://i.pravatar.cc/150?img=2",
+      text: "C a cause des gens comme lui quil faut voter rn"
     }
   ];
 
