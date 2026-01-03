@@ -344,7 +344,7 @@ setInterval(changeText, 4000);
     },
     {
       user: "nassim25x",
-      avatar: "./OST_IMG/pfp/user6.png",
+      avatar: "./OST_IMG/pfp/nassim.jpg",
       text: " @ines.dz jsuis daccord avec toi !! c'esst une merde ce type"
     },
          {
@@ -387,11 +387,7 @@ setInterval(changeText, 4000);
       avatar: "./OST_IMG/pfp/youssef.jpg",
       text: "le site crée pour le mossad, supprime connard!!"
     },
-    {
-      user: "francois-lacroix du pont (ivam) ",
-      avatar: "https://i.pravatar.cc/150?img=2",
-      text: "C a cause des gens comme lui quil faut voter rn"
-    }
+
   ];
 
   let index = 0;
