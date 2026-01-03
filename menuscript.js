@@ -405,6 +405,11 @@ setInterval(changeText, 4000);
       user: "Xxx_manasse_xxX",
       avatar: "https://i.pravatar.cc/150?img=65",
       text: "HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥"
+    },
+    {
+      user: "yanis26x (mec genant)",
+      avatar: "./OST_IMG/imageCool/CestTriste.jpg",
+      text: "heuuu.. si vous voulez votre propre commentaire, dites le moi..."
     }
   ];
 
