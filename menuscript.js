@@ -329,6 +329,7 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"ines.dz", avatar:"./OST_IMG/pfp/ines.jpg", text:"tes pas le couteaux le plus tranchant du tiroir toi! mdr tyra pas loin dans la vie avec ton site de connard" },
     { user:"nassim25x", avatar:"./OST_IMG/pfp/nassim.jpg", text:" @ines.dz jsuis daccord avec toi !! c'esst une merde ce type" },
     { user:"ines.dz", avatar:"./OST_IMG/pfp/ines.jpg", text:"@nassim25x ferme ta gueule toi personne ta demander ton avis, imbecile" },
+    { user:"mahdi", avatar:"./OST_IMG/pfp/mahdi.jpg", text:"AJOUTER MOI SUR SNAP QUE LES MEUFS Kouachi_smk" },
     { user:"aLaRechercheDuBonheur", avatar:"./OST_IMG/pfp/drogues.jpg", text:"ton site est aussi utile que toi dans la vie" },
     { user:"SATAN", avatar:"./OST_IMG/pfp/satan.png", text:"@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici" },
     { user:"sarah.privv", avatar:"./OST_IMG/pfp/helloKitty.jpg", text:"jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les animaux sal comme toi!" },
