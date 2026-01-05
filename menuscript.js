@@ -321,6 +321,7 @@ $("#randomBtn")?.addEventListener("click", () => {
   const comments = [
     { user:"karim_92", avatar:"https://i.pravatar.cc/150?img=14", text:"T’as voulu faire le mec original mais t juste gênant fdp" },
     { user:"riyad", avatar:"./OST_IMG/pfp/riyad.jpg", text:"Hak rabi tu va finir en enfer avec moi sal fdp" },
+    { user:"Glody", avatar:"./OST_IMG/pfp/glody.jpg", text:"écoute les haters ❤️" },
     { user:"TuCritiqueMaisTuClique44", avatar:"https://i.pravatar.cc/150?img=4", text:"ta dla chance tes pas devant moi sinnon jtaurais deja cracher a la geule toccard!" },
     { user:"yousshayat", avatar:"./OST_IMG/pfp/youssef.jpg", text:"le site crée pour le mossad, supprime connard!!" },
     { user:"nadinee__", avatar:"./OST_IMG/pfp/user3.png", text:"jespere que ce mec meurt bientot tellement son site est degueulasse" },
