@@ -320,7 +320,9 @@ $("#randomBtn")?.addEventListener("click", () => {
 
   const comments = [
     { user:"karim_92", avatar:"https://i.pravatar.cc/150?img=14", text:"T’as voulu faire le mec original mais t juste gênant fdp" },
+    { user:"riyad", avatar:"./OST_IMG/pfp/riyad.jpg", text:"Hak rabi tu va finir en enfer avec moi sal fdp" },
     { user:"TuCritiqueMaisTuClique44", avatar:"https://i.pravatar.cc/150?img=4", text:"ta dla chance tes pas devant moi sinnon jtaurais deja cracher a la geule toccard!" },
+    { user:"yousshayat", avatar:"./OST_IMG/pfp/youssef.jpg", text:"le site crée pour le mossad, supprime connard!!" },
     { user:"nadinee__", avatar:"./OST_IMG/pfp/user3.png", text:"jespere que ce mec meurt bientot tellement son site est degueulasse" },
     { user:"00aya", avatar:"https://i.pravatar.cc/150?img=5", text:"y croit il a dead ca en + mdrrrr, jcomprend pk il a pas damis loll" },
     { user:"ines.dz", avatar:"./OST_IMG/pfp/ines.jpg", text:"tes pas le couteaux le plus tranchant du tiroir toi! mdr tyra pas loin dans la vie avec ton site de connard" },
@@ -332,7 +334,7 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"1kramm", avatar:"https://i.pravatar.cc/150?img=19", text:"maintenant jcomprend pk il a pas de meuf, quesquil est moche en plus, c pr ca jle regarde tjr mal" },
     { user:"Xxx_friend_xxX", avatar:"https://i.pravatar.cc/150?img=63", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
     { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. merci?! si vous voulez ajouter un commentaire ecrivez le moi mp et jvais lajouter avec tous seu quils ont deja fait , byee..." },
-    { user:"yousshayat", avatar:"./OST_IMG/pfp/youssef.jpg", text:"le site crée pour le mossad, supprime connard!!" },
+    
   ];
 
   let index = 0;
