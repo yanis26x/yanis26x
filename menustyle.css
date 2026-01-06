@@ -604,3 +604,99 @@ body{
   display:flex;
   justify-content:flex-end;
 }
+
+/* ===== Modal (Add comment) ===== */
+.modalOverlay{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t) var(--spring);
+}
+
+.modalOverlay.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalBox{
+  width: min(520px, 100%);
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--card2), var(--card));
+  box-shadow: 0 28px 80px rgba(0,0,0,.55);
+  transform: translateY(10px) scale(.98);
+  transition: transform var(--t) var(--spring);
+}
+
+.modalOverlay.open .modalBox{
+  transform: translateY(0) scale(1);
+}
+
+.modalTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding: 16px 16px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modalTitle{
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.modalClose{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform var(--t) var(--spring);
+}
+.modalClose:hover{ transform: translateY(-2px); }
+
+.modalBody{
+  padding: 16px;
+}
+
+.modalText{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.modalActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+/* Add your comment — accent button */
+.addCommentAccent{
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  box-shadow: 0 14px 36px rgba(0,0,0,.35);
+}
+
+.addCommentAccent:hover{
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}

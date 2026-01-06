@@ -345,9 +345,9 @@ $("#randomBtn")?.addEventListener("click", () => {
   // ✅ Tu vas remplir ça avec tes vrais "verified"
   const verifiedComments = [
     { user:"BOT#1", avatar:"./OST_IMG/pfp/bot.png", text:"c̷̖̣̠̏̇̇͑̈́͘͝ŏ̸̢̡̧̨̡̫̭͚͙͓͚̤̲̬̔̈͗̉͌͌͑ö̵̧͖̮̎l̵̠̰͖̪̦͕̗̭̻͐̋̂͐̀͑̔͘ ̸̢̱̲͓̈́̈́̑̐̊̋̓̂̍̈͝w̶̖̠̗̦͍̙̟̘̪͓̑͂̚ȅ̵̙͉̓̄b̷̡̡̞̥͚̣̳͙̹̲̖̜̿̽͋̾̄̊̓̓̍̍ş̵̡̤̟̹̮̦͛̎͛̂̇̓̇̉̈̓̉̑̕ͅḯ̶̤̦͉̣̙̘̝͍̗̠̺͖̇͌̂́̍̄͆ͅͅt̴͙̏̋̓̓̎̽̿̄̋͘e̶͕͍̋͋͠" },
-    { user:"BOT#2", avatar:"./OST_IMG/pfp/bot.png", text:"hhello?!" },
+    { user:"BOT#2", avatar:"./OST_IMG/pfp/bot2.png", text:"hhello?!" },
     { user:"BOT#3", avatar:"./OST_IMG/pfp/bot.png", text:"idk" },
-    { user:"BOT#4", avatar:"./OST_IMG/pfp/bot.png", text:"cool website !" },
+    { user:"BOT#4", avatar:"./OST_IMG/pfp/bot2.png", text:"cool website !" },
     
   ];
 
@@ -445,12 +445,40 @@ $("#randomBtn")?.addEventListener("click", () => {
   verifiedBtn?.addEventListener("click", () => setMode("verified"));
 })();
 
+
+
 /* =========================
-   ADD YOUR COMMENT (popup)
+   ADD YOUR COMMENT (custom modal)
 ========================= */
-$("#addCommentBtn")?.addEventListener("click", () => {
-  alert(
-    "If you want to add your own comments:\n" +
-    "Send me the comment, the username and a profil picture on Instagram @yanis26x"
-  );
-});
+(() => {
+  const modal = $("#commentModal");
+  const openBtn = $("#addCommentBtn");
+  const closeBtn = $("#commentModalClose");
+  const okBtn = $("#commentModalOk");
+
+  if (!modal || !openBtn) return;
+
+  const open = () => {
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+  };
+
+  const close = () => {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+  };
+
+  openBtn.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+  okBtn?.addEventListener("click", close);
+
+  // click outside (overlay)
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+
+  // ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("open")) close();
+  });
+})();
