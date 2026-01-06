@@ -559,3 +559,48 @@ body{
 .brand-avatar:hover.spin{
   animation-duration: 1.2s;
 }
+
+
+/* Comments toggle */
+.panel-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.commentToggle{
+  display:flex;
+  gap:8px;
+  padding:6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+}
+
+.toggleBtn{
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor:pointer;
+  transition: transform var(--t) var(--spring), background var(--t) var(--spring);
+}
+
+.toggleBtn:hover{ transform: translateY(-1px); }
+
+.toggleBtn.on{
+  background: var(--accent);
+  color:#fff;
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.commentActions{
+  margin-top: 12px;
+  display:flex;
+  justify-content:flex-end;
+}

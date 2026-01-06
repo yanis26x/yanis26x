@@ -129,23 +129,39 @@
             </section>
 
 
-             <!-- COMMENTS -->
-               <section class="panel">
-              <div class="panel-head">
-                <div class="panel-title">Comments</div>
-               
-                <div class="panel-sub"><span id="crTime">il y a 0 seconde</span></div>
-                
-              </div>
+           
+               <!-- COMMENTS -->
+<section class="panel">
+  <div class="panel-head">
+    <div class="panel-title-row">
+      <div class="panel-title">Comments</div>
 
-              <div class="commentBox">
-                <img id="crAvatar" class="cr-avatar" src="" alt="avatar" />
-                <div class="commentTxt">
-                  <div class="cr-user" id="crUser">—</div>
-                  <div class="cr-text" id="crText">—</div>
-                </div>
-              </div>
-            </section>
+      <!-- Toggle -->
+      <div class="commentToggle" role="tablist" aria-label="Filtre commentaires">
+        <button id="commentsVerifiedBtn" class="toggleBtn" type="button" role="tab" aria-selected="false">
+          Verified
+        </button>
+        <button id="commentsUnverifiedBtn" class="toggleBtn on" type="button" role="tab" aria-selected="true">
+          Unverified
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-sub"><span id="crTime">il y a 0 seconde</span></div>
+  </div>
+
+  <div class="commentBox">
+    <img id="crAvatar" class="cr-avatar" src="" alt="avatar" />
+    <div class="commentTxt">
+      <div class="cr-user" id="crUser">—</div>
+      <div class="cr-text" id="crText">—</div>
+    </div>
+  </div>
+  <div class="commentActions">
+  <button id="addCommentBtn" class="miniBtn" type="button">Add your comment</button>
+</div>
+</section>
+
 
             <!-- CONTACT PANEL -->
             <section class="panel">

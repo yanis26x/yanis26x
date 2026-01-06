@@ -307,9 +307,8 @@ $("#randomBtn")?.addEventListener("click", () => {
   changeText();
   setMotd(motdIndex + 1);
 });
-
 /* =========================
-   COMMENTS ROTATOR (same logic)
+   COMMENTS ROTATOR (with Verified / Unverified toggle)
 ========================= */
 (function commentRotator(){
   const crUserEl = $("#crUser");
@@ -317,9 +316,13 @@ $("#randomBtn")?.addEventListener("click", () => {
   const crTimeEl = $("#crTime");
   const crAvatarEl = $("#crAvatar");
 
+  const unverifiedBtn = $("#commentsUnverifiedBtn");
+  const verifiedBtn = $("#commentsVerifiedBtn");
+
   if (!crUserEl || !crTextEl || !crTimeEl || !crAvatarEl) return;
 
-  const comments = [
+  // --------- LISTS ----------
+  const unverifiedComments = [
     { user:"karim_92", avatar:"https://i.pravatar.cc/150?img=14", text:"T’as voulu faire le mec original mais t juste gênant fdp" },
     { user:"riyad", avatar:"./OST_IMG/pfp/riyad.jpg", text:"Hak rabi tu va finir en enfer avec moi sal fdp" },
     { user:"Glody", avatar:"./OST_IMG/pfp/glody.jpg", text:"écoute les haters ❤️" },
@@ -337,12 +340,29 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"1kramm", avatar:"https://i.pravatar.cc/150?img=19", text:"maintenant jcomprend pk il a pas de meuf, quesquil est moche en plus, c pr ca jle regarde tjr mal" },
     { user:"Xxx_friend_xxX", avatar:"https://i.pravatar.cc/150?img=63", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
     { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. merci?! si vous voulez ajouter un commentaire ecrivez le moi mp et jvais lajouter avec tous seu quils ont deja fait , byee..." },
+  ];
+
+  // ✅ Tu vas remplir ça avec tes vrais "verified"
+  const verifiedComments = [
+    { user:"BOT#1", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
+    { user:"BOT#2", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
+    { user:"BOT#3", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
+    { user:"BOT#4", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
     
   ];
+
+  // --------- STATE ----------
+  const MODE_KEY = "comments:mode";
+  let mode = localStorage.getItem(MODE_KEY) || "verified";
+  let comments = mode === "verified" ? verifiedComments : unverifiedComments;
 
   let index = 0;
   let start = Date.now();
 
+  let tickTimer = null;
+  let nextTimer = null;
+
+  // --------- HELPERS ----------
   function formatAgo(ms){
     const totalSec = Math.max(0, Math.floor(ms / 1000));
     const min = Math.floor(totalSec / 60);
@@ -356,10 +376,26 @@ $("#randomBtn")?.addEventListener("click", () => {
     return text.replace(/@([a-zA-Z0-9_.]+)/g, '<span class="mention">@$1</span>');
   }
 
+  function safeAvatarFallback(){
+    crAvatarEl.onerror = () => {
+      crAvatarEl.onerror = null;
+      crAvatarEl.src = "./OST_IMG/pfp/user3.png"; // fallback local
+    };
+  }
+
   function render(){
+    if (!comments.length){
+      crUserEl.textContent = "—";
+      crTextEl.textContent = "Aucun commentaire.";
+      crAvatarEl.src = "./OST_IMG/pfp/user3.png";
+      crTimeEl.textContent = "—";
+      return;
+    }
+
     const c = comments[index];
     crUserEl.textContent = c.user;
     crTextEl.innerHTML = parseMentions(c.text);
+    safeAvatarFallback();
     crAvatarEl.src = c.avatar;
 
     start = Date.now();
@@ -367,15 +403,54 @@ $("#randomBtn")?.addEventListener("click", () => {
   }
 
   function next(){
+    if (!comments.length) return;
     index = (index + 1) % comments.length;
     render();
   }
 
-  render();
+  function setMode(newMode){
+    mode = newMode === "verified" ? "verified" : "unverified";
+    localStorage.setItem(MODE_KEY, mode);
 
-  setInterval(() => {
-    crTimeEl.textContent = formatAgo(Date.now() - start);
-  }, 1000);
+    comments = mode === "verified" ? verifiedComments : unverifiedComments;
 
-  setInterval(next, 8000);
+    // UI buttons
+    if (unverifiedBtn && verifiedBtn){
+      const isUnv = mode === "unverified";
+      unverifiedBtn.classList.toggle("on", isUnv);
+      verifiedBtn.classList.toggle("on", !isUnv);
+      unverifiedBtn.setAttribute("aria-selected", String(isUnv));
+      verifiedBtn.setAttribute("aria-selected", String(!isUnv));
+    }
+
+    // reset rotation
+    index = 0;
+    render();
+  }
+
+  function startTimers(){
+    tickTimer = setInterval(() => {
+      crTimeEl.textContent = formatAgo(Date.now() - start);
+    }, 1000);
+
+    nextTimer = setInterval(next, 8000);
+  }
+
+  // --------- INIT ----------
+  setMode(mode);      // sets comments + renders
+  startTimers();
+
+  // --------- EVENTS ----------
+  unverifiedBtn?.addEventListener("click", () => setMode("unverified"));
+  verifiedBtn?.addEventListener("click", () => setMode("verified"));
 })();
+
+/* =========================
+   ADD YOUR COMMENT (popup)
+========================= */
+$("#addCommentBtn")?.addEventListener("click", () => {
+  alert(
+    "If you want to add your own comments:\n" +
+    "Send me the comment, the username and a profil picture on Instagram @yanis26x"
+  );
+});
