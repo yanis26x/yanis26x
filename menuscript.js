@@ -344,10 +344,10 @@ $("#randomBtn")?.addEventListener("click", () => {
 
   // ✅ Tu vas remplir ça avec tes vrais "verified"
   const verifiedComments = [
-    { user:"BOT#1", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
-    { user:"BOT#2", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
-    { user:"BOT#3", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
-    { user:"BOT#4", avatar:"./OST_IMG/pfp/user3.png", text:"cool website !" },
+    { user:"BOT#1", avatar:"./OST_IMG/pfp/bot.png", text:"c̷̖̣̠̏̇̇͑̈́͘͝ŏ̸̢̡̧̨̡̫̭͚͙͓͚̤̲̬̔̈͗̉͌͌͑ö̵̧͖̮̎l̵̠̰͖̪̦͕̗̭̻͐̋̂͐̀͑̔͘ ̸̢̱̲͓̈́̈́̑̐̊̋̓̂̍̈͝w̶̖̠̗̦͍̙̟̘̪͓̑͂̚ȅ̵̙͉̓̄b̷̡̡̞̥͚̣̳͙̹̲̖̜̿̽͋̾̄̊̓̓̍̍ş̵̡̤̟̹̮̦͛̎͛̂̇̓̇̉̈̓̉̑̕ͅḯ̶̤̦͉̣̙̘̝͍̗̠̺͖̇͌̂́̍̄͆ͅͅt̴͙̏̋̓̓̎̽̿̄̋͘e̶͕͍̋͋͠" },
+    { user:"BOT#2", avatar:"./OST_IMG/pfp/bot.png", text:"hhello?!" },
+    { user:"BOT#3", avatar:"./OST_IMG/pfp/bot.png", text:"idk" },
+    { user:"BOT#4", avatar:"./OST_IMG/pfp/bot.png", text:"cool website !" },
     
   ];
 
