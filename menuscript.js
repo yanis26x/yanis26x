@@ -225,6 +225,7 @@ const nextMoodBtn = $("#nextMood");
 const moodImages = [
   "./OST_IMG/imageCool/242.g.jpeg",
   "./OST_IMG/imageCool/CestTriste.jpg",
+  "./OST_IMG/imageCool/nana_film.jpg",
   "./OST_IMG/imageCool/BloodMask.jpeg",
   "./OST_IMG/imageCool/lamp_cover.jpg",
   "./OST_IMG/imageCool/sora.png",
