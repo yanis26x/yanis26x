@@ -227,9 +227,16 @@ const moodImages = [
   "./OST_IMG/imageCool/CestTriste.jpg",
   "./OST_IMG/imageCool/nana_film.jpg",
   "./OST_IMG/imageCool/BloodMask.jpeg",
+  "./OST_IMG/imageCool/eyes.jpg",  
   "./OST_IMG/imageCool/lamp_cover.jpg",
   "./OST_IMG/imageCool/sora.png",
-  "./OST_IMG/imageCool/lisa.jpg",
+  "./OST_IMG/imageCool/addicted_track_cover.jpg",
+  "./OST_IMG/imageCool/fatal_frame.jpeg",
+  "./OST_IMG/imageCool/lucy_cover.png",
+  "./OST_IMG/imageCool/confetti.jpg",
+  "./OST_IMG/imageCool/HEELUCI4GIF.gif"
+  
+  
 ];
 
 let moodIndex = 0;
