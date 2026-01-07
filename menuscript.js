@@ -644,3 +644,231 @@ $("#randomBtn")?.addEventListener("click", () => {
   tick();
   setInterval(tick, 3500);
 })();
+
+
+
+
+
+
+
+
+/* =========================
+   HEARTBEAT MONITOR (ECG canvas)
+========================= */
+(() => {
+  const canvas = document.getElementById("hbCanvas");
+  const bpmEl = document.getElementById("hbBpm");
+  const statusEl = document.getElementById("hbStatus");
+  if (!canvas || !bpmEl || !statusEl) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  // DevicePixelRatio for sharp canvas
+  const setupCanvas = () => {
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const cssW = canvas.clientWidth || 820;
+    const cssH = 180;
+    canvas.style.height = cssH + "px";
+    canvas.width = Math.floor(cssW * dpr);
+    canvas.height = Math.floor(cssH * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  };
+
+  setupCanvas();
+  window.addEventListener("resize", setupCanvas);
+
+  // ECG buffer
+  const H = () => 180;
+  const W = () => (canvas.clientWidth || 820);
+
+  let bpm = 92;
+  let targetBpm = 92;
+  let lastBpmChange = 0;
+
+  // Rolling signal values (y offsets)
+  let x = 0;
+  const points = [];
+  const maxPoints = 900;
+
+  // Generate one ECG-ish sample for current phase
+  let phase = 0; // 0..1 within beat
+  const nextSample = (dt) => {
+    const beatDur = 60 / Math.max(40, Math.min(180, bpm)); // seconds per beat
+    phase += dt / beatDur;
+    if (phase >= 1) phase -= 1;
+
+    // baseline noise
+    let v = (Math.random() - 0.5) * 0.06;
+
+    // simple ECG shape:
+    // P wave
+    if (phase > 0.08 && phase < 0.12) v += 0.15 * Math.sin(((phase - 0.08) / 0.04) * Math.PI);
+    // Q dip
+    if (phase > 0.18 && phase < 0.20) v -= 0.35;
+    // R spike
+    if (phase > 0.20 && phase < 0.215) v += 1.15;
+    // S dip
+    if (phase > 0.215 && phase < 0.235) v -= 0.55;
+    // T wave
+    if (phase > 0.34 && phase < 0.44) v += 0.22 * Math.sin(((phase - 0.34) / 0.10) * Math.PI);
+
+    // occasional “glitch/irregularity”
+    if (Math.random() < 0.003) v += (Math.random() < 0.5 ? -1 : 1) * 0.6;
+
+    return v;
+  };
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  const drawGrid = (w, h) => {
+    ctx.save();
+    ctx.clearRect(0, 0, w, h);
+
+    // background subtle
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = "rgba(255,255,255,.02)";
+    ctx.fillRect(0, 0, w, h);
+
+    // grid
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = "rgba(255,255,255,.06)";
+    ctx.lineWidth = 1;
+
+    const step = 22;
+    for (let gx = 0; gx <= w; gx += step) {
+      ctx.beginPath();
+      ctx.moveTo(gx + 0.5, 0);
+      ctx.lineTo(gx + 0.5, h);
+      ctx.stroke();
+    }
+    for (let gy = 0; gy <= h; gy += step) {
+      ctx.beginPath();
+      ctx.moveTo(0, gy + 0.5);
+      ctx.lineTo(w, gy + 0.5);
+      ctx.stroke();
+    }
+
+    // stronger grid lines
+    ctx.strokeStyle = "rgba(255,255,255,.10)";
+    const big = step * 5;
+    for (let gx = 0; gx <= w; gx += big) {
+      ctx.beginPath();
+      ctx.moveTo(gx + 0.5, 0);
+      ctx.lineTo(gx + 0.5, h);
+      ctx.stroke();
+    }
+    for (let gy = 0; gy <= h; gy += big) {
+      ctx.beginPath();
+      ctx.moveTo(0, gy + 0.5);
+      ctx.lineTo(w, gy + 0.5, h);
+      ctx.lineTo(w, gy + 0.5);
+      ctx.stroke();
+    }
+    ctx.restore();
+  };
+
+  const drawWave = (w, h) => {
+    const mid = h * 0.55;
+    const amp = h * 0.34;
+
+    // glow stroke
+    ctx.save();
+    ctx.lineWidth = 2.2;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#3B82F6";
+
+    // small glow
+    ctx.shadowColor = ctx.strokeStyle;
+    ctx.shadowBlur = 12;
+
+    ctx.beginPath();
+    for (let i = 0; i < points.length; i++) {
+      const px = points[i].x;
+      const py = mid - points[i].v * amp;
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    ctx.restore();
+
+    // scan line (right edge)
+    ctx.save();
+    ctx.globalAlpha = 0.22;
+    ctx.fillStyle = "rgba(255,255,255,.18)";
+    ctx.fillRect(w - 18, 0, 18, h);
+    ctx.restore();
+  };
+
+  const updateStatus = () => {
+    // Make it “scary” but subtle
+    const scary = [
+      "signal: unstable",
+      "signal: contaminated",
+      "signal: heartbeat detected",
+      "signal: do not panic",
+      "signal: someone is here",
+      "signal: irregular rhythm",
+    ];
+    statusEl.textContent = scary[Math.floor(Math.random() * scary.length)];
+  };
+
+  // BPM changes slowly to feel alive
+  const maybeChangeBpm = (t) => {
+    if (t - lastBpmChange < 2200) return;
+    lastBpmChange = t;
+
+    // drift target between 70 and 140
+    targetBpm = 70 + Math.random() * 70;
+
+    // sometimes spikes
+    if (Math.random() < 0.12) targetBpm = 135 + Math.random() * 25;
+
+    updateStatus();
+  };
+
+  let last = performance.now();
+  const loop = (t) => {
+    const dt = Math.min(0.05, (t - last) / 1000);
+    last = t;
+
+    maybeChangeBpm(t);
+    bpm = lerp(bpm, targetBpm, 0.015);
+
+    const w = W();
+    const h = H();
+
+    // advance x and add samples
+    const speed = 240 * dt; // px per second (feel free to tweak)
+    x += speed;
+
+    // add multiple samples if needed for smoothness
+    const samples = Math.max(1, Math.floor(speed / 2));
+    for (let i = 0; i < samples; i++) {
+      const v = nextSample(dt / samples);
+      points.push({ x: x + i * 2, v });
+    }
+
+    // normalize to screen: shift points left when x exceeds width
+    if (x > w) {
+      const shift = x - w;
+      for (let p of points) p.x -= shift;
+      x = w;
+
+      // drop offscreen points
+      while (points.length && points[0].x < -10) points.shift();
+    }
+
+    // keep buffer small
+    if (points.length > maxPoints) points.splice(0, points.length - maxPoints);
+
+    drawGrid(w, h);
+    drawWave(w, h);
+
+    bpmEl.textContent = `${Math.round(bpm)} bpm`;
+    requestAnimationFrame(loop);
+  };
+
+  requestAnimationFrame(loop);
+})();
