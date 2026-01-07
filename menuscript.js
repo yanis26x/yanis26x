@@ -263,8 +263,8 @@ const motdDots = $("#motdDots");
 
 const motd = [
   "i dont XXXXXX anymore.",
+  "pLaY kInGd0M hEaRtS 2 . n0w !!",
   "its all your fault.",
-  "XXXXXXXXX",
   "XXXXXXXXX",
   "NEED MORE XXXXXX",
   "0kay?!.",
