@@ -483,3 +483,40 @@ $("#randomBtn")?.addEventListener("click", () => {
     if (e.key === "Escape" && modal.classList.contains("open")) close();
   });
 })();
+
+
+/* =========================
+   MINI SOUND PLAYER (Next + label)
+========================= */
+(() => {
+  const audio = $("#mp3Player");
+  const btn = $("#mp3Next");
+  const label = $("#mp3Label");
+
+  if (!audio || !btn || !label) return;
+
+  const tracks = [
+    { name: "h3llo", src: "./OST_IMG/helloOST.mp3" },
+    { name: "NaNa", src: "./OST_IMG/nanaost.mp3" },
+    { name: "HahA", src: "./OST_IMG/haha.mp3" },
+  ];
+
+  let index = 0;
+
+  const playNext = async () => {
+    try{
+      audio.pause();
+      const t = tracks[index];
+      audio.src = t.src;
+      audio.currentTime = 0;
+      label.textContent = t.name;
+      await audio.play();
+      index = (index + 1) % tracks.length;
+    } catch {}
+  };
+
+  // init label
+  label.textContent = tracks[0].name;
+
+  btn.addEventListener("click", playNext);
+})();
