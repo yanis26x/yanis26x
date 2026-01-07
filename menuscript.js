@@ -502,6 +502,7 @@ $("#randomBtn")?.addEventListener("click", () => {
     { name: "IDK", src: "./OST_IMG/wo.mp3" },
     { name: "goodbye", src: "./OST_IMG/cry.mp3" },
     { name: "laugh!", src: "./OST_IMG/Pain.mp3" },
+    { name: "Cest triste", src: "./OST_IMG/bgm.mp3" },
     
   ];
 
