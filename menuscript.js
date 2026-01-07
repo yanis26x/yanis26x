@@ -342,7 +342,7 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"yanis26x", avatar:"./OST_IMG/imageCool/CestTriste.jpg", text:"heuuu.. merci?! si vous voulez ajouter un commentaire ecrivez le moi mp et jvais lajouter avec tous seu quils ont deja fait , byee..." },
   ];
 
-  // ✅ Tu vas remplir ça avec tes vrais "verified"
+  // ✅ verified
   const verifiedComments = [
     { user:"BOT#1", avatar:"./OST_IMG/pfp/bot.png", text:"c̷̖̣̠̏̇̇͑̈́͘͝ŏ̸̢̡̧̨̡̫̭͚͙͓͚̤̲̬̔̈͗̉͌͌͑ö̵̧͖̮̎l̵̠̰͖̪̦͕̗̭̻͐̋̂͐̀͑̔͘ ̸̢̱̲͓̈́̈́̑̐̊̋̓̂̍̈͝w̶̖̠̗̦͍̙̟̘̪͓̑͂̚ȅ̵̙͉̓̄b̷̡̡̞̥͚̣̳͙̹̲̖̜̿̽͋̾̄̊̓̓̍̍ş̵̡̤̟̹̮̦͛̎͛̂̇̓̇̉̈̓̉̑̕ͅḯ̶̤̦͉̣̙̘̝͍̗̠̺͖̇͌̂́̍̄͆ͅͅt̴͙̏̋̓̓̎̽̿̄̋͘e̶͕͍̋͋͠" },
     { user:"BOT#2", avatar:"./OST_IMG/pfp/bot2.png", text:"hhello?!" },
