@@ -5,7 +5,7 @@
 ## Qibla++
 
 <p align="center">
-  <a href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+  <a href="https://apps.apple.com/us/app/qibla/id6754793667" target="_blank" rel="noopener noreferrer">
     <img alt="Download on the App Store" src="https://img.shields.io/badge/Download%20on%20the%20App%20Store-000000?style=for-the-badge&logo=apple&logoColor=white">
   </a>
 </p>
@@ -26,7 +26,7 @@ It is based on real-time location data and features a dark, smooth, ad-free 26x-
 - AND MORE
 
 <p align="center">
-  <a href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+  <a href="https://apps.apple.com/us/app/qibla/id6754793667" target="_blank" rel="noopener noreferrer">
     <img alt="Download on the App Store" src="https://img.shields.io/badge/Download%20on%20the%20App%20Store-000000?style=for-the-badge&logo=apple&logoColor=white">
   </a>
 </p>
