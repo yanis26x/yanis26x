@@ -4,26 +4,10 @@
 
 ## Qibla++
 
-<p align="center">
-  <a href="https://apps.apple.com/us/app/qibla/id6754793667" target="_blank" rel="noopener noreferrer">
-    <img alt="Download on the App Store" src="https://img.shields.io/badge/Download%20on%20the%20App%20Store-000000?style=for-the-badge&logo=apple&logoColor=white">
-  </a>
-</p>
+
 
 **Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction.
 It is based on real-time location data and features a dark, smooth, ad-free 26x-style UI focused on clarity and performance.
-
-### Features
-- Ultra-precise Qibla direction
-- Location-based prayer times
-- iOS widgets (soon)
-- Multiple themes
-- notifications
-- Learning mode
-- Islamic mini-games
-- Fast and fluid interface
-- Completely ad-free
-- AND MORE
 
 <p align="center">
   <a href="https://apps.apple.com/us/app/qibla/id6754793667" target="_blank" rel="noopener noreferrer">
