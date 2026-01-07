@@ -417,8 +417,9 @@ body{
 .cr-user{ font-weight: 900; margin-bottom: 6px; }
 .cr-text{
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.45;
+   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 .cr-text .mention{ color: var(--accent); font-weight: 900; }
 
