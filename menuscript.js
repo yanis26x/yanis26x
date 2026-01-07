@@ -276,6 +276,7 @@ const motd = [
   "140mg in my blood rn",
   "play Persona 4 Golden!",
   "will you bleed 4 me?",
+  "u dont bleed what i bleed",
 ];
 
 let motdIndex = 0;
