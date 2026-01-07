@@ -232,7 +232,7 @@ const moodImages = [
   "./OST_IMG/imageCool/sora.png",
   "./OST_IMG/imageCool/addicted_track_cover.jpg",
   "./OST_IMG/imageCool/fatal_frame.jpeg",
-  "./OST_IMG/imageCool/lucy_cover.png",
+  "./OST_IMG/imageCool/persona4.jpg",
   "./OST_IMG/imageCool/confetti.jpg",
   "./OST_IMG/imageCool/HEELUCI4GIF.gif"
 
@@ -273,8 +273,9 @@ const motd = [
   "pLaY kInGd0M hEaRtS 2 . n0w !!",
   "its all your fault.",
   "Echo26x is tAkInG wAy m0Re tImE tHaN eXpEcTeD...",
-  "NEED MORE XXXXXX 140mg in my blood rn",
-  "0kay?!.",
+  "140mg in my blood rn",
+  "play Persona 4 Golden!",
+  "will you bleed 4 me?",
 ];
 
 let motdIndex = 0;
