@@ -265,8 +265,8 @@ const motd = [
   "i dont XXXXXX anymore.",
   "pLaY kInGd0M hEaRtS 2 . n0w !!",
   "its all your fault.",
-  "XXXXXXXXX",
-  "NEED MORE XXXXXX",
+  "Echo26x is tAkInG wAy m0Re tImE tHaN eXpEcTeD...",
+  "NEED MORE XXXXXX 140mg in my blood rn",
   "0kay?!.",
 ];
 
@@ -499,6 +499,10 @@ $("#randomBtn")?.addEventListener("click", () => {
     { name: "h3llo", src: "./OST_IMG/helloOST.mp3" },
     { name: "NaNa", src: "./OST_IMG/nanaost.mp3" },
     { name: "HahA", src: "./OST_IMG/haha.mp3" },
+    { name: "IDK", src: "./OST_IMG/wo.mp3" },
+    { name: "goodbye", src: "./OST_IMG/cry.mp3" },
+    { name: "laugh!", src: "./OST_IMG/pain.mp3" },
+    
   ];
 
   let index = 0;
