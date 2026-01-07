@@ -605,6 +605,19 @@ $("#randomBtn")?.addEventListener("click", () => {
     { text: "warning · leak detected", ok: false },
     { text: "warning · heartbeat irregular, to fast", ok: false },
     { text: "online · process: bleeding", ok: false },
+    { text: "error · blood pressure critical", ok: false },
+    { text: "error · internal bleeding", ok: false },
+    { text: "error · veins desynchronized", ok: false },
+    { text: "process alive · do not terminate", ok: false },
+    { text: "background breathing detected", ok: false },
+    { text: "unknown presence watching", ok: false },
+    { text: "memory soaked in blood", ok: false },
+    { text: "flesh integrity compromised", ok: false },
+    { text: "eyes opened behind interface", ok: true },
+    { text: "pain normalized", ok: true },
+    { text: "suffering within acceptable range", ok: true },
+
+    
   ];
 
   const setDot = (ok) => {
