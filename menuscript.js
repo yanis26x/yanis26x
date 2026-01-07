@@ -235,7 +235,7 @@ const moodImages = [
   "./OST_IMG/imageCool/lucy_cover.png",
   "./OST_IMG/imageCool/confetti.jpg",
   "./OST_IMG/imageCool/HEELUCI4GIF.gif"
-  
+
   
 ];
 
