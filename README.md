@@ -1,21 +1,42 @@
 # Salut ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> 
 
+---
+
+## Qibla++
+
 <p align="center">
-  <table>
-    <tr>
-      <td align="left" valign="middle">
-        <h1>INSTALL QIBLA++ ON APPSTORE!!!</h1>
-      </td>
-      <td align="right" valign="middle">
-        <img src="https://github.com/yanis26x/yanis26x/blob/index/OST_IMG/appstore_Qibla.JPG" alt="Qibla++" width="320">
-      </td>
-    </tr>
-  </table>
+  <a href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+    <img alt="Download on the App Store" src="https://img.shields.io/badge/Download%20on%20the%20App%20Store-000000?style=for-the-badge&logo=apple&logoColor=white">
+  </a>
 </p>
 
-Currently working on **Echo26x**, a messaging app that I'm developing myself.
-The goal is to create a smooth, modern, and secure communication experience for users.
+**Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction.
+It is based on real-time location data and features a dark, smooth, ad-free 26x-style UI focused on clarity and performance.
+
+### Features
+- Ultra-precise Qibla direction
+- Location-based prayer times
+- iOS widgets (soon)
+- Multiple themes
+- notifications
+- Learning mode
+- Islamic mini-games
+- Fast and fluid interface
+- Completely ad-free
+- AND MORE
+
+<p align="center">
+  <a href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+    <img alt="Download on the App Store" src="https://img.shields.io/badge/Download%20on%20the%20App%20Store-000000?style=for-the-badge&logo=apple&logoColor=white">
+  </a>
+</p>
+
+---
+
+Currently working on **Echo26x**, a messaging app that I'm developing myself.  
+The goal is to create a smooth, modern, and secure communication experience for users.  
 I plan to release it someday, **stay tuned!**
+
 <p align="center">
   <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html" target="_blank" rel="noopener noreferrer">
     <img alt="Aller sur mon portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
@@ -26,10 +47,6 @@ I plan to release it someday, **stay tuned!**
   </a>
 </p>
 
-
-
 ![alt text](https://github.com/yanis26x/yanis26x/blob/index/nimp/OsakiScreen2.jpg)
 
-
-<p align="center">© 2025 <b>yanis26x</b> · Tous droits réservé </p>
-
+<p align="center">© 2025 <b>yanis26x</b> · Tous droits réservés</p>
