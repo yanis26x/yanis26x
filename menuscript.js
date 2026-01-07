@@ -589,3 +589,45 @@ $("#randomBtn")?.addEventListener("click", () => {
   // random activity
   setInterval(addLog, 3500);
 })();
+
+/* =========================
+   SYSTEM STATUS (mini)
+========================= */
+(() => {
+  const line = $("#statusLine");
+  const dot = $("#statusDot");
+  if (!line || !dot) return;
+
+  const states = [
+    { text: "online · stability: unstable", ok: true },
+    { text: "online · bloodflow: normal", ok: true },
+    { text: "online · watchers: 1", ok: true },
+    { text: "warning · leak detected", ok: false },
+    { text: "warning · heartbeat irregular, to fast", ok: false },
+    { text: "online · process: bleeding", ok: false },
+  ];
+
+  const setDot = (ok) => {
+    const color = ok ? "#22c55e" : "#ef4444"; // vert / rouge
+    dot.style.background = color;
+    dot.style.boxShadow = `0 0 0 0 ${ok ? "rgba(34,197,94,.55)" : "rgba(239,68,68,.55)"}`;
+    dot.style.animation = "none";
+    // re-trigger animation
+    void dot.offsetHeight;
+    dot.style.animation = "statusPulse 1.2s ease-in-out infinite";
+
+    // update keyframe glow color by overriding with filter (simple + clean)
+    dot.style.filter = ok ? "none" : "saturate(1.2)";
+  };
+
+  let i = 0;
+  const tick = () => {
+    const s = states[i % states.length];
+    line.textContent = s.text;
+    setDot(s.ok);
+    i++;
+  };
+
+  tick();
+  setInterval(tick, 3500);
+})();
