@@ -804,3 +804,43 @@ body{
   overflow: hidden;
 }
 
+/* =========================
+   SYSTEM LOG
+========================= */
+.systemLog{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.systemLogList{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.logLine{
+  display:flex;
+  gap:10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+  opacity: .9;
+}
+
+.logTime{
+  color: var(--accent);
+  min-width: 52px;
+}
+
+.logMsg{
+  flex:1;
+}
+
+/* subtle flicker */
+.logLine{
+  animation: logIn .35s var(--spring) both;
+}
+
+@keyframes logIn{
+  from{ opacity:0; transform: translateY(4px); }
+  to{ opacity:.9; transform: translateY(0); }
+}

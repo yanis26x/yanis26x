@@ -524,3 +524,68 @@ $("#randomBtn")?.addEventListener("click", () => {
 
   btn.addEventListener("click", playNext);
 })();
+
+
+
+/* =========================
+   FAKE SYSTEM LOG
+========================= */
+(() => {
+  const logEl = document.getElementById("systemLogList");
+  if (!logEl) return;
+
+  const logs = [
+    "system is suffering",
+    "heartbeat: OK",
+    "System alive. Unfortunately.",
+    "Warning, disk space almost full",
+    "Blood curently moving in veins",
+    "New connection from MX64+8XM, Zoige, Ngawa Tibetan and Qiang Autonomous Prefecture, Sichuan, Chine, 624500",
+    "subject skin is strarting to burn",
+    "a user just died from OD",
+    "ERROR: organs missing",
+    "subject barely alive",
+    "injecting 140mg of XXXXXX",
+    "Thinking about a irreversible action...",
+    "pain level to high, system shutting down soon",
+  ];
+
+  const maxLines = 6;
+
+  const nowTime = () => {
+    const d = new Date();
+    return d.toLocaleTimeString("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
+  const addLog = () => {
+    const line = document.createElement("div");
+    line.className = "logLine";
+
+    const time = document.createElement("span");
+    time.className = "logTime";
+    time.textContent = `[${nowTime()}]`;
+
+    const msg = document.createElement("span");
+    msg.className = "logMsg";
+    msg.textContent = logs[Math.floor(Math.random() * logs.length)];
+
+    line.appendChild(time);
+    line.appendChild(msg);
+
+    logEl.prepend(line);
+
+    // limit lines
+    while (logEl.children.length > maxLines) {
+      logEl.removeChild(logEl.lastChild);
+    }
+  };
+
+  // initial logs
+  for (let i = 0; i < 3; i++) addLog();
+
+  // random activity
+  setInterval(addLog, 3500);
+})();
