@@ -196,14 +196,15 @@ body{
 .col{ display:flex; flex-direction:column; gap:16px; }
 
 .panel{
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--card2), var(--card));
-  box-shadow: var(--shadow);
+  background: none;        /* ⬅️ enlève le fond */
+  backdrop-filter: none;  /* ⬅️ enlève le blur */
+  border: none;            /* optionnel */
+  box-shadow: none;        /* optionnel */
   padding: 18px;
-  backdrop-filter: blur(10px);
   animation: fadeUp .7s var(--spring) both;
 }
+
+
 @keyframes fadeUp{
   from{ transform: translateY(16px); opacity:0; }
   to{ transform: translateY(0); opacity:1; }
