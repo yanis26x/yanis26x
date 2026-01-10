@@ -345,7 +345,7 @@ $("#randomBtn")?.addEventListener("click", () => {
     { user:"mahdi", avatar:"./OST_IMG/pfp/mahdi.jpg", text:"AJOUTER MOI SUR SNAP QUE LES MEUFS Kouachi_smk" },
     { user:"120mgInMybloodRN", avatar:"./OST_IMG/pfp/drogues.jpg", text:"ton site est aussi utile que toi dans la vie" },
     { user:"SATAN", avatar:"./OST_IMG/pfp/satan.png", text:"@yanis26x jtais reserver une place en enfer pour toi gros, fait belek ya pas la clim ici" },
-    { user:"sarah.privv", avatar:"./OST_IMG/pfp/helloKitty.jpg", text:"jai tjr etait vegan mais la jme demande si on devrait vraiment laisser vivre les animaux sal comme toi!" },
+    { user:"sarahh2", avatar:"./OST_IMG/pfp/helloKitty.jpg", text:"jai tjr etait vegan, mais la jme demande si on devrait vraiment laisser vivre les animaux sal comme toi!" },
     { user:"1kramm", avatar:"https://i.pravatar.cc/150?img=19", text:"maintenant jcomprend pk il a pas de meuf, quesquil est moche en plus, c pr ca jle regarde tjr mal" },
     { user:"Xxx_friend_xxX", avatar:"https://i.pravatar.cc/150?img=64", text:"HAVARD IS CALLING🔥🔥.... THE WRONG NUMBER 🔥" },
 
