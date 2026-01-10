@@ -96,17 +96,21 @@ body{
   gap: 16px;
   align-items:center;
   padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--card2), var(--card));
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+
+  background: none;        /* ⬅️ pas de fond */
+  backdrop-filter: none;  /* ⬅️ enlève le blur */
+
+  border: none;            /* optionnel */
+  box-shadow: none;        /* optionnel */
+
   animation: pop .7s var(--spring) both;
 }
+
 @keyframes pop{
   from{ transform: translateY(14px); opacity:0; }
   to{ transform: translateY(0); opacity:1; }
 }
+
 
 .brand-title{
   display:flex;
@@ -938,3 +942,5 @@ body{
 .cherchedutaff{
   color: var(--accent); /* bleu en dark / rose en light */
 }
+
+
