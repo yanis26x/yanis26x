@@ -392,7 +392,7 @@ body{
   0%,100%{ transform: scale(1); opacity:.28; }
   50%{ transform: scale(1.06); opacity:.42; }
 }
-.miniRow{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top: 12px; font-family: 'Rock Salt', cursive; color: #ff2d2d;}
+.miniRow{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top: 12px; }
 .miniHint{ color: var(--muted); font-weight: 800; }
 
 /* Comments */
@@ -932,5 +932,5 @@ body{
 
 
 .imavamp{
-  font-family: 'Rock Salt', cursive; color: var(--accent);;
+  font-family: 'Rock Salt', cursive;
 }
