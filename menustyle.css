@@ -934,3 +934,7 @@ body{
 .imavamp{
   font-family: 'Rock Salt', cursive;
 }
+
+.cherchedutaff{
+  color: var(--accent); /* bleu en dark / rose en light */
+}
