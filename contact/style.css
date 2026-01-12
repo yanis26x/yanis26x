@@ -103,8 +103,8 @@ body{
 .btn:active{ transform: translateY(0) scale(.99); }
 
 .btn.primary{
-  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 65%, #000 35%), var(--accent));
-  border-color: color-mix(in srgb, var(--accent) 60%, var(--border) 40%);
+
+
 }
 .btn.primary:hover{
   border-color: color-mix(in srgb, var(--accent) 85%, var(--border) 15%);
