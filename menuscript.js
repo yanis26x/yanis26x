@@ -269,14 +269,15 @@ const motdText = $("#motdText");
 const motdDots = $("#motdDots");
 
 const motd = [
-  "i dont XXXXXX anymore.",
+  "want sum more?!",
+  "iM a vAmP",
   "pLaY kInGd0M hEaRtS 2 . n0w !!",
-  "its all your fault.",
   "Echo26x is tAkInG wAy m0Re tImE tHaN eXpEcTeD...",
-  "140mg in my blood rn",
-  "play Persona 4 Golden!",
   "will you bleed 4 me?",
-  "u dont bleed what i bleed",
+  "i dont XXXXXX anymore.",
+  "idkk what im doing",
+  "its all your fault.",
+  "leave a comment...",
 ];
 
 let motdIndex = 0;
@@ -506,6 +507,7 @@ $("#randomBtn")?.addEventListener("click", () => {
 
   const tracks = [
     { name: "h3llo", src: "./OST_IMG/helloOST.mp3" },
+    { name: "WAKE UP F1LTHY", src: "./OST_IMG/filthy.mp3" },
     { name: "NaNa", src: "./OST_IMG/nanaost.mp3" },
     { name: "HahA", src: "./OST_IMG/haha.mp3" },
     { name: "IDK", src: "./OST_IMG/wo.mp3" },
