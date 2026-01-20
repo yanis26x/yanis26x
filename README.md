@@ -5,7 +5,7 @@
     <img alt="Visit Website" src="https://img.shields.io/badge/Visit%20Website-0A66C2?style=for-the-badge">
   </a>
 </p>
-
+ 
 ## Qibla++
 
 **Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction.
