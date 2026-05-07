@@ -7,7 +7,6 @@
 </p>
 
 
-
 ## Qibla++
 
 **Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction.
