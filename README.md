@@ -1,4 +1,4 @@
-# Salut ! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> 
+# Salut!!
 
 <p align="center">
   <a href="https://yanis26x.github.io/yanis26x/" target="_blank" rel="noopener noreferrer">
@@ -33,4 +33,4 @@ I plan to release it someday, **stay tuned!**
   </a> -->
 </p>
 
-<p align="center">© 2026 <b>yanis26x</b> · Tous droits réservés</p>
+<p align="center">© 2026 <b>yanis26x</b> · All rights reserved</p>
