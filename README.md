@@ -1,16 +1,10 @@
-# Salut!!
+# @yanis26x <a href="https://yanis26x.github.io/yanis26x/" target="_blank" rel="noopener noreferrer"><img align="right" alt="Visit My Website" src="https://img.shields.io/badge/Visit%20My%20Website-000000?style=for-the-badge"></a>
+Always open 2 help and to new opportunities — **@yanis26x** on all socials
 
-<p align="center">
-  <a href="https://yanis26x.github.io/yanis26x/" target="_blank" rel="noopener noreferrer">
-    <img alt="Visit Website" src="https://img.shields.io/badge/Visit%20Website-0A66C2?style=for-the-badge">
-  </a>
-</p>
+Currently working on **Echo26x**, a messaging app. I plan to release it someday — **stay tuned!!**
+## My app
 
-
-## Qibla++
-
-**Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction.
-It is based on real-time location data and features a dark, smooth, ad-free cool UI focused on clarity and performance.
+**Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction. It uses real-time location data and features a smooth, dark, ad-free UI focused on clarity and performance.
 
 <p align="center">
   <a href="https://apps.apple.com/us/app/qibla/id6754793667" target="_blank" rel="noopener noreferrer">
@@ -18,19 +12,22 @@ It is based on real-time location data and features a dark, smooth, ad-free cool
   </a>
 </p>
 
-
 ---
-Currently working on **Echo26x**, a messaging app that I'm developing myself.  
-I plan to release it someday, **stay tuned!**
 
 <p align="center">
   <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html" target="_blank" rel="noopener noreferrer">
-    <img alt="Aller sur mon portfolio" src="https://img.shields.io/badge/Aller%20sur%20mon%20portfolio-0A66C2?style=for-the-badge">
+    <img alt="Visit My Portfolio" src="https://img.shields.io/badge/Visit%20My%20Portfolio-0A66C2?style=for-the-badge">
   </a>
-  &nbsp;
-  <!-- <a href="https://raw.githubusercontent.com/yanis26x/yanis26x/index/nimp/CV_Stage_Informatique.pdf" target="_blank" rel="noopener noreferrer">
-    <img alt="Télécharger mon CV (PDF)" src="https://img.shields.io/badge/T%C3%A9l%C3%A9charger%20mon%20CV-0A66C2?style=for-the-badge&logo=adobeacrobatreader&logoColor=white">
-  </a> -->
 </p>
 
 <p align="center">© 2026 <b>yanis26x</b> · All rights reserved</p>
+
+# 𖤐Dont mind this section
+## Frontend
+```bash
+npm run dev
+```
+## Backend
+```bash
+npm run start:dev
+```
