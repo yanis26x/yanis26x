@@ -24,12 +24,4 @@ Currently working on **Echo26x**, a messaging app. I plan to release it someday 
 
 <p align="center">© 2026 <b>yanis26x</b> · All rights reserved</p>
 
-# 𖤐Dont mind this section
-## Frontend
-```bash
-npm run dev
-```
-## Backend
-```bash
-npm run start:dev
-```
+# 𖤐
