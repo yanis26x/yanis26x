@@ -13,7 +13,6 @@ Currently working on **Echo26x**, a messaging app. I plan to release it someday 
   </a>
 </p>
 
-
 ---
 
 <p align="center">
