@@ -17,6 +17,7 @@ Always open 2 help and to new opportunities — **@yanis26x** on all socials
   </a>
 </p>
 
+--- 
 <p align="center">
   <a href="https://yanis26x.github.io/yanis26x/PORTFOLIO/Portfolio.html" target="_blank" rel="noopener noreferrer">
     <img alt="Visit My Portfolio" src="https://img.shields.io/badge/Visit%20My%20Portfolio-0A66C2?style=for-the-badge">
