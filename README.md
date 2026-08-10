@@ -1,6 +1,7 @@
 # @yanis26x <a href="https://yanis26x.github.io/yanis26x/" target="_blank" rel="noopener noreferrer"><img align="right" alt="Visit My Website" src="https://img.shields.io/badge/Visit%20My%20Website-000000?style=for-the-badge"></a>
 Always open 2 help and to new opportunities — **@yanis26x** on all socials
 
+
 ## My app
 
 **Qibla++** is a minimalist, fast, and modern iOS application designed to help you keep your prayers organized while maintaining an accurate Qibla direction. It uses real-time location data and features a smooth, dark, ad-free UI focused on clarity and performance.
