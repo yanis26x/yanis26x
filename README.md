@@ -24,6 +24,7 @@ Always open 2 help and to new opportunities — **@yanis26x** on all socials
   </a>
 </p>
 
+
 <p align="center">© 2026 <b>yanis26x</b> · All rights reserved</p>
 
 # 𖤐
