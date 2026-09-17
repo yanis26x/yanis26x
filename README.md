@@ -10,7 +10,6 @@ Always open 2 help and to new opportunities — **@yanis26x** on all socials
 </p>
 
 
-
 ## SoundSync
 **SoundSync** is an app 2 easily transfer your playlists and favorite songs between music streaming platforms like Spotify, Apple Music, YouTube Music, & more. Switch platforms without having to rebuild your playlists from Zero!!
 <p align="center">
